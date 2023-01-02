@@ -1,0 +1,84 @@
+<!-- 
+<form 태그 관련 내용>
+1. 형태: <form> 내용 </form> - 폼(양식,형식) 사용자가 키보드/마우스로 입력/선택 할 수 있는 서식
+2. 연관 태그
+ 1) <input />: 입력상자
+ 	- type = "text"
+ 	- type = "password"
+ 	- type = "radio": 동그라미 선택 버튼 생성 / name 속성 값을 동일하게 설정할 경우 단일선택만 가능
+ 	- type = "checkbox": 네모 선택 버튼 생성 / name 속성 값을 동일하게 설정할 경우 복수선택 가능
+	- type = "button" : 버튼 (이벤트 버튼으로 사용)
+	- type = "submit" : 폼 전송 (전송/통신 가능)
+	- type = "reset" : 폼 초기화
+
+ 	- name: 식별이름 (radio or checkbox type과 같이 사용)
+ 	- value: 입력상자에 입력된 데이터 (버튼 안에 데이터를 입력하고 싶을 때 type과 함께 사용)
+ 	- readonly: 읽기모드 (입력/수정 불가능)
+ 	- disabled: 사용불가
+ 	- placeholder: 문자 가이드 (무엇을 입력해야하는지 가이드해주며, 입력하게 되면 placeholder text는 사라짐)
+ 	- autofocus: 마우스 커서 위치
+ 	- checked: 체크 기본 설정
+ 
+ 2) <textarea> </textarea>: 게시판 형식에 많이 사용
+ 	- rows: 가로텍스트 길이
+ 	- cols: 세로텍스트 길이
+ 	- style = "resize:none": 설정해 놓은 크기로 고정
+
+3) <select> </select>: 목록상자
+	<option></option>: 목록 항목(값) 입력 ===> <li> list item </li>과 비슷한 유형
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form> <!-- form S -->
+		<!-- 자주 사용하는 input type -->																<!-- 입력 상자 삽입 -->
+		[읽기모드] <input type = "text" value = "인사과" readonly = "readonly" /> <br/>					<!-- 문자 입력이 가능한 상자(기본값) -->
+		[사용금지] <input type = "text" value = "전요셉" disabled = "disabled" /> <br/>
+		[포커스] <input type = "password" placeholder = "패스워드" autofocus = "autofocus"/> <br/>  	<!-- 패스워드 입력이 가능한 상자 -->
+		
+		[단일선택]
+		<input type = "radio" 	name = "email" checked = "checked" /> 예 							<!-- 동그라미 선택 버튼 생성: 복수선택 불가 -->
+		<input type = "radio" 	name = "email" /> 아니오 <br/>
+		
+		[복수선택]
+		<input type = "checkbox" 	name = "item" /> 경제 											<!-- 네모 선택 버튼 생성: 복수선택 가능 -->
+		<input type = "checkbox" 	name = "item" /> 연예
+		<input type = "checkbox" 	name = "item" /> 스포츠 <br/>
+		
+		[긴글텍스트]
+		<textarea rows = "5" cols = "10" style = "resize:none"></textarea> <br/>
+		
+		[목록상자]
+		<select>
+			<option> 네이버 </option>
+			<option> 카카오 </option>
+			<option> 구글 </option>		
+		</select><br/>
+		
+		[버튼목록]
+		<input type = "button" 	value = "인증" /> <br/>
+		<input type = "submit" 	value = "전송" /> <br/>
+		<input type = "reset" 	value = "입력 초기화" /> <br/>
+
+		<!-- 실 사용은 하지 않는 input type -->		
+		<input type = "color" /> <br/> 														<!-- 색상 선택 -->
+		<input type = "date" /> <br/> 														<!-- 날짜 선택 -->
+		<input type = "datetime-Local" /> <br/> 											<!-- 날짜/시간 선택 -->
+		<input type = "email" /> <br/> 														<!-- 이메일(@)형식 입력 -->
+		<input type = "month" /> <br/> 														<!-- 날짜(월) 선택 -->
+		<input type = "time" /> <br/> 														<!-- 시간 선택 -->
+		<input type = "week" /> <br/> 														<!-- 날짜(주) 선택 -->
+		<input type = "range" min = 0 max = 10 /> <br/> 									<!-- 범위 스크롤 -->
+		<input type = "number" min = 0 max = 50 /> <br/> 									<!-- 범위 내 숫자 입력 -->
+		
+		
+	</form> <!-- form E -->
+
+</body>
+</html>
