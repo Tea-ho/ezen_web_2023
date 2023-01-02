@@ -1,0 +1,53 @@
+<!--
+CSS: Cascading Style sheets
+what? HTML이나 XML(XML의 방언인 SVG, XHTML 포함)로 작성된 문서의 표시 방법을 기술하기 위한 스타일 시트 언어
+	  마크업 언어(ex: HTML)가 웹사이트의 몸체를 담당한다면 CSS는 옷과 액세서리처럼 꾸미는 역할을 담당한다고 할 수 있다.
+	  즉, HTML 구조는 그대로 두고 CSS 파일만 변경해도 전혀 다른 웹사이트처럼 꾸밀 수 있다.
+	  
+	  => 요약: HTML 꾸미는 언어 (HTML은 정적 언어로, 문서작업만 가능)
+	  
+활용:
+ 1) 주로 html, xml 문서에서 사용
+ 2) 레이아웃과 스타일 정의
+ 3) 확장자: 파일명.css
+
+사용방법:
+ 1) 태그의 style 속성 이용
+  <태그 style = "속성: 값">
+
+ 2) head태그 안에서 css 정의
+  예시)
+  <style type = "text/css">
+  	h1{ color : blue; }
+  	 
+ 3) CSS 파일 import 하기
+  <link href = "1.css_start.css" rel = "stylesheet">
+ 
+ *정의 how? 식별자{ 속성 : 값 } 
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<!-- 2) style 태그 이용하여 css 정의 -->
+	<style type = "text/css">
+		h3{ color : green; }
+	</style>
+	
+	<!-- 3) css 파일 가져오기 -->
+	<link href = "1.css_start.css" rel = "stylesheet">
+
+</head>
+<body>
+	
+	<!-- 1) 태그 style 속성 이용 -->
+	<p style = "color : red"> 사용방법1) CSS 시작합니다. </p>
+	<h3> 사용방법2) CSS 시작합니다. </h3>
+	<h4> 사용방법3) CSS 시작합니다. </h4>
+
+</body>
+</html>
