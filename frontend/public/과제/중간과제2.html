@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<fieldset> <!-- 입력 그룹 S -->
+		<legend> <h2> 비회원 게시판 </h2> </legend> <!-- 그룹 제목 -->
+		
+			<!-- 카테고리 창 생성 -->
+			카테고리 <select>
+				<option> 공지사항 </option>
+				<option> 자유게시판 </option>
+				<option> 공유게시판 </option>		
+			</select><br/>
+			
+			<!-- 작성자 창 생성 -->
+			<input type = "text" placeholder = "작성자" />
+		
+			<!-- 비밀번호 창 생성 -->
+			<input type = "password" placeholder = "비밀번호" />		<br/>
+
+			<hr> 	<!-- 구분선 -->
+			
+			<!-- 게시물 제목 입력창 생성 -->
+			<input type = "text" placeholder = "게시물 제목 입력" />
+		
+			<hr> 	<!-- 구분선 -->
+		
+			<!-- 게시글 내용 입력창 생성 -->
+			<textarea rows = "20" cols = "70" style = "resize:none" placeholder = "게시물 내용입력"></textarea>		<br/>
+		
+			공개선택
+			<input type = "radio" 	name = "공개여부" checked = "checked" /> 공개글							
+			<input type = "radio" 	name = "공개여부" /> 비공개글 <br/>
+			공유선택 
+			<input type = "checkbox" 	name = "SNS" /> 카카오톡											
+			<input type = "checkbox" 	name = "SNS" /> 트위터
+			<input type = "checkbox" 	name = "SNS" /> 네이버카페 <br/>
+			작성일자 <input type = "date" />
+			작성시간 <input type = "time" />
+			<hr> 	<!-- 구분선 -->
+			<!-- 첨부파일 창 입력 --> 															
+			첨부파일 <input type = "button" 	value = "파일선택" />	선택된 파일 없음	<br/>
+			
+			<br/>
+			<!-- 목록보기, 글쓰기, 다시쓰기 버튼 생성  -->
+			<input type = "button" 	value = "목록보기" />
+			<input type = "submit" 	value = "글쓰기" />
+			<input type = "reset" 	value = "다시쓰기" />
+		
+	</fieldset> <!-- 입력 그룹 E -->		
+
+</body>
+</html>
