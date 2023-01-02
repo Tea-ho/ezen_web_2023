@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/* css 주석 */
+
+/* 1. 모든곳에 적용 */
+*{ /* S */
+	font-family: "궁서";
+	color: blue;
+} /* E */
+
+/* 2. h3 태그에 적용 */
+h3{
+	text-decoration: underline;
+	text-shadow: 2px 2px 2px gray;
+	text-align: center;
+}
+
+/* 2. p 태그에 적용 */
+P{
+	font-family: "굴림";		color: 블랙;
+	font-size: 8px; 		font-style: italic;
+	font-weight: bold;		line-height: 100%;	
+	word-spacing: 2px;		letter-spacing: 2px;
+}
+
+/* 4. 아이디에 적용 */
+#p2{ color : green; }
+
+/*
+우선순위: 속성이 중복일 경우 우선 적용되는 순위
+ style -> id -> class -> 태그 -> *
+ but, style 사용은 유지보수 업무에 비효율적이기 때문에 사용하지 않음.
+*/
