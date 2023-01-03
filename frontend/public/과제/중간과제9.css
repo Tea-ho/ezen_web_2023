@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.signup_tittle{
+	text-align: center;
+}
+
+#line{
+	border-bottom: solid 2px #1e1f21;
+}
+
+.join_form{
+	width: 800px;
+	border-top: solid 2px #1e1f21;
+	border-bottom: solid 2px #1e1f21;
+	margin: 0 auto;
+}
+
+.submit_b{
+	padding: 15px;
+	width: 800px;
+	text-align: right;	
+}
+
+.save_B{
+	width: 100px;
+	height: 50px;
+	margin-right: 10px;
+}
+
+.cancle_B{
+	width: 100px;
+	height: 50px;
+}

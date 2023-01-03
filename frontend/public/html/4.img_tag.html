@@ -1,41 +1,52 @@
 <!-- 
 
-<�̹��� �±� ���� ����>
-1. ����: <img/>
-2. Ư¡
- 1) �̹��� ����ϴµ� ����ϴ� �±�
- 2) src="�̹��� ���"
-  *���(�������ϱ���) ��� ǥ����
-   (1) ./: ��������
-   (2) ../: ��������
+<이미지 태그 관련 내용>
+1. 형태: <img/>
+2. 특징
+ 1) 이미지 출력하는데 사용하는 태그
+ 2) src="이미지 경로"
+  *상대(현재파일기준) 경로 표기방법
+   (1) ./: 현재폴더
+   (2) ../: 상위폴더
 
-3. alt: �̹��� �̸� �ޱ�
-4. width: ������ ���� ���� ���� type: 1) px, 2) %
-   
+3. alt: 이미지 이름 달기
+4. width: 사진의 가로 길이 설정 type: 1) px, 2) %
+
+<하이퍼링크 태그 관련 내용>
+1. 형태: <a href = "경로"> 텍스트 </a>
+2. 특징
+ 1) 하이퍼링크 관련 태그
+ 2) 텍스트 클릭시 설정한 경로로 이동됨
+ => 페이지 전환/이동 시 사용하는 태그
+ 
  -->
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-	<!-- �����: �������� ��������, ÷���ϰ��� �ϴ� �̹����� ������ ��θ� Ȯ��  -->
+	<!-- 상대경로: 현재파일 기준으로, 첨부하고자 하는 이미지의 파일의 경로를 확인  -->
 
-	<!-- 1. ���� html�� ���� ������ ������ ���� ��쿡�� �ν� -->
+	<!-- 1. 현재 html과 같은 폴더에 사진이 있을 경우에만 인식 -->
 	<img alt="dusk" src="dusk_221230.jpg" />
 	
-	<!-- 2. ���� html ������ �������� (public ����)�� ���� ��� �ν�  -->	
+	<!-- 2. 현재 html 폴더의 상위폴더 (public 폴더)에 있을 경우 인식  -->	
 	<img alt="dusk" src="../dusk_221230.jpg" />
 	
 	<!-- 3.   -->	
 	<img alt="dusk" src="../img/dusk_221230.jpg" width="30px" />
 	
-	<!-- ������: ÷���ϰ��� �ϴ� �̹��� ������ ��� ����� �ּҷ�, pc���� ��ΰ� �ٸ� �� ����. -->
+	<!-- 절대경로: 첨부하고자 하는 이미지 파일의 모든 경로의 주소로, pc마다 경로가 다를 수 있음. -->
 	
 	<img alt="dusk" src="C:\Users\504\Desktop\WEB\ezen_web_2023\frontend\public\img\dusk_221230.jpg" width="30%" />
+
+	
+	<!-- 하이퍼링크 태그 관련 내용 -->
+	<a href = "./html/1.html_start.html"> html_start </a>
 
 </body>
 </html>

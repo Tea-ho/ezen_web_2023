@@ -10,6 +10,7 @@
 	- type = "button" : 버튼 (이벤트 버튼으로 사용)
 	- type = "submit" : 폼 전송 (전송/통신 가능)
 	- type = "reset" : 폼 초기화
+	- type = "file" : 첨부파일 1개 업로드 (여러개 업로드 희망할 경우, multiple = "multiple" 추가) 
 
  	- name: 식별이름 (radio or checkbox type과 같이 사용)
  	- value: 입력상자에 입력된 데이터 (버튼 안에 데이터를 입력하고 싶을 때 type과 함께 사용)
@@ -24,8 +25,11 @@
  	- cols: 세로텍스트 길이
  	- style = "resize:none": 설정해 놓은 크기로 고정
 
-3) <select> </select>: 목록상자
+ 3) <select> </select>: 목록상자
 	<option></option>: 목록 항목(값) 입력 ===> <li> list item </li>과 비슷한 유형
+
+ 4) <fieldset> </fieldset>: 입력상자 그룹	
+	
  -->
 
 <!DOCTYPE html>
@@ -37,46 +41,66 @@
 <body>
 
 	<form> <!-- form S -->
-		<!-- 자주 사용하는 input type -->																<!-- 입력 상자 삽입 -->
-		[읽기모드] <input type = "text" value = "인사과" readonly = "readonly" /> <br/>					<!-- 문자 입력이 가능한 상자(기본값) -->
-		[사용금지] <input type = "text" value = "전요셉" disabled = "disabled" /> <br/>
-		[포커스] <input type = "password" placeholder = "패스워드" autofocus = "autofocus"/> <br/>  	<!-- 패스워드 입력이 가능한 상자 -->
+		<!-- 자주 사용하는 input type -->
 		
-		[단일선택]
-		<input type = "radio" 	name = "email" checked = "checked" /> 예 							<!-- 동그라미 선택 버튼 생성: 복수선택 불가 -->
-		<input type = "radio" 	name = "email" /> 아니오 <br/>
+		<fieldset> <!-- 입력 그룹 S -->
+			<legend> 자주 사용되는 input </legend> <!-- 그룹 제목 -->
+			
+			<!-- 문자 입력이 가능한 상자(기본값) -->
+			[읽기모드] <input type = "text" value = "인사과" readonly = "readonly" /> <br/>					
+			[사용금지] <input type = "text" value = "전요셉" disabled = "disabled" /> <br/>
+			<!-- 패스워드 입력이 가능한 상자 -->
+			[포커스] <input type = "password" placeholder = "패스워드" autofocus = "autofocus"/> <br/>  	
+			[단일선택]
+			<!-- 동그라미 선택 버튼 생성: 복수선택 불가 -->
+			<input type = "radio" 	name = "email" checked = "checked" /> 예 							
+			<input type = "radio" 	name = "email" /> 아니오 <br/>		
+			[복수선택]
+			<!-- 네모 선택 버튼 생성: 복수선택 가능 -->
+			<input type = "checkbox" 	name = "item" /> 경제 											
+			<input type = "checkbox" 	name = "item" /> 연예
+			<input type = "checkbox" 	name = "item" /> 스포츠 <br/>		
+			[긴글텍스트]<br/>
+			<textarea rows = "7" cols = "50" style = "resize:none"></textarea> <br/>		
+			[목록상자]
+			<select>
+				<option> 네이버 </option>
+				<option> 카카오 </option>
+				<option> 구글 </option>		
+			</select><br/>
+			
+			<hr> 	<!-- 구분선 -->
 		
-		[복수선택]
-		<input type = "checkbox" 	name = "item" /> 경제 											<!-- 네모 선택 버튼 생성: 복수선택 가능 -->
-		<input type = "checkbox" 	name = "item" /> 연예
-		<input type = "checkbox" 	name = "item" /> 스포츠 <br/>
+			[첨부파일] <br/>
+			<!-- 첨부파일 1개 -->
+			<input type = "file" /> <br/>
+			<!-- 첨부파일 여러개 --> 															
+			<input type = "file" multiple = "multiple" /> <br/>							
+			
+			<hr> 	<!-- 구분선 -->
 		
-		[긴글텍스트]
-		<textarea rows = "5" cols = "10" style = "resize:none"></textarea> <br/>
-		
-		[목록상자]
-		<select>
-			<option> 네이버 </option>
-			<option> 카카오 </option>
-			<option> 구글 </option>		
-		</select><br/>
-		
-		[버튼목록]
-		<input type = "button" 	value = "인증" /> <br/>
-		<input type = "submit" 	value = "전송" /> <br/>
-		<input type = "reset" 	value = "입력 초기화" /> <br/>
+			[버튼목록] <br/>
+			<input type = "button" 	value = "인증" /> <br/>
+			<input type = "submit" 	value = "전송" /> <br/>
+			<input type = "reset" 	value = "입력 초기화" /> <br/>
+
+		</fieldset> <!-- 입력 그룹 E -->
 
 		<!-- 실 사용은 하지 않는 input type -->		
-		<input type = "color" /> <br/> 														<!-- 색상 선택 -->
-		<input type = "date" /> <br/> 														<!-- 날짜 선택 -->
-		<input type = "datetime-Local" /> <br/> 											<!-- 날짜/시간 선택 -->
-		<input type = "email" /> <br/> 														<!-- 이메일(@)형식 입력 -->
-		<input type = "month" /> <br/> 														<!-- 날짜(월) 선택 -->
-		<input type = "time" /> <br/> 														<!-- 시간 선택 -->
-		<input type = "week" /> <br/> 														<!-- 날짜(주) 선택 -->
-		<input type = "range" min = 0 max = 10 /> <br/> 									<!-- 범위 스크롤 -->
-		<input type = "number" min = 0 max = 50 /> <br/> 									<!-- 범위 내 숫자 입력 -->
+		<fieldset> <!-- 입력 그룹 S -->
+			<legend> html5 이상부터 추가된 input </legend> <!-- 그룹 제목 -->
+
+			[색상]<input type = "color" /> <br/> 								<!-- 색상 선택 -->
+			[날짜]<input type = "date" /> <br/> 								<!-- 날짜 선택 -->
+			[날짜/시간]<input type = "datetime-Local" /> <br/> 					<!-- 날짜/시간 선택 -->
+			[이메일 형식 입력]<input type = "email" /> <br/> 								<!-- 이메일(@)형식 입력 -->
+			[날짜(월)]<input type = "month" /> <br/> 								<!-- 날짜(월) 선택 -->
+			[시간]<input type = "time" /> <br/> 								<!-- 시간 선택 -->
+			[날짜(주)]<input type = "week" /> <br/> 								<!-- 날짜(주) 선택 -->
+			[범위 스크롤]<input type = "range" min = 0 max = 10 /> <br/> 			<!-- 범위 스크롤 -->
+			[범위 숫자]<input type = "number" min = 0 max = 50 /> <br/> 			<!-- 범위 내 숫자 입력 -->
 		
+		</fieldset> <!-- 입력 그룹 E -->		
 		
 	</form> <!-- form E -->
 

@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.signup_t{
+	text-align: center;
+}
+
+.signup_form{
+	width: 600px;
+	margin: 0 auto;
+	border-top: solid 2px #1e1f21;
+	border-bottom: solid 2px #1e1f21;
+	padding: 30px;
+}
+
+/* 글머리 제거 */
+.singup_box li{
+	list-style-type: none;
+}
+
+/* li 기본 속성 변경: block -> inline-block */
+.colums li{ display: inline-block; }
+
+.colums .col1{ width: 150px;}
+.colums .col2{ width: 250px; height: 25px; }
+.colums .col2 select{
+	width: 100px; height: 30px;
+	display: inline-block;
+	}
+
+/* textarea 고정 */
+textarea{ resize: none; }
+
+/* 버튼 box 조정 */
+.btn_box{ text-align: right; }
+
+/* 버튼 box 사이즈 변경 */
+.btn_box input{
+	padding: 10px 20px;
+	margin: 10px 3px 0px 0px;
+}
+
+/* 가입경로 텍스트 세로 정렬 */
+.hello{ vertical-align: top; }
+
+.selcetP{ display: inline-block; }

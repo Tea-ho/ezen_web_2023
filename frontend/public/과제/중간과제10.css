@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.email_form{
+	width: 900px;
+	margin: 0 auto;
+	border-top: solid 2px #1e1f21;
+}
+
+
+/* 버튼 box 조정 */
+.btn_box{ text-align: right; }
+
+/* 버튼 box 사이즈 변경 */
+.btn_box input{
+	padding: 5px 20px;
+	margin: 5px 15px 0px 0px;
+}
+
+/* textarea 고정 */
+textarea{ resize: none; }
+
+.text_box{
+	width: 715px;
+	height: 25px;
+}
+
+.email_form .col1{ height: 30px;}
+
+.email_form td{
+	border-bottom: solid 2px #f4f4f4;
+}
