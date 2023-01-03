@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+*{ /* 모든 곳에 적용 */
+	border: solid 3px black;
+}
+
+span{
+	border: solid 2px red; 
+}
+
+div{
+	border: solid 2px blue;
+	margin: 20px;
+}
+
+.s1{
+	display: inline;
+	width: 200px;
+	height: 100px;
+}
+
+.s2{
+	display: block;
+	width: 200px;
+	height: 100px;
+}
+
+.s3{
+	display: inline-block;
+	width: 200px;
+	height: 100px;
+}
+
+.s4{
+	display: none;
+	width: 200px;
+	height: 100px;
+}
+
+.d1{
+	display: inline;
+}
+
+.d2{
+	display: block;
+}
+
+.d3{
+	display: inline-block;
+}
+
+.d3{
+	display: none;
+}

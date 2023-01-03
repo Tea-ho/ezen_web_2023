@@ -1,0 +1,85 @@
+<!-- 
+CSS속성>
+ 1. 박스(테두리)
+  1) 테두리 위치 (테두리, 밑줄, 박스 형성, 강조처리에 활용함)
+ 	전체 - border: 선유형, 굵기, 색상;
+ 	위쪽 - border-top: 선유형, 굵기, 색상;
+ 	아래 - border-bottom: 선유형, 굵기, 색상;
+ 	왼쪽 - border-left: 선유형, 굵기, 색상;
+ 	오른쪽 - border-right: 선유형, 굵기, 색상;
+
+  2) 선 유형
+  	solid: 실선
+  	dotted: 점선
+  	double: 이중선
+  	dashed: 파선
+  
+  3) 둥근 모서리
+  	border-radius: px;
+  	
+  4) 그림자 설정
+  	box-shadow: x축 y축 흐림정도 색상;
+  	
+  5) 테두리 내부 여백 설정 (간격 잡거나, 사이즈 설정할 때 활용함)
+	전체: padding: px;
+  	위쪽: padding-top: px;
+  	아래: padding-bottom: px;
+  	왼쪽: padding-left: px;
+  	오른쪽: padding-right: px;
+  	
+  	tip>
+  	*padding: 1)px 2)px; 로 설정할 경우 => 1)위,아래 / 2)왼쪽,오른쪽으로 여백 설정됨
+  	*padding: 1)px 2)px 3)px 4)px; 로 설정할 경우 => 1)위 2)오른쪽 3)아래 4)왼쪽으로 여백 설정됨 (시계방향) 
+  	*text-align: center; => 박스 내 텍스트 가운데 정렬
+
+  6) 바깥 여백 설정
+  	전체: margin: px; 
+  	위쪽: margin-top: px;
+  	아래: margin-bottom: px;
+  	왼쪽: margin-left: px;
+  	오른쪽: margin-right: px;
+  	
+  	tip>
+  	*margin: 1)px 2)px; 로 설정할 경우 => 1)위,아래 / 2)왼쪽,오른쪽으로 여백 설정됨
+  	*margin: 1)px 2)px 3)px 4)px; 로 설정할 경우 => 1)위 2)오른쪽 3)아래 4)왼쪽으로 여백 설정됨 (시계방향)
+  	*margin: 0 auto; => 구역(box) 가운데 정렬
+  	
+  7) 박스 가로 높이 설정
+  	width: px; or width: %
+  	*설정 안할 경우, 100%로 자동 설정됨.
+  	
+  8) 박스 사이즈 조정
+  	box-sizing: content-box; (기본값)
+  	=> 내용물 박스 기준 / 사이즈 고정되지 않음 (내용물에 따라 박스 크기가 변동됨)
+  	box-sizing: border-box;
+  	=> 테두리 박스 기준  / 사이즈 고정됨 (내용물이 박스보다 커지면 박스 밖으로 내용물이 나가는 현상 발생됨)
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	
+		<link href = "4.css_박스.css" rel = "stylesheet">
+
+</head>
+<body>
+
+	<h3> WEB </h3>
+	<h4> Box1 </h4>
+	<h5> Box2 </h5>
+	<h6> Box3 </h6>
+	<h2> Box4 </h2>
+	<h1> Box5 </h1>
+	
+	<!-- 식별자 클래스 설정 -->
+	<p class="box1"> Box6 </p>
+	
+	<p id="box2"> Box7 </p>
+	
+	<p id="box3"> Box8 </p>
+	
+</body>
+</html>

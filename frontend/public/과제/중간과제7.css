@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+#name{
+	display: block;
+	width: 200px;
+	height: 500px;
+}
+
+#who{
+	height: 60px;
+	width: 700px;
+	padding: 20px;				/* 안쪽 여백 */
+	line-height: 150%;			/* 표준 줄간격: 150~180 */
+	background-color: #1e1f21;
+	color: white;	
+}
+
+#char{
+	height: 60px;
+	width: 700px;
+	padding: 20px;				/* 안쪽 여백 */
+	line-height: 150%;			/* 표준 줄간격: 150~180 */
+	background-color: #1e1f21;
+	color: white;	
+}
+
+#keyword{
+	color: orange;
+	font-weight: bold;
+}
+
+h1{
+	display: inline;
+	color: orange;
+}
+
+h3{
+	display: inline;
+}
