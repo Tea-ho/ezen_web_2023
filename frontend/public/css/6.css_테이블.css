@@ -5,6 +5,12 @@
  ex> .fee_t th{ }
 2. 복수 선택자: "," 이용하여 구분 => 식별자, 식별자, 식별자
  ex> .fee_t , .fee_t th{ }
+ 
+3. 2개 이상의 식별자 정의
+ - class 수준에서 복수 식별자 사용하는 경우가 있음. (ID는 주로 식별자 1개만을 사용함.)
+ - how? class="name1" "name2" 큰따움표로 식별자1을 정의하고 띄어쓰기하여 다시 식별자2 정의
+ ex> <div class="web_box" "content_box">
+ 
  */
 
 .fee_t , .fee_t th , .fee_t td{
@@ -32,4 +38,4 @@
 .fee_t .col1{ width: 70px;}		/* 1열 */
 .fee_t .col2 , .fee_t .col3{ 	/* 2, 3열 */ 
 	width: 100px;}
-.fee_t .col4{ width: 150px;}		/* 1열 */
+.fee_t .col4{ width: 150px;}	/* 1열 */

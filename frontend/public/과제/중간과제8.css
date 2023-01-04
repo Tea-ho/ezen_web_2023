@@ -3,18 +3,14 @@
 h3{
 	text-align: center;
 }
-
-.login_t{
-	width: 400px;
+.Login_t{
+	width: 400px;		/* 테이블 가로 길이 설정 */
 	margin: 0 auto;
 }
-
-
-.Login_B , .Password_B{
-	height: 30px;
+.Login_B , .Password_B{	/* 로그인, 패스워드 입력란 크기 설정 */
+	height: 30px;		
 	width: 200px;
 }
-
-.Login_S{
-	padding: 30px 20px;
+.Login_S{				
+	padding: 30px 20px;	/* 로그인 버튼 크기 설정 */
 }

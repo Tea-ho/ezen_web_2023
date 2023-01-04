@@ -1,0 +1,53 @@
+<!-- 
+레이아웃 구성>
+- 헤더: 메인메뉴, 검색창, 로고, 로그인 등
+- 본문: 내용물(대표사진), 제품목록, 정보/내용 등
+- 푸터: 사이트맵, 사이트정보, 사업자정보 등
+
+레이아웃 div 작성 순서>
+1. 전체 태그를 감싼 div를 생성한다.	=> web box
+2. 레이아웃 구성요소(헤더, 본문, 푸터)의 div를 생성한다.	=> 요소별 box
+
+배경 사진 활용 tip>
+<HTML>
+1. 이미지 태그 생성 후 id만 설정
+   <img id="아이디 설정">
+<CSS>
+1. 이미지 삽입
+   background-image: url("이미지 경로");
+2. 크기 적용
+   height: px; width: 100%
+3. 이미지 반복(repeat) 제거
+   background-repeat: no-repeat;
+4. 위치 설정
+   background-position: top;
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<link
+		href="8.css_레이아웃.css"
+		rel="stylesheet"
+	>
+
+</head>
+<body>
+	
+	<div id="web_box">
+		<div id="header"></div>		<!-- 헤더 -->
+		<div id="content">	<!-- 본문 -->
+			<div id="left_menu"> 왼쪽 메뉴 </div>		<!-- 왼쪽 메뉴 -->
+			<div id="right_menu"> 오른쪽 메뉴 </div>	<!-- 오른쪽 메뉴 -->
+		</div>		
+		<div id="footer"></div>		<!-- 푸터 -->
+	
+	
+	</div>
+
+
+</body>
+</html>

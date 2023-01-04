@@ -8,7 +8,9 @@
 
 
 /* 버튼 box 조정 */
-.btn_box{ text-align: right; }
+.btn_box{
+	width: 900px;
+	text-align: right; }
 
 /* 버튼 box 사이즈 변경 */
 .btn_box input{

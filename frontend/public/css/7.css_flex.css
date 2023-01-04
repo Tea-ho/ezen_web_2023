@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.flex_box1{
+	border: 1px solid red; padding: 5px;	/* 구역 확인용(추후 삭제) */	
+	display: flex;	/* 아래의 box를 가로배치하기 위해 class="flex_box1"에서 입력 */
+}
+.box{
+	border: 1px solid blue;
+	width: 100px; height: 50px;		
+}
+.flex_box2{
+	border: 1px solid red; padding: 5px;
+	display: flex;
+	flex-direction: column;
+}
+.flex_box3{
+	border: 1px solid red; padding: 5px;
+	display: flex;
+	flex-direction: row-reverse;
+}
+.flex_box4{
+	border: 1px solid red; padding: 5px;
+	display: flex;
+	flex-direction: column-reverse;
+}
