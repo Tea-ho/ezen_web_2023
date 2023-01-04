@@ -21,7 +21,6 @@
 .colums li{ display: inline-block; }
 
 .colums .col1{ width: 150px;}
-.colums .col2{ width: 250px; height: 25px; }
 .colums .col2 select{
 	width: 100px; height: 30px;
 	display: inline-block;
