@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+
+/* ------ 공통 적용 사항 ------ */
+
+*{ padding: 0px; margin: 0px; }
+/* *{ border: 1px solid gray; } */ /* 완성 후 삭제 */
+
+/* 하이퍼링크 태그 기본 속성(파란색상, 밑줄) 제거 */
+a{ color: black; text-decoration: none;}
+
+/* li 태그 머릿말 삭제 */
+li{ list-style-type: none; }
+
+/* ul 태그 여백 삭제 */
+ul{ padding: 0px; }
+
+/* ------ 헤더 ------ */
+#header{
+	width: 1200px; /* height: 100px; */
+	margin: 0 auto;					/* 가운데 배치 */
+	display: flex;					/* 하위 요소 가로 배치 */
+	justify-content: space-between;	/* 메뉴 균등 배치 */
+}
+
+/* ------ 헤더 상단 메뉴 ------ */
+.top_menu{
+	text-align: right;		/* 오른쪽 정렬 */
+	margin-top: 20px;		/* 바깥 윗 여백 설정 */
+	margin-bottom: 10px;	/* 바깥 아래 여백 설정 */
+}
+
+/* ------ 헤더 메인 메뉴 ------ */
+/* li 설정 */
+.main_menu li{
+	display: inline-block;	/* li 가로 배치  */
+	margin-left: 80px; 		/* li 사이 여백 설정 */
+	font-size: 20px;		/* 폰트 크기 설정 */
+	font-weight: bold;		/* 진하게 처리 */
+}
+
+/* ------ 메인 이미지 삽입 ------ */
+#main_img{
+	background-image: url("../img/the베이킹_광고사진.png");	/* 이미지 삽입 */
+	height: 250px; width: 100%;		/* 크기 설정 */
+	background-repeat: no-repeat;	/* 자동채우기 제거 */
+	background-position: top;	/* 배경 위치 */
+	margin: 20px 0px;
+}
+
+/* ------ 본문 ------ */
+#content{
+	width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* ------ 1)본문 사이드바 ------ */
+.side_bar{ width: 220px; }
+
+.side_bar h3{
+	background-color: #C5D735;
+	color: white;	font-size: 20px;
+	padding: 10px 0px;	
+}
+
+.side_bar p{
+	padding: 10px 0px;
+}
+
+.side_bar input{
+	margin: 10px;
+}
+
+.text_bar{
+	padding: 0px; margin: 0px;
+	width: 130px;
+	height: 30px;
+}
+
+.button_bar{
+	padding: 0px; margin: 0px;
+	width: 40px;
+	height: 30px;
+}
+
+.side_bar h4{
+	border-top: solid 2px black;
+	border-bottom: solid 1px #eeeeee;
+	font-size: 16px;
+	padding: 10px 0px;	
+}
+
+.side_bar li{
+	border-bottom: dotted 1px #eeeeee;
+	padding: 10px;
+}
+
+/* ------ 2)메인 본문 ------ */
+.main_content{
+	width: 930px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+.main_content h4{
+	border-bottom: solid 1px black;
+	font-size: 16px;
+	padding: 10px 0px;	
+}
+
+/* ------ 메인 본문(왼쪽) ------ */
+.left_mainC{
+	width: 460px;
+}
+
+/* ------ 메인 본문(오른쪽) ------ */
+.right_mainC{
+	width: 460px;
+}
+
+.table_알림판 , .table_게시판 , .table_클래스{
+	padding: 10px 0px;
+}
+
+.table_알림판 .col1, .table_게시판 .col1{
+	width: 300px;
+	height: 30px;
+}
+
+.table_알림판 .col2, .table_게시판 .col2{
+	width: 150px;
+	text-align: right;
+}
+
+.table_클래스 .col1 , table_클래스 .col2{
+	padding: 0px 15px;
+}
+
+
+/* ------ 푸터 ------ */
+#footer{
+	background-color: #2C2A29;
+	color: white;
+	margin-top: 50px;
+}
+#ft_box{ 
+	display: flex;	flex-direction: column;
+	width: 1200px;	margin: 0 auto;
+	padding: 20px;
+}
+/* ------ 푸터(상단) ------ */
+.ft_top{
+	margin: 10px 0px;
+}
+
+.ft_top li{
+	display: inline-block;	/* li 가로 배치 => 자동으로 글머리 제거 */
+	margin-right: 20px; 	/* li 사이 여백 설정 */
+	font-size: 14px;		/* 폰트 크기 설정 */
+	font-weight: bold;		/* 진하게 처리 */
+}
+/* ------ 푸터(하단) ------ */
+.ft_bottom{
+	display: flex;	flex-direction: row;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.ft_bottom1 , .ft_bottom2 , .ft_bottom3{
+	width: 390px;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+/* 피드백: 클래스에 동일한 속성을 적용시킬 경우, 클래스명을 동일하게 부여하면 됨.
+   why? 1개 클래스만 입력해도 되기 때문에 효율적임
+*/

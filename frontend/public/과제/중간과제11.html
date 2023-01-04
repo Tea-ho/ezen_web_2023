@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+		<link
+		href="중간과제11.css"
+		rel="stylesheet"
+	>
+
+</head>
+<body>
+	
+	<!-- 웹 사이트 전체 박스 -->
+	<div id="web_box">
+	
+		<!-- 헤더 -->
+		<div id="header">
+			<div class="header_logo">
+				<img alt="" src="../img/the베이킹_로고.png">
+			</div>	<!-- class header_logo E -->
+		
+			<div class="menu">
+				<div class="top_menu">
+					<a href="#">김태호(TeO)님</a> ㅣ
+					<a href="#">로그아웃</a> ㅣ
+					<a href="#">정보수정</a>
+				</div>	<!-- class top_menu E -->
+
+				<div class="main_menu">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">출석부</a></li>
+						<li><a href="#">작품갤러리</a></li>
+						<li><a href="#">게시판</a></li>
+						<li><a href="#">갤러리</a></li>
+					</ul>
+				</div>	<!-- class main_menu E -->
+			</div>	<!-- class 메뉴 E -->
+		</div>	<!-- id header E -->
+		
+		<!-- 메인 사진 삽입 -->
+		<img id="main_img">
+			
+		<!-- 본문 -->
+		<div id="content">
+			<!-- 본문 사이드바 -->
+			<div class="side_bar">
+				<h3> The 베이킹 </h3>
+				<p> 안녕하세요. 쿠키와 빵 만들기 정보를 공유하고 소통하는 공간입니다.</p>
+				<input type="text" class="text_bar"> <input type="submit" value="검색" class="button_bar">
+				
+				<h4><a href="#">베이킹/요리</a></h4>
+					<ul>
+						<li> <a href="#">쿠키 만들기</a></li>
+						<li> <a href="#">빵 만들기</a></li>
+						<li> <a href="#">마카롱 만들기</a></li>					
+					</ul>
+				<h4><a href="#">최근 댓글</a></h4>
+					<ul>
+						<li> <a href="#">쿠키 만들기</a></li>
+						<li> <a href="#">빵 만들기</a></li>
+						<li> <a href="#">마카롱 만들기</a></li>					
+					</ul>
+			</div>	<!-- 본문 사이드바 -->
+			
+			<!-- 본문 메인 -->
+			<div class="main_content">
+
+				<!-- 본문 메인(왼쪽) -->
+				<!-- 피드백: 테이블 사용보다 div로 구획 잡고 ul/li를 이용하여 만드는게 좋음
+					 why? 테이블로 잡게 되면, 내용물이 추가할 때마다 테이블을 추가 생성해야함.
+					 	  div와 ul/li 사용 시, 내용이 추가되면 아래 줄로 자동 추가되기 때문에 유지/보수 측면에서 훨씬 효율적임.
+				-->
+				<div class="left_mainC">
+					<div class="알림">
+						<h4>알림</h4>
+							<table class="table_알림판">
+								<tr>
+									<td class="col1"> 쿠키 클래스 연기합니다. </td>
+									<td class="col2"> 09.30 </td>	
+								</tr>
+								<tr>
+									<td class="col1"> 쿠키 클래스 연기합니다. </td>
+									<td class="col2"> 09.30 </td>	
+								</tr>
+								<tr>
+									<td class="col1"> 쿠키 클래스 연기합니다. </td>
+									<td class="col2"> 09.30 </td>	
+								</tr>
+								<tr>
+									<td class="col1"> 쿠키 클래스 연기합니다. </td>
+									<td class="col2"> 09.30 </td>	
+								</tr>
+								<tr>
+									<td class="col1"> 쿠키 클래스 연기합니다. </td>
+									<td class="col2"> 09.30 </td>	
+								</tr>								
+							</table>
+					</div>
+					
+					<div class="게시판">
+						<h4>게시판</h4>
+							<table class="table_게시판">
+								<tr>
+									<td class="col1"> 안녕하세요. 반갑습니다. </td>
+									<td class="col2"> 09.30 </td>	
+								</tr>
+								<tr>
+									<td class="col1"> 안녕하세요. 반갑습니다. </td>
+									<td class="col2"> 09.30 </td>	
+								</tr>
+								<tr>
+									<td class="col1"> 안녕하세요. 반갑습니다. </td>
+									<td class="col2"> 09.30 </td>	
+								</tr>
+								<tr>
+									<td class="col1"> 안녕하세요. 반갑습니다. </td>
+									<td class="col2"> 09.30 </td>	
+								</tr>
+								<tr>
+									<td class="col1"> 안녕하세요. 반갑습니다. </td>
+									<td class="col2"> 09.30 </td>	
+								</tr>								
+							</table>						
+					</div>
+				</div>	<!-- 메인 본문(왼쪽) E -->
+				<div class="right_mainC">
+					<h4>제빵 클래스</h4>
+					<table class="table_클래스">
+						<tr>
+							<td class="col1"> <img alt="" src="../img/the베이킹_도넛.png"> </td>
+							<td class="col2"> <img alt="" src="../img/the베이킹_빵.png"> </td>
+						</tr>
+						<tr>
+							<td class="col1"> 도너츠 만들기[3]<br/>22.09.11 </td>
+							<td class="col2"> 도너츠 만들기[3]<br/>22.09.11 </td>	
+						</tr>								
+						<tr>
+							<td class="col1"> <img alt="" src="../img/the베이킹_샌드위치.png"> </td>
+							<td class="col2"> <img alt="" src="../img/the베이킹_머핀.png"> </td>	
+						</tr>				
+						<tr>
+							<td class="col1"> 도너츠 만들기[3]<br/>22.09.11 </td>
+							<td class="col2"> 도너츠 만들기[3]<br/>22.09.11 </td>	
+						</tr>		
+					</table>								
+				</div>	<!-- 메인 본문(오른쪽) E -->			
+			</div>	<!-- 메인 본문 E -->
+		</div>	<!-- 본문 E -->
+		
+		<!-- 푸터 -->
+		<div id="footer">	<!-- 푸터 배경색 100% 적용하는 div -->
+			<div id="ft_box">			<!-- 푸터 내용물 div -->
+				<!-- 푸터(상단) -->	
+				<div class="ft_top">
+					<ul>
+			            <li> The 베이킹 소개 </li>
+			            <li> 개인정보처리방침 </li>
+			            <li> 저작권 정보 </li>
+			         	<li> 이용 안내 </li>
+					</ul>					
+				</div>
+				
+				<!-- 푸터(하단) -->				
+				<div class="ft_bottom">
+					<div class="ft_bottom1">
+						<h4>문의 전화</h4>
+						<ul>
+				            <li> 전화번호: 123-1234 </li>
+				            <li> 영업시간: 10:00~18:00(Lunch 12:00~13:00)</li>
+						</ul>
+					</div>
+
+				<div class="ft_bottom2">
+				<h4>The 베이킹</h4>
+					<ul>
+			            <li> 주소: 경기도 안산시 한대앞역 123-123 </li>
+			            <li> 전화: 031-123-1234 </li>
+						<li> 팩스: 031-123-1234 </li>
+						<li> 이메일: qweqwe@qweqwe.com </li>
+					</ul>
+				</div>
+
+				<div class="ft_bottom3">
+					<h4>입금 정보</h4>
+					<ul>
+			            <li> 농협 123-123-123456 </li>
+			            <li> The 베이킹 </li>
+					</ul>
+				</div>
+
+				</div>
+			</div>	<!-- 푸터 내용 E -->
+		</div>	<!-- 푸터 배경 E -->
+
+	
+	</div> <!-- 웹 전체 E -->
+
+
+</body>
+</html>
