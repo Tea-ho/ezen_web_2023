@@ -10,13 +10,20 @@ display: flex; => flex 사용할 요소의 상위요소(flexContainer)에 입력
 3) flex-direction: row-reverse;	=> 가로 배치(오른쪽부터)
 4) flex-direction: column-reverse;	=> 열 배치 역순
 
-수평정렬> justify-content
+수평 정렬> justify-content
 1) justify-content: flex-start;
 2) justify-content: flex-end;
 3) justify-content: center;
 4) justify-content: space-between;
 5) justify-content: space-around;
 6) justify-content: space-evenly;
+
+수직 정렬> align-items
+1) align-items: flex-start;	=> 위쪽 정렬
+2) align-items: center; => 가운데 정렬
+3) align-items: flex-end; => 아래쪽 정렬
+4) align-items: stretch;  => height/width 없는 요소에 자동으로 크기 적용
+5) align-items: baseline; => 내용물을 기준으로 정렬
 
 묶음> flex-wrap
 1) flex-wrap: nowrap; => 묶음 처리 X(기본값으로 생략해도 무방)

@@ -1,0 +1,60 @@
+<!-- 
+포지션(position) tag
+
+1) 기준점 설정
+ (1) position: static; => 작성순서대로 배치 (기본값으로 위치이동 불가)
+ (2) position: relative; => 상대 위치 (본래 위치)
+ (3) position: absolute; => 절대 위치 (상위 요소 위치)
+ (4) position: fixed; => 화면 위치 (디바이스 위치)
+ 
+2) 기준점 기준으로 위치이동 (+: 안쪽으로 이동, -: 바깥쪽으로 이동)
+ (1) top: 위쪽에서 이동 (+: 아래로, -: 위로)
+ (2) left: 왼쪽에서 이동 (+: 오른쪽, -: 왼쪽)
+ (3) right: 오른쪽에서 이동 (+: 왼쪽, -: 오른쪽)
+ (4) bottom: 아래에서 이동 (+: 위로, -: 아래로)
+
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	
+	<link	
+		href="12.css_position.css"
+		rel="stylesheet"
+	>
+
+</head>
+<body>
+	<h3>[상대위치] position: relative; *부모: body </h3>
+	<div class="box1"> box1 </div>
+	<div class="box2"> box2 </div>
+	<div class="box3"> box3 </div>
+	
+	<h3>[절대 위치] position: absolute; *부모: body </h3>
+	<div class="box4"> box4 </div>
+	<div class="box5"> box5 </div>
+	<div class="box6"> box6 </div>
+
+	<h3>[화면 위치] position: fixed; *부모: body </h3>	
+	<div class="box7"> box7 </div>
+	<div class="box8"> box8 </div>
+	<div class="box9"> box9 </div>	
+
+	<h3>[부모: relative, 자식: absolute] </h3>
+	<div class="parent1">	
+		<div class="box10"> box10 </div>
+		<div class="box11"> box11 </div>
+		<div class="box12"> box12 </div>
+	</div>
+
+	<h3>[부모: absolute, 자식: absolute] </h3>
+	<div class="parent2">	
+		<div class="box13"> box13 </div>
+		<div class="box14"> box14 </div>
+		<div class="box15"> box15 </div>
+	</div>
+		
+</body>
+</html>

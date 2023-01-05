@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.box1 , .box2 , .box3 ,
+.box4 , .box5 , .box6 ,
+.box7 , .box8 , .box9 ,
+.box10 , .box11 , .box12 ,
+.box13 , .box14 , .box15 ,
+.box16 , .box17 , .box18
+{
+	width: 100px; height: 80px;
+	background-color: red;
+	border: solid 1px white;
+}
+
+.box2{ position: relative; left: 50px; top: 50px; }
+/* box2 position: relative; 이해 내용
+   현재 있던 위치를 기준으로 왼쪽에서 50px 이동
+   현재 있던 위치를 기준으로 위쪽에서 50px 이동
+*/
+
+.box5{ position: absolute; left: 50px; top: 50px; }
+
+.box8{ position: fixed; left: 50px; top: 50px; }
+
+
+.parent1 , .parent2{
+	width: 300px; height: 300px; border: 1px solid white;
+	background-color: blue;
+}
+
+.parent1{ position: relative; }
+.box11{ position: absolute; right: -10px; bottom: -10px; }
+
+.box12{ left:20px; }
+
+.parent2{ position: absolute; }
+.box14{ position: absolute; right: -10px; bottom: -10px; }
