@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/* 기본 적용 사항 */
+
+*{ margin: 0; padding: 0; font-family: "맑은 고딕"; }
+a{ text-decoration: none; color: black; }
+li{ list-style-type: none; }
+
+/* 헤더 */
+
+#header{
+	width: 1200px; margin: 0 auto; height: 100px;
+	display: flex; justify-content: space-between;
+	padding-top: 20px;
+	position: relative;
+}
+
+.h_logo{
+	position: absolute; left: 0px; top: 30px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.h_logo span{
+	color: blue;
+	font-size: 30px;
+}
+
+.h_menus{
+	position: absolute; right: 0px; top: 40px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.main_menu li{
+	display: inline-block;
+	padding-right: 20px;
+}
+
+/* 대표이미지 */
+#info_main{
+	width: 100%; height: 350px;
+	background-image: url("img/reservation_main.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	color: #F0F3DA;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* -------------- 본문 -----------------*/
+#section{
+	width: 1200px; margin: 0 auto;
+	display: flex; justify-content: space-between;
+	padding: 50px 0px;
+}
+/* -------------- 본문(왼쪽) -----------------*/
+.content_left{
+	width: 700px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #FCF9EA;
+	padding-bottom: 40px;
+}
+
+.content_left p{
+	padding-top: 40px;
+}
+
+.content_left h3{
+	padding: 20px 0px;
+}
+
+.calendar{
+	border: solid 1px black;
+	border-collapse: collapse;
+}
+
+.calendar th{
+	color: red;
+	border: solid 1px black;
+	width: 80px;
+}
+
+.calendar td{
+	border: solid 1px black;
+	width: 80px;
+}
+
+.calendar .box1{
+	height: 30px;
+	text-align: center;	
+}
+
+.calendar .box2{
+	width: 80px;
+	height: 80px;
+	text-align: left;
+	vertical-align: top;
+}
+/* -------------- 본문(오른쪽) -----------------*/
+.content_right{
+	width: 470px;
+	padding-bottom: 40px;
+}
+.right_top{
+	padding: 40px;
+}
+
+.right_bottom{
+	padding: 40px;
+}
+
+.content_right h3{
+	border-left: solid 10px black;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	font-size: 15px;
+}
+
+.content_right p{
+	padding-top: 10px;
+	color: green;
+	font-weight: bold;
+}
+
+.right_top li , .right_bottom li{
+	padding-bottom: 5px;
+}
+
+
+/* -------------- 푸터 -----------------*/
+#footer{ background-color: #4A463A; height: 200px; }
+
+.ft_content{
+	width: 1200px; margin: 0 auto;
+	display: flex; justify-content: space-between;
+	padding: 50px 0px;
+	color: white;
+}
+
+.f_left , f_center{ width: 500px; }
+.f_right{ width: 200px; }
+.ft_content li{ display: inline-block ;}
