@@ -2,15 +2,15 @@
 레이아웃 관련 태그: flex
 
 특징>
-display: flex; => flex 사용할 요소의 상위요소에 입력
+display: flex; => flex 사용할 요소의 상위요소(flexContainer)에 입력
 
-배치>
+배치 방향> flex-direction
 1) flex-direction: row;	=> 가로배치(기본값으로 생략해도 무방)
 2) flex-direction: column;	=> 열 배치
 3) flex-direction: row-reverse;	=> 가로 배치(오른쪽부터)
 4) flex-direction: column-reverse;	=> 열 배치 역순
 
-정렬>
+수평정렬> justify-content
 1) justify-content: flex-start;
 2) justify-content: flex-end;
 3) justify-content: center;
@@ -18,7 +18,7 @@ display: flex; => flex 사용할 요소의 상위요소에 입력
 5) justify-content: space-around;
 6) justify-content: space-evenly;
 
-묶음>
+묶음> flex-wrap
 1) flex-wrap: nowrap; => 묶음 처리 X(기본값으로 생략해도 무방)
 2) flex-wrap: wrap; => 묶음 처리 O(부모 사이즈 초과하지 않도록 설정됨)
 
