@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/* ------ 공통 적용 사항 ------  */
+a{
+	color: black;
+	text-decoration: none;
+}
+*{ font-family: "맑은 고딕" }
+*:focus{outline: none;}
+ul{ padding: 0px; }
+#wrap{ background-color: #F5F6F7; }
+li{ list-style-type: none; }
+
+/* ------ 0. 메인 사진 삽입 ------ */
+
+#main_img_bar{
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* ------ 본문 작업 ------ */
+#content{
+	margin: 0 auto;		/* 구역 가운데 설정 */
+	width: 1620px;		/* 넓이 설정: 조군 사이트와 일치 */
+}
+
+/* ------ 1. 상단바_이미지 삽입 ------ */
+.top_bar{
+	margin: 200px auto;		/* 상하 여백 설정 */
+	text-align: center;		/* 내용물 가운데 위치 */
+}
+
+.top_bar img{
+	width: 100%;		/* 이미지 가로 100% 설정 */
+	vertical-align: middle;
+	margin: 50px 0px 20px 0px;	/* 여백 설정 */
+}
+
+.top_bar li{
+	display: inline-block;	/* 가로 배치 */
+}
+
+/* ------ 2. 본문 내용 시작 ------ */
+#content h3{		
+	font-size: 17px;	font-weight: 700;	/* 글씨체 설정 */
+    text-align: center;		/* 가운데 정렬 */
+}
+
+.sub-title{
+	color: #999;	font-size: 13px;	font-weight: 200;	/* 글씨체 설정 */
+    margin-top: 20px;    margin-bottom: 10px;	/* 여백 설정 */
+    text-align: center;		/* 가운데 정렬 */
+}
+
+.item-wrap{
+	padding: 2% 0 0;
+	width: 1620px;
+}
+
+.item-cont{
+	display: flex;
+	margin: 0 auto;
+	justify-content: center;
+}
+
+/* ------ 3. 아이템 상단 ------ */
+.product_img{
+	padding: 1% 1%;
+}
+
+.item-cont img{
+	width: 100%;		/* 이미지 가로 100% 설정 */
+	vertical-align: middle;
+	margin: 0px 7px 0px 0px;	/* 여백 설정 */
+}
+
+.product_info{
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.prd_con{
+	position: absolute;
+	bottom: 0px;	left: 0px;
+}
+.MK-product-icons{
+	display: flex;
+}
+
+.prd_review_count{
+	color: #9B9D9B;
+	position: absolute;
+	top: 0px;	right: 4px;
+}
+
+.prod_color{
+	position: absolute;
+	top: 0px;	left: 4px;
+    border: 1px solid #dbdbdb;
+    background: #DDE1E7;
+    width: 8px;
+    height: 8px;
+}
+
+.sale_percent{
+	color: red;
+	font-weight: bold;
+	position: absolute;
+	bottom: 45px;	right: 4px;
+}
+
+.price_impact{
+	font-weight: bold;
+	margin: 3px 0;
+}
+
+.prd_name_tittle{
+	margin: 1px 0;
+	font-weight: bold;
+	font-size: 17px;
+}

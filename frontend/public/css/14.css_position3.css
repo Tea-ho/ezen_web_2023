@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+#header{
+	width: 1200px;
+	margin: 0 auto;
+	
+	display: flex;
+	justify-content: space-between;
+	
+	position: sticky;		/* 스크롤 생성될 때 고정 */
+	top: 0px;				/* 고정 위치: 상단 배치 */
+	
+	background-color: red;
+	border: 1px solid #eeeeee;
+	
+	z-index: 1;				/* 다른 요소와 위치가 겹칠 때 비치 순서부여 */
+}
+
+#header .h_menu li{
+	display: inline-block;	/* block별로 한줄 배치 */
+}
+
+#section{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+#popup{
+	width: 20%;
+	border: 1px solid #eeeeee;
+	
+	background-color: transparent;
+	/* 배경색 투명 설정 */
+	
+	position: fixed;		/* 화면 위치 고정 */
+	right: 0px; top:40%;	/* 고정 위치: 가장오른쪽 + 위에서 부터 40%되는 지점 */
+	
+	opacity: 50%;			/* 투명도 설정 */
+	
+}

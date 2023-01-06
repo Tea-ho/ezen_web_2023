@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 네이버: 회원가입 </title>
+
+	<link
+		href="16.css_네이버회원가입.css"
+		rel="stylesheet"
+	>
+
+</head>
+<body>
+
+	<div id="wrap">		<!-- 레이아웃 전체 배경 -->
+		<div id="headr">
+			<div class="logo">
+			
+				<a href="https://www.naver.com">
+					<img src="../img/네이버.png"/>
+				</a>
+			
+			</div>
+		
+		</div>
+	
+		<div id="join_form">
+			<div class="top_group">
+			
+				<h3> 아이디 </h3>
+				<span class="signup_input">
+					<input class="input_box" id="id" type="text">
+					<span class="id_at">@naver.com</span>
+				</span>
+
+				<h3> 비밀번호 </h3>
+				<span class="signup_input">
+					<input class="input_box" id="password1" type="password">
+					<span class="signup_lock"></span>
+				</span>
+
+				<h3> 비밀번호 확인 </h3>
+				<span class="signup_input">
+					<input class="input_box" id="password2" type="password">
+					<span class="signup_lock"></span>
+				</span>							
+
+			</div>
+			
+			<div class="row_group">		<!-- 이름, 생년월일, 이메일 입력란 -->
+				<h3> 이름 </h3>
+				<span class="signup_input">
+					<input class="input_box" id="name" type="text">
+				</span>
+			
+				<h3> 생년월일 </h3>
+				<span class="birth_box">
+					<span class="signup_input" id="birth_y_box">
+						<input class="input_box" id="birth" type="text" placeholder="년(4자)">
+					</span>
+					
+					<span class="signup_input" id="birth_m_box">
+						<select class="input_box" id="month">
+							<option>월</option><option>1</option><option>2</option>
+							<option>3</option><option>4</option><option>5</option>
+							<option>6</option><option>7</option><option>8</option>
+							<option>9</option><option>10</option><option>11</option><option>12</option>
+						</select>
+					</span>
+					
+					<span class="signup_input" id="birth_d_box">
+						<input id="day" type="text" placeholder="일">
+					</span>			
+				</span>
+				
+				<h3> 성별 </h3>
+				<span class="signup_input" id="select_box">
+					<select class="input_box" id="select">
+						<option>성별</option><option>남</option><option>여</option>
+					</select>
+				</span>
+				
+				<h3> 본인 확인 이메일<span class="s_text">(선택)</span></h3>
+				<span class="signup_input">
+					<input class="input_box" placeholder="선택입력" type="text">
+				</span>
+						
+			</div>	<!-- 이름, 생년월일, 이메일 E -->
+			
+			<div class="row_group">	<!-- 휴대전화 입력란 -->
+				<h3>휴대전화</h3>
+				
+				<span class="signup_input">
+					<select class="input_box" id="select">
+						<option>대한민국 +82</option><option>호주 +61</option><option>미국/캐나다 +1</option>
+					</select>
+				</span>
+				
+				<span class="phone_box">
+					<span class="phonenumber_input">
+						<input id="phonenumber_box" type="text" placeholder="전화번호 입력">
+					</span>
+					<input class="btn_auth" type="button" value="인증번호 받기">
+				</span>
+			
+				<span class="signup_input" id="auth_box">
+				
+					<input readonly class="input_box" id="input_auth" type="text" value="인증번호 입력하세요">
+				
+				</span>
+			
+			</div>
+			
+			<div class="btn_area">
+				<input id="btnJoin" class="btn_type btn_primary" type="button" value="가입하기">
+			</div>
+			
+				
+		</div>
+	
+		<div id="footer">
+		
+			<div class="ft_box">
+				<div class="ft_top">
+					<ul>
+						<li> <a href="#">이용약관</a> </li>
+						<li id="ft_top_bar">ㅣ</li>
+						<li> <a href="#">개인정보처리방침</a> </li>
+						<li id="ft_top_bar">ㅣ</li>
+						<li> <a href="#">책임의 한계와 법적고지</a> </li>
+						<li id="ft_top_bar">ㅣ</li>
+						<li> <a href="#">회원정보 고객센터</a> </li>
+					</ul>
+				</div>
+				
+				<div class="ft_sub">
+					<img src="../img/네이버.png" />
+					<div>
+						Copyright NAVER Corp. All Rights Reserved.
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
