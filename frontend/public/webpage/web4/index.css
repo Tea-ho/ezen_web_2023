@@ -93,14 +93,18 @@ li{ list-style-type: none; }
 .prd_review_count{
 	color: #9B9D9B;
 	position: absolute;
-	top: 0px;	right: 4px;
+	top: 5px;	right: 4px;
 }
 
 .prod_color{
-	position: absolute;
-	top: 0px;	left: 4px;
-    border: 1px solid #dbdbdb;
-    background: #DDE1E7;
+	display: inline-block;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.prod_color span{
+    display: inline-block;
+    vertical-align: top;
     width: 8px;
     height: 8px;
 }
@@ -117,8 +121,12 @@ li{ list-style-type: none; }
 	margin: 3px 0;
 }
 
+.prd_name{
+	margin-bottom: 15px;
+}
+
 .prd_name_tittle{
-	margin: 1px 0;
+	margin: 1px 0px;
 	font-weight: bold;
-	font-size: 17px;
+	font-size: 15px;
 }
