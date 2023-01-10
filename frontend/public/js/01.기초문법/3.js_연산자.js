@@ -111,7 +111,8 @@ console.log("7의배수+홀수면 True:" + (Num6%7==0)&&(Num6%2==1))
 
 ------------------------------------------------------------------------------------ */	
 
-/*// 4. 대입 연산자
+/*
+// 4. 대입 연산자
 let data3 = 10; // 선언과 동시에 대입하는 경우를 "초기화"라고 칭한다.
 data3 += 2 		// == data3 = data3 + 2
 console.log( "+= 대입 결과: " + data3 )
@@ -162,7 +163,8 @@ let data10 = Number(prompt("세번째 정수를 입력하시오."))
 let dataStore1 = data8
 dataStore1 = dataStore1 < data9 ? data9 : dataStore1
 dataStore1 = dataStore1 < data10 ? data10 : dataStore1
-console.log("가장 큰 수: " + dataStore1)*/
+console.log("가장 큰 수: " + dataStore1)
+*/
 
 // 문제12) 정수 3개를 입력받아 오름차순으로 출력
 let data11 = Number(prompt("첫번째 정수를 입력하시오."))
