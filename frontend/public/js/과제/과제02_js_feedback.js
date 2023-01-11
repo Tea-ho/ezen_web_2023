@@ -16,11 +16,11 @@ function confirm(){		// --- 조건2> 함수 S
 	let yNum = document.querySelector( '.yNum' );	//--- 조건2>
 	// 해석: HTML Num1,2 클래스 JS 사용 선언 [DOM 객체화]
 	
-		let inputXNum = xNum.value
-		let inputYNum = yNum.value
+	xNum = xNum.value
+	yNum = yNum.value
 
-			for( let i = 1 ; i <= inputYNum; i++){	// for S
-				tablecontent += '<tr> <th> '+inputXNum+' </th> <th> '+i+' </th> <th> '+(inputXNum * i)+' </th> </tr>';
+			for( let i = 1 ; i <= yNum; i++){	// for S
+				tablecontent += '<tr> <th> '+xNum+' </th> <th> '+i+' </th> <th> '+(xNum * i)+' </th> </tr>';
 				// 해석: JS 변수 tablecontent 값 초기화 (동작: 기존에 가지고 있던 데이터는 유지하면서, 데이터를 추가함)
 				
 				document.querySelector('.tablecontent_HTML').innerHTML = tablecontent
