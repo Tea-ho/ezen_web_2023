@@ -22,16 +22,16 @@ function confirm(){	// --- 조건3>
 	let textArea = document.querySelector( '.textArea' );
 	// 해석: HTML 클래스 textArea JS 사용 선언 [DOM 객체화]
 	
-	let inputTextArea = textArea.value;
-	// 해석: JS 변수 inputTextArea 선언 (입력값: HTML 클래스 textArea에 입력된 데이터)
-	
 	contentArray.push( textArea.value );
+	// 해석: HTML 클래스 textArea값을 JS 배열 contentArray에 저장
+
+		console.log(contentArray);	// --- 배열 확인
 	// 해석: HTML 클래스 textArea에 입력된 값을 JS 배열 contentArray에 저장
 	
 	for( let i = 0 ; i < contentArray.length; i++ ){	// --- 조건4>
+
 		tableContent += '<tr> <th> '+(i+1)+' </th> <th> '+contentArray[i]+' </th> </tr>'
 		document.querySelector('.tablecontent_HTML').innerHTML = tableContent
 		textArea.value = null;
 	}
-	
 }
