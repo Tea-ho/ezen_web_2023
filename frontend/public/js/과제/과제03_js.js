@@ -26,7 +26,6 @@ function confirm(){	// --- 조건3>
 	// 해석: HTML 클래스 textArea값을 JS 배열 contentArray에 저장
 
 		console.log(contentArray);	// --- 배열 확인
-	// 해석: HTML 클래스 textArea에 입력된 값을 JS 배열 contentArray에 저장
 	
 	for( let i = 0 ; i < contentArray.length; i++ ){	// --- 조건4>
 
