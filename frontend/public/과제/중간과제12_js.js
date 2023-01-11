@@ -1,7 +1,7 @@
 let studentArray = [ '20230110', '20230109', '20230108' ];	//---- 기본옵션1)
-	console.log(studentArray)	// --- 기능확인(배열확인)
+	console.log(studentArray)								// --- 기능확인(배열확인)
 
-// 과제1)
+// 문제1)
 function onLogin(){
 	
 	// [입력부]

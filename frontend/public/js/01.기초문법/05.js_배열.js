@@ -71,7 +71,6 @@ document.write( '</ol>' )
 // 4. 배열의 길이
 console.log( '수강 인원: ' + array.length + '명' )
  
-
 // 5. 배열 요소 추가
 array.push( "전현무", "유재석", "강호동", "짭훈희" );
 console.log( array );
