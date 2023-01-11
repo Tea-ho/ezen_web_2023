@@ -88,8 +88,7 @@ function onDelete(){	// F_onDelete S
 		confirm++;
 	}
 	
-	
-	if ( sNum.value.length != 8 ){
+	if ( confirm == 0 && sNum.value.length != 8 ){
 		alert( "학번을 다시 확인해주세요.(오류: 학번(8자리) 불일치)" );		// --- 추가옵션3)
 		sNum.value=null;										// --- 추가옵션2)
 		confirm++;
@@ -107,4 +106,4 @@ function onDelete(){	// F_onDelete S
 				console.log( studentArray );							// --- 기능 확인(배열 확인)
 		}
 	}
-}		// F_onDelete E
+}	// F_onDelete E
