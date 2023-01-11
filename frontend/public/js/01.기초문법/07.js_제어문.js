@@ -59,4 +59,4 @@ else if( score_input1 >= 80 ) { console.log("B등급") }
 else if( score_input1 >= 70 ) { console.log("C등급") }
 else console.log("탈락")
 
-// 문제3) 
+ 

@@ -2,11 +2,11 @@ let studentArray = [ '20230110', '20230109', '20230108' ];	//---- 기본옵션1)
 	console.log(studentArray)								// --- 기능확인(배열확인)
 
 // 문제1)
-function onLogin(){
+function onLogin(){		// F_onLogin S
 	
 	// [입력부]
 	let sNum = document.querySelector( '.sNum' ); 	// --- 기본옵션2)
-	// HTML sNum 클래스를 JS 사용 선언
+	// HTML sNum 클래스를 JS 사용 선언 [DOM 객체화]
 	
 	let cNum = sNum.value;
 	// JS 변수 cNum 정의 (기능: sNum.value값 저장)
@@ -34,10 +34,11 @@ function onLogin(){
 		alert( "로그인 성공" );	// --- 기본옵션3)
 		sNum.value=null;		// --- 추가옵션2)
 	}							
-}
+}	// F_onLogin E
 
 // 과제2)
-function onRegist(){
+function onRegist(){	// F_onRegist S
+
 	// [입력부]
 	let sNum = document.querySelector( '.sNum' );	// --- 기본옵션2)
 	
@@ -64,10 +65,11 @@ function onRegist(){
 		alert( "학번을 다시 확인해주세요.(오류: 학번 중복)" );	// --- 기본옵션3)
 		sNum.value=null;								// --- 추가옵션2)
 	}
-}
+}	// F_onRegist E
 
 // 추가> 데이터 삭제
-function onDelete(){
+function onDelete(){	// F_onDelete S
+
 	// [입력부]
 	let sNum = document.querySelector( '.sNum' );	// --- 기본옵션2)
 	
@@ -76,22 +78,33 @@ function onDelete(){
 	let dcindex = studentArray.indexOf( dNum );
 
 	// [출력부]
+	
+	// 피드백: 검사변수 confirm 생성 (역할: 유효성검사 체크리스트) 
+	let confirm = 0;
+	
 	if ( sNum.value == '' ){
 		alert( "학번을 입력해주세요.(오류: 학번 미입력)" );	// --- 추가옵션1)
 		sNum.value=null;							// --- 추가옵션2)
+		confirm++;
 	}
-	else if ( sNum.value.length != 8 ){
+	
+	
+	if ( sNum.value.length != 8 ){
 		alert( "학번을 다시 확인해주세요.(오류: 학번(8자리) 불일치)" );		// --- 추가옵션3)
 		sNum.value=null;										// --- 추가옵션2)
+		confirm++;
 	}
-	else if ( dcindex == -1 ){
-		alert( "학번을 다시 확인해주세요.(오류: 미등록)" );	// --- 기본옵션3)
-		sNum.value=null;							// --- 추가옵션2)	
+	
+	if ( confirm == 0){
+		if ( dcindex == -1 ){
+			alert( "학번을 다시 확인해주세요.(오류: 미등록)" );	// --- 기본옵션3)
+			sNum.value=null;							// --- 추가옵션2)	
+		}
+		else{
+			studentArray.splice( dcindex, 1 );  						// --- 기본옵션1)
+			alert( "정보가 정상 삭제되었습니다." + "입력학번: " + sNum.value ); 	// --- 기본옵션3)
+			sNum.value=null;											// --- 추가옵션2)
+				console.log( studentArray );							// --- 기능 확인(배열 확인)
+		}
 	}
-	else{
-		studentArray.splice( dcindex, 1 );  						// --- 기본옵션1)
-		alert( "정보가 정상 삭제되었습니다." + "입력학번: " + sNum.value ); 	// --- 기본옵션3)
-		sNum.value=null;											// --- 추가옵션2)
-			console.log( studentArray );							// --- 기능 확인(배열 확인)
-	}
-}
+}		// F_onDelete E
