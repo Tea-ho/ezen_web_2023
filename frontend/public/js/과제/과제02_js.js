@@ -64,7 +64,6 @@ function confirm(){		// --- 조건2> 함수 S
 		// 해석: HTML x,yNum 입력란 초기화		
 		}	// esle E
 	}	// if1 E
-	
 } 	// 함수 E
 
 
