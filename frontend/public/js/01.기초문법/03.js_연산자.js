@@ -175,12 +175,12 @@ let dataMin = data11
 dataMin = dataMin > data12 ? data12 : dataMin
 dataMin = dataMin > data13 ? data13 : dataMin
 
-let dataMiddle = data11
-dataMiddle = dataMiddle < data12 ? data12 : dataMiddle
-dataMiddle = dataMiddle < data13 ? dataMiddle : data13
-
 let dataMax = data11
 dataMax = dataMax < data12 ? data12 : dataMax
 dataMax = dataMax < data13 ? data13 : dataMax
+
+let dataMiddle = data11
+dataMiddle = dataMiddle > data12 ? dataMiddle : data12
+dataMiddle = dataMiddle > data13 ? dataMiddle : data13
 
 console.log("입력값1: " + data11 + "입력값2: " + data12 + "입력값3: " + data13 + "오름차순 정렬: " + dataMin +", " + dataMiddle +", " + dataMax)
