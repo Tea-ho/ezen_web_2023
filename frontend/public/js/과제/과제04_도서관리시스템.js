@@ -77,10 +77,10 @@ function bookSave( ){
 				confirm++;
 					console.log(confirm)
 				alert("이미 등록된 도서입니다. 다시 확인해주세요.")
+				break;
 			}
 		}
 		
-		BookList.push(bookSaveInformation)	;
 		
 }
 		
