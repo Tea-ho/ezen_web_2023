@@ -16,21 +16,36 @@ function confirm(){	// --- 조건3>
 
 		console.log('입력완료');	// --- 기능 확인 (정상 입력됨)
 	
-	let tableContent = '<tr> <th>번호</th> <th>방문록</th> </tr>';		// --- 조건4>
-	// 해석: JS 변수 tableContent 선언
-	
-	let textArea = document.querySelector( '.textArea' );
+	let textArea = document.querySelector( '.textArea_HTML' ).value;
 	// 해석: HTML 클래스 textArea JS 사용 선언 [DOM 객체화]
 	
-	contentArray.push( textArea.value );
-	// 해석: HTML 클래스 textArea값을 JS 배열 contentArray에 저장
+	contentArray.push( textArea );
+	// 해석: JS변수 textArea에 저장된 값을 배열 contentArray에 저장
 
 		console.log(contentArray);	// --- 배열 확인
+	printContent()
+	
+
+}
+
+function buttonDelete( dNum ){
+	contentArray.splice( dNum, 1 )
+	printContent()
+}
+
+// 프린트 함수
+function printContent(){
+	let tableContent = '<tr> <th>번호</th> <th>방문록</th> <th>비고</th> </tr>';		// --- 조건4>
+	// 해석: JS 변수 tableContent 선언
 	
 	for( let i = 0 ; i < contentArray.length; i++ ){	// --- 조건4>
 
-		tableContent += '<tr> <th> '+(i+1)+' </th> <th> '+contentArray[i]+' </th> </tr>'
+		// 문자열 활용
+		// tableContent += '<tr> <th> '+(i+1)+' </th> <th> '+contentArray[i]+' </th> </tr>'
+		
+		// 백틱 홢용
+		tableContent += `<tr> <th> ${(i+1)} </th> <th> ${contentArray[i]} </th> <th><button onclick="buttonDelete( ${i} )">삭제</button></th> </tr>`
+		
 		document.querySelector('.tablecontent_HTML').innerHTML = tableContent
-		textArea.value = null;
 	}
 }

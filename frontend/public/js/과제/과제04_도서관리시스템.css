@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+*{ background-color: black; color: white; }	/* 연동 확인용 */
+
+.wrap{ display: flex; }
+
+.content1 , .content2{
+	width: 50%;
+	border: 1px solid white;
+}
+
+.contetn1Top{
+	margin: 0 auto;
+}
+
+.adminBookListPrint{
+	margin: 0 atuo;
+}
