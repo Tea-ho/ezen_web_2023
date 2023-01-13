@@ -40,81 +40,84 @@ alert('js작동 확인')
 // 230113, 김태호
 let BookList = ['혼자공부하는자바','이것이자바다','열혈 C언어']
 
-// 1. 검색 버튼 함수 생성 (기능 - 입력된 데이터를 JS로 연결 / )
-function bookSearch( ){
+// 1-1. 검색창 도서명 JS 연결 및 검색 버튼 함수 생성 (기능 )
+function bookSearch(){
+		//console.log("검색 함수 작동 확인")
 	
-		console.log('검색완료');	// --- 기능 확인 (정상 입력됨)
-		
-	let bookSearch = document.querySelector( '.bookResist_HTML' ).value;
-	// 해석: HTML 클래스 bookResist_HTML JS 사용 선언 [DOM 객체화]
+	let bookSearch = document.querySelector('.bookResist_HTML').value;
 	
 	let confirm = 0;
-	// 유효성 변수 선언
-		
-	if( bookSearch.length < 5 || bookSearch.length > 10 ){
-		confirm++;
-			console.log(confirm)
+	
+	if( bookSearch.length >= 5 && bookSearch.length <= 10 ){
+		//console.log(BookList)
+		confirm = 0
+		printBookList()
+	}
+	else{
+			//console.log(confirm)
 		alert("도서명을 다시 입력하시오.(입력범위: 5 ~ 10)")
-		}	
-	printBookList()
+		confirm++
+	}
+	return confirm
 }
 
-// 1-1. 저장 버튼 함수 생성 (기능 - 입력된 값이 설정된 길이에 부합하고 중복이 아니면, 데이터를 JS배열에 추가)
-function bookSave( ){
-		console.log('저장 확인');
+// 1-2. 저장 버튼 함수 생성
+function bookSave(){
+		//console.log('저장 함수 작동 확인')
 	
-	let bookSaveInformation = document.querySelector( '.bookResist_HTML' ).value;
-			console.log(bookSaveInformation)
-			console.log(BookList)
-		
-		confirm = 0;
-		
-		bookSearch( )
-		
-		for( let j = 0; j < BookList.length; j++ ){
-				console.log(BookList[j])
-			if( BookList.indexOf(j) >= 0){
-				confirm++;
-					console.log(confirm)
-				alert("이미 등록된 도서입니다. 다시 확인해주세요.")
-				break;
-			}
-		}
-		
-		
-}
-		
-		
+	let bookSave = document.querySelector('.bookResist_HTML').value;
 	
-			
+	let confirm = bookSearch();
+		// console.log(confirm)
+	
+	if(confirm == 0){
+		// console.log(BookList)
 		
-	bookSearch()
-	/*
 		for( let i = 0; i < BookList.length; i++){
-			if( bookSave == BookList[i] ){
+			// console.log(BookList[i])
+			if(bookSave == BookList[i]){
+				confirm++;
+				// console.log(confirm)
+				printBookList()
 				alert("이미 등록된 도서입니다. 다시 확인해주세요.")
-				break;
-			}
-			else{
-				BookList.push( bookSave );
-			}
+			}		
 		}
-	*/
+	}
+	if(confirm == 0){
+		BookList.push(bookSave)		
+		printBookList()		
 
-// 2. 검색 버튼 함수 생성
+		// console.log(BookList)
+	}
+}
 
-
-
-// 출력함수 생성
+// 2-1. 도서 현황 출력 함수 생성
 function printBookList(){
-	let tableBookList = '<table><tr> <th>번호</th> <th>도서명</th> <th>도서 대여 여부</th> <th>비고</tr></table>';
+	let tableBookList = '<table class="tableBookList"><tr> <th class="list1">번호</th> <th class="list2">도서명</th> <th class="list3">도서 대여 여부</th> <th class="list4">비고</tr></table>';
 	// 해석: JS 변수 bookList 선언
 	
 	for(let i = 0; i < BookList.length; i++){
-		tableBookList += `<table><tr> <th> ${(i+1)} </th><th> ${BookList[i]} </th> <th>도서대여 여부</th>
-						  	   <th><button onclick="buttonDelete( ${i} )">삭제</button></th>
-					 	  </tr></table>`	
+		tableBookList += `<table class="tableBookList">
+							<tr>
+								<th class="list1"> ${(i+1)} </th>
+								<th class="list2"> ${BookList[i]} </th>
+								<th class="list3"> <button onclick="checkRent( ${i} )">대여현황 확인</button></th>
+						  	   	<th class="list4"> <button onclick="buttonDelete( ${i} )">삭제</button> </th>
+					 	  </tr>
+					 	 </table>`	
 	}
-	document.querySelector('.adminBookListPrint').innerHTML = tableBookList
-	
+	document.querySelector('.adminBookListPrint').innerHTML = tableBookList	
 }
+
+// 2-2. 도서대여 여부 (합체)
+
+
+// 2-3. 삭제버튼 함수 생성
+function buttonDelete( dNum ){
+
+	BookList.splice( dNum, 1 )
+	printBookList()
+	alert("정상적으로 삭제되었습니다.")
+}
+
+
