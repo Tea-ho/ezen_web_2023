@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 2. 로또 구매 버튼 생성 -->
+	<button onclick="lottoPrint()"> 로또 구매 </button>
+	
+	<button class="cancleButton" style="display: none;" onclick="lottoCancle()"> 구매 취소 </button>
+
+	<!-- 3. 로또 숫자버튼이 표시되는 구역 -->
+	<!-- 하고 싶은 행위: 1부터 45까지 번호 생성 -->
+	<div class="numButtonBox"></div>
+
+	<!-- 4. 선택된 숫자버튼 목록이 표시되는 구역 -->
+	<h3> 선택한 번호 목록 </h3>
+	<div class="selectNumBox"></div>
+	
+	<!-- 5. 추첨버튼 [ 번호 6개를 선택했을 때 활성화 ] -->
+	<button class="resultButton" style="display: none;" onclick="lottoResult()"> 결과 보기 </button>
+
+	<!-- 1. JS파일 연동 -->
+	<script src="04.로또구매.js" type="text/javascript"></script>
+
+</body>
+</html>

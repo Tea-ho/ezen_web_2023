@@ -6,11 +6,14 @@
 </head>
 <body>
 
+
+
+
 	<!-- 1. 함수 정의 -->
-	<script src="01.js_함수정의.js"></script>
+<!-- 	<script src="01.함수정의.js"></script> -->
 	
 	<!-- 2. 함수 호출 -->
-	<script src="02.js_함수호출.js"></script>
+<!-- 	<script src="02.함수호출.js"></script> -->
 	
 	
 		<!-- 1. HTML에서 인수가 없는 함수 호출 -->
@@ -24,7 +27,19 @@
 		
 		<!-- 4. HTML에서 인수와 리턴이 있는 함수 호출 [result 반영 어려움] -->
 		<button onclick="함수4( 5, 7, 9 )"> 함수4 </button>
-		
 	
+
+	<!-- 3. 함수 정의와 호출 -->
+	<script src="03.함수정의와호출.js"></script>
+	
+	<button onclick="함수1()">함수1실행</button>
+	
+	<!-- html클릭이벤트로 JS함수 호출은 가능하지만, 추후행동은 발생되지 않는다.(반환값 확인 X) -->
+	<button onclick="함수2( 3,5 )">함수2실행</button>
+	
+	<button onclick="함수3( 3,5,7 )">함수3실행</button>
+	
+	<button onclick="함수4( 3,5,7 )">함수4실행[출력x]</button>
+		
 </body>
 </html>

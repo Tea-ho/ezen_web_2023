@@ -1,6 +1,6 @@
 let output1 = ''; // 출력 변수
 
-/*
+
 // 예시1) 입력받은 수 만큼 * 출력
 let s1 = Number(prompt('예시1 별 개수'));
 for( let i = 1; i <= s1; i++){
