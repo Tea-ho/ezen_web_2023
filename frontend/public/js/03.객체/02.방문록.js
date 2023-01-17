@@ -3,7 +3,7 @@
 // 배열 선언 [ 기능: board 객체 누적 저장 ]
 let boardArray = []
 
-//1. 작성 버튼 클릭 시 실행 함수 생성
+// 1. 작성 버튼 함수 생성
 function 작성(){
 	console.log('함수 작동 확인')
 	
@@ -26,6 +26,7 @@ function 작성(){
 	printTable()	
 }
 
+// 2. 삭제 함수 생성
 function buttonDelete(i){
 	let 비밀번호 = prompt('게시물 비밀번호 입력: ')
 		console.log(비밀번호)
@@ -44,6 +45,7 @@ function buttonDelete(i){
 	}
 }
 
+// 3. 수정 함수 생성
 function buttonEdit(i){
 	let 비밀번호 = prompt('게시물 비밀번호 입력: ')
 	
@@ -63,7 +65,7 @@ function buttonEdit(i){
 	
 }
 
-
+// 4. 프린트 함수 생성 (HTML 연결: class 게시물테이블)
 function printTable(){
 	// 배열 내 객체 출력
 	let html = `<tr><th>번호</th><th>내용</th><th>작성자</th><th>비고</th></tr>`

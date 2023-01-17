@@ -22,6 +22,20 @@
 	 	function 함수2( x , y ){ }		=> 호출: 함수2( 1, 3 )
 	 	function 함수3( x , y , z ){ }	=> 호출: 함수3( 1, 5, 3 )
 
+	6. 미리 만들어진 함수
+	 1) let 객체 1개 = document.querySelector('식별자')
+	 2) let 객체 여러개 = document.querySelectorAll('식별자')
+	 
+	 3) document.querySelector('식별자').value
+	 	*value 속성을 가지고 있는 마크업: input, textarea, select 등
+	 4) document.querySelector('식별자').innerHTML
+	 	*innerHTML 속성을 가지고 있는 마크업: div, span, table 등
+	 
+	 5) 배열명.indexOf(찾을데이터): 배열 내 찾을 데이터의 인덱스 번호 반환
+	 	*존재할 경우, 인덱스 번호 반환 // 없을 경우, -1 값 반환
+	 6) 배열명.includes(찾을데이터): 배열 내 찾을 데이터의 존재 여부 반환
+	 	*존재할 경우, true // 없을 경우, false
+	 
 */
 
 // 1. 함수의 선언 [1. 재활용성 ]
