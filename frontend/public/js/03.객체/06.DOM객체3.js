@@ -5,6 +5,12 @@
 
 */
 
+
+// 키보드 이벤트: DOM 상에서 창(window)이나 문서(document), 또는 특정 요소(element)에서 사용
+// keyup 이벤트
+// 동작 시점: 키를 놓을 때 keyup 타입 이벤트 동작
+// 활용:
+
 const textarea = document.querySelector('textarea')
 // 해석: HTML textarea 객체화
 
@@ -24,10 +30,13 @@ textarea.addEventListener( 'keyup' , ( event ) => {
 	
 })
 
+// keydown 이벤튼
+// 동작 시점: 키를 누를 때 keydown 타입 이벤트 동작
+// 활용: 대상을 이동키로 이동시킬 때 사용 
+
 textarea.style.position = 'absolute'
 // 선언 이유: body 안에 있는 textarea를 이동키로 이동시키기 위함
 // 해석: 1)JS에서 CSS 제어 가능, 2)HTML Body를 기준으로 포지션 조정 가능 상태
-
 
 let x = 0;
 let y = 0;
@@ -78,6 +87,3 @@ document.querySelector('.moving').addEventListener('click', ()=>{
 	// 해석: 2회 클릭하면 control 값이 다시 true로 변경되어 위의 keydown 동작을 다시 진행할 수 있음.
 	// 무한 반복
 })
-
-
-
