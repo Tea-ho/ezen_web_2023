@@ -190,15 +190,19 @@ function orderBtn(){
 	// 카트리스트 주문리스트에 전송
 	
 	let orderno = 0;
-	
+		
+		console.log(orderno)
 	if( orderList.length == 0 ){ orderno = 1; }
 	else{ orderno = orderList[ orderList.length-1 ].orderno+1 }
 	// orderList.length+1로 입력할 경우, 삭제하면 문제가 발생될 수 있음.
 	// 때문에 orderList의 마지막 인덱스를 이용하여 해결 ( 마지막인덱스: 배열명.length-1 )
-	// 작동: 주문 없으면 주문번호 1, 주문 발생되면 마지막 인덱스+1 출력 
+	// 작동: 주문 없으면 주문번호 1, 주문 발생되면 마지막 인덱스+1 출력
+	// 참고사항: if문을 이용하여 orderList.length == 0을 설정한 이유는 orderList에 정보가 없으면 orderList[-1]이 되어 오류가 발생됨
+	
+		console.log(orderno)
 	
 	let map배열 = cartList.map( (o) => { return o; })
-		console.log( map배열 )
+		//console.log( map배열 )
 	// 신규문법: 배열명.map( (반복변수)=>{ 실행문; return 값; } )
 	// 특징: for-each문과 동일하게 동작하나, 반복실행문에 return 값을 입력하면 return값을 반환할 수 있다.
 	// map배열 선언 이유: 배열 cartList를 사용하고, cartList를 초기화할 경우 객체 order에 초기화된 값이 입력되는 문제를 해결하기 위함(변수를 이용하여 메모리 공간 공유) 		  
@@ -206,7 +210,7 @@ function orderBtn(){
 	// for( let i = 0; i < cartList.length; i++ ){ 새로운배열.push(cartList[i])}
 	
 	let for배열 = cartList.forEach( (o) => { return o; }) 
-		console.log( for배열 )
+		//console.log( for배열 )
 		
 	let total = 0;
 	for( let i = 0; i < map배열; i++){ total += map배열[i].price }
@@ -225,8 +229,9 @@ function orderBtn(){
 	}
 	
 	orderList.push(order);
+		console.log(orderno)
 	
-	console.log(order)
+	//console.log(order)
 
 	
 	alert('정상적으로 주문이 완료되었습니다.')
