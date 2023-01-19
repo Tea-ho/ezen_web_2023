@@ -29,10 +29,10 @@ document.addEventListener( 'DOMContentLoaded' , function(){ alert( 'HTML 열림2
 		} // for E
 		
 		// 1-2. JS for문 활용: 배열 내 요소 모든 인덱스를 마지막까지 하나씩 반복변수에 대입
-		for ( let index in h2Array ){ 
+		/*for ( let index in h2Array ){ 
 			h2Array[index].innerHTML = '안녕' + i
 		}
-		
+		*/
 		// 1-3. JS for문 활용: 배열 내 요소 모든 데이터를 마지막까지 하나씩 반복변수에 대입
 		for( let object of h2Array ){
 			object.innerHTML = '안녕'
@@ -52,5 +52,14 @@ document.addEventListener( 'DOMContentLoaded' , function(){ alert( 'HTML 열림2
 			console.log( object ); console.log( index ); console.log( array )
 		})
 		
-		
+		let ar = [ 1, 2, 3, 4, 5]
+		let sum = 0; 
+		ar.forEach( ( x )=>{ sum += x } )
+		console.log(sum)
+
+		let forEach문 = ar.forEach( ( o )=>{ return o; } )
+		console.log(forEach문)
+		let map문 = ar.map( ( o )=>{ return o; } )
+		console.log(map문)
+		ar.splice(0)
 		

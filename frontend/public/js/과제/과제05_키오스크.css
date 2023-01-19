@@ -93,3 +93,87 @@
 /* ----------------------------------- 키오스 푸터 */
 
 .footer{ height: 50px;	border: 1px solid yellow; }
+
+
+
+/* ----------------------------------- 관리자 페이지 시작 */
+/* ----------------------------------- 메뉴 파트 */
+.categoryPos{
+	padding-top:15px;
+	padding-bottom: 15px;
+	margin: 0 auto;
+	text-align: center;
+	height: 70px;
+}
+
+.categoryPos li{
+	display: inline;
+}
+
+.categoryPos button{
+	width: 20%;
+	height: 50px;
+}
+
+.resisteditContent2 input, .resisteditContent2 select{
+	width: 100%;
+	height: 30px;
+}
+
+.resisteditContent2 button{
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:16px;
+	width: 46%;
+	height: 35px;
+}
+
+.resisteditContent1Wap, .resistedBGContentWap, .orderCSContentWap, .salesCSContentWap{
+	display: none;
+}
+
+.resistedBGTable{
+	text-align: center;
+	padding-top: 15px;
+}	
+
+.resistedBGTable th{
+	width:150px;
+}
+
+.resistedBGTable button{
+	width: 100px;
+	height: 40px;
+}
+
+.orderCSTable{
+	text-align: center;
+	padding-top: 15px;
+}
+
+.orderCSTable th{
+	width:200px;
+}
+
+.orderitems{
+	display: block;
+}
+
+
+.ordercomplete{
+	display: none;
+}
+
+.OrderComplete{
+	display: none;
+}
+
+.salesCSTable{
+	text-align: center;
+	padding-top: 15px;
+}
+
+.salesCSTable th{
+	width:200px;
+}
+

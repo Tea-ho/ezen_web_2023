@@ -57,10 +57,77 @@
 		</div>
 
 		<div class="container">
-			<h3> 포스기 </h3>
 			<div class="posBox">
-			
-			
+				<div class="categoryPos">
+					<ul>
+						<li class="categoryli" >
+							<button onclick="resisteditBtn()" class="ctegoryBTN" type="button"> 버거 정보 등록/변경 </button>
+						</li>
+						<li class="categoryli">
+							<button onclick="resistedBGBtn()" class="ctegoryBTN" type="button"> 버거 등록 현황 </button>
+						</li>
+						<li class="categoryli">
+							<button onclick="orderCSBtn()" class="ctegoryBTN" type="button"> 주문 현황 </button>
+						</li>
+						<li class="categoryli">
+							<button onclick="salesCSBtn()" class="ctegoryBTN" type="button"> 매출 현황 </button>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="contentPos">
+					<div class="contentPosTop">
+						<div class="resisteditContent1Wap">
+							<div class="resisteditContent1">
+								<h4> 버거 정보 등록/변경 </h4>
+							</div>
+							<div class="resisteditContent2">
+							버거이름: <input class="bugerName" type="text">
+							카테고리명: <select class="selectBox">
+										<option value="프리미엄"> 프리미엄 </option>
+										<option value="스페셜"> 스페셜 </option>
+										<option value="와퍼"> 와퍼 </option>
+										<option value="올데이킹"> 올데이킹 </option>
+										<option value="치킨버거"> 치킨버거 </option>
+									</select>
+							가격: <input class="bugerPrice" type="text">
+							이미지: <input class="bugerImg" type="text">
+							<button onclick="saveBtn_admin()" class="saveBtn_admin"> 저장하기 </button>
+							<button onclick="CancleBtn_admin()" class="CancleBtn_admin"> 취소하기 </button>
+							</div>
+						</div>
+						
+						<div class="resistedBGContentWap">
+							<div class="resistedBGContent1">
+								<h4> 버거 등록 현황 </h4>
+							</div>
+							<div class="resistedBGContent2">
+							
+							</div>
+						</div>
+					</div>
+					
+					<div class="contentPosBottom">
+						<div class="orderCSContentWap">
+							<div class="orderCSContent1">
+								<h4> 주문 현황 </h4>
+							</div>
+							<div class="orderCSContent2">
+						
+							</div>
+						</div>
+						
+						<div class="salesCSContentWap"> 
+							<div class="salesCSContent1">
+								<h4> 매출 현황 </h4>
+							</div>
+							<div class="salesCSContent2">
+							
+							</div>
+						</div>
+					</div>
+					
+				</div>			
 			
 			</div>
 		</div>

@@ -23,7 +23,7 @@
 		}
 */
 
-/*
+
 // 2) while문1 (무한루프)
 while(true){ alert('반복실행'); }
 
@@ -46,7 +46,7 @@ while( i < 10 ){ 	// while S
 	i++;
 }	// while E
 // 해석: 변수 i가 10이하까지 실행문 실행 (즉, i = 10에서 false 값으로 인식되어 while문 종료)
-*/
+
 // 1) for문
 for( let j = 0; j < 10; j++ ){	// for S
 	console.log('실행문3: ' + j);
