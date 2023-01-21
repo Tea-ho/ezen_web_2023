@@ -71,9 +71,9 @@ let categoryList = [ '프리미엄', '스페셜', '와퍼', '올데이킹', '치
 // JS 배열 categoryList 선언 (목적: JS에서 반복문을 이용하여 HTML 화면에 출력하기 위함)
 
 let burgerList = [
-	{ name: '몬스터X', price: 9500, img: '버거킹_몬스터x.jpg' , category: '프리미엄' },
-	{ name: '통새우스테이크', price: 6200, img: '버거킹_통새우스테이크.jpg' , category: '프리미엄' },
-	{ name: '트러플머쉬룸X', price: 7500, img: '버거킹_트러플머쉬룸X.jpg' , category: '스페셜' }
+	{ name: '몬스터와퍼', price: 9500, img: '버거킹_몬스터와퍼.png' , category: '프리미엄' },
+	{ name: '통새우와퍼', price: 6200, img: '버거킹_통새우와퍼.png' , category: '프리미엄' },
+	{ name: '블랙어니언팩', price: 10500, img: '버거킹_블랙어니언팩.png' , category: '스페셜' }
 ]
 // JS 배열 burgerList 선언 (목적: JS에서 반복문을 이용하여 HTML 화면에 출력하기 위함)
 
@@ -209,7 +209,7 @@ function orderBtn(){
 	let orderno = 0;
 	// 변수 orderno 선언 (목적: 주문취소의 경우에도, 변하지 않는 주문번호 생성을 위함)
 		
-		console.log(orderno)
+		// console.log(orderno)
 	if( orderList.length == 0 ){ orderno = 1; }
 	else{ orderno = orderList[ orderList.length-1 ].orderno+1 }
 	// orderList.length+1로 입력할 경우, 삭제하면 문제가 발생될 수 있음.
@@ -217,7 +217,7 @@ function orderBtn(){
 	// 작동: 주문 없으면 주문번호 1, 주문 발생되면 마지막 인덱스+1 출력
 	// 참고사항: if문을 이용하여 orderList.length == 0을 설정한 이유는 orderList에 정보가 없으면 orderList[-1]이 되어 오류가 발생됨
 	
-		console.log(orderno)
+		// console.log(orderno)
 	
 	let map배열 = cartList.map( (o) => { return o; })
 		//console.log( map배열 )
@@ -247,9 +247,9 @@ function orderBtn(){
 	}
 	
 	orderList.push(order);
-		console.log(orderno)
+		// console.log(orderno)
 	
-		console.log(orderList)
+		// console.log(orderList)
 
 	
 	alert('정상적으로 주문이 완료되었습니다.')
@@ -288,7 +288,14 @@ categoryAdmin = [
 	'버거 등록 현황',
 	'주문 현황',
 	'매출 현황' ];
+	
+let orderedList = [];
 
+let salesList = burgerList;
+
+
+
+// ------------------------------------------------- 카테고리 출력 함수
 function categoryAdminPrint(){
 	
 	let categorybox = `<ul>`
@@ -305,7 +312,7 @@ function categoryAdminPrint(){
 
 }
 
-// 등록수정 버튼 함수 생성
+// ------------------------------------------------- 버거 등록 카테고리 버튼 함수 생성
 // 기능: 버거 정보 등록/변경 화면 출력
 function resisteditBtn(){	
 	document.querySelector('.resisteditContent1Wap').style.display = 'inline'
@@ -314,9 +321,9 @@ function resisteditBtn(){
 	document.querySelector('.orderCSContentWap').style.display = 'none'
 }
 
-// 버거 등록 - 저장버튼 함수
+// ------------------------------------------------- 버거 등록 페이지 저장버튼 함수
 // 기능: 신규 버거 저장(유효성 검사: 가격 숫자만 입력)
-function saveBtn_admin(){
+function saveBtn_admin( index ){
 	let bugerName = document.querySelector('.bugerName').value;
 		// console.log(bugerName)
 	let selectBox = document.querySelector('.selectBox').value;
@@ -336,10 +343,12 @@ function saveBtn_admin(){
 	if( isNaN(bugerPrice) ){ alert('숫자를 입력해주세요.') }
 	else{ burgerList.push(buger) }
 	
+	category_select( 0 );
+
 		// console.log(burgerList)
 }
 
-// 취소하기
+// ------------------------------------------------- 버거 등록 페이지 취소하기 함수
 function CancleBtn_admin(){
 	document.querySelector('.resisteditContent1Wap').style.display = 'none'
 	document.querySelector('.resistedBGContentWap').style.display = 'none'
@@ -347,8 +356,7 @@ function CancleBtn_admin(){
 	document.querySelector('.orderCSContentWap').style.display = 'none'
 }
 
-//등록된 버거 현황 출력
-
+// ------------------------------------------------- 버거 등록현황 카테고리 버튼 함수
 function resistedBGBtn(){
 		// console.log('작동확인')
 	document.querySelector('.resisteditContent1Wap').style.display = 'none'
@@ -359,6 +367,7 @@ function resistedBGBtn(){
 	resistedBGPrint()
 }
 
+// ------------------------------------------------- 버거 등록현황 출력 함수
 function resistedBGPrint(){
 	let resistedBGTable = `<table class="resistedBGTable">
 								<tr>
@@ -388,23 +397,22 @@ function resistedBGPrint(){
 								</tr>
 							</table>`
 	}
-	
 	document.querySelector('.resistedBGContent1').innerHTML = resistedBGTable;
 }
 
-
-
+// ------------------------------------------------- 버거 등록현황 삭제버튼 함수
 function resistedBGTable_Delete( Dindex ){
 		// console.log(Dindex)	// --- Dindex: 클릭한 버튼의 인덱스값 인수로 받음 확인
 	for( let i = 0; i < burgerList.length; i++){
 		if(Dindex == i){ burgerList.splice( i, 1) }
 	}
-	
 		// console.log(burgerList)	// --- 배열 삭제 정상 확인
 	
 	resistedBGPrint()
+	category_select( 0 );
 }
 
+// ------------------------------------------------- 버거 등록현황 수정버튼 함수
 function resistedBGTable_EditPrice( Eindex ){
 		// console.log(Eindex) // --- Eindex: 클릭한 버튼의 인덱스값 인수로 받음 확인
 	
@@ -416,10 +424,10 @@ function resistedBGTable_EditPrice( Eindex ){
 	burgerList.map( ( o , i ) => { if( i == Eindex ){ burgerList[i].price = editPrice; } })
 		// console.log(burgerList)
 	resistedBGPrint()
-	
+	category_select( 0 );
 }
 
-// 주문된 주문 목록 현황 출력
+// ------------------------------------------------- 주문된 주문 목록 현황 출력
 function orderCSBtn(){
 	document.querySelector('.resisteditContent1Wap').style.display = 'none'
 	document.querySelector('.resistedBGContentWap').style.display = 'none'
@@ -432,17 +440,21 @@ function orderCSBtn(){
 	
 }
 
-let orderedList = []
-
+// ------------------------------------------------- 주문현황 주문 완료 버튼 함수
 function CompleteBtn(i){
 
-	orderedList.push(orderList[i]);
 	
-		console.log(orderedList)
 
+	orderedList.push(orderList[i]);
+
+		// console.log(orderedList) // --------- 정상 작동 확인
+	
 	orderCSPrint()
+	salesCSPrint()
+
 }
 
+// ------------------------------------------------- 주문현황 페이지 출력 함수
 function orderCSPrint(){
 	let orderCSTable = `<table class="orderCSTable">
 								<tr>
@@ -452,7 +464,6 @@ function orderCSPrint(){
 									<th> 비고 </th>
 								</tr>
 							</table>`	
-
 
 	for( let i = 0; i < orderList.length; i++ ){
 		orderCSTable += `<table class="orderCSTable">
@@ -469,24 +480,33 @@ function orderCSPrint(){
 									</th>
 							</tr>
 						</table>`
-															
 	}
-	
 		// console.log(orderCSTable)
-	
-		// -------------------------------------------------------------------------------------- 질문 o console.log(orderList.orderitems.name)
 	
 	document.querySelector('.orderCSContent2').innerHTML = orderCSTable;	
 }
 
+	// console.log(burgerList.length)	// --- 확인 완료
+	// console.log(salesList.length)	// --- 확인 완료
+	// console.log(salesList)			// --- 확인 완료
 
-// 4) 매출 현황 출력
-// 매출 현황 출력
+// ------------------------------------------------- 매출 현황 페이지 출력
 function salesCSBtn(){
 	document.querySelector('.resisteditContent1Wap').style.display = 'none'
 	document.querySelector('.resistedBGContentWap').style.display = 'none'	
 	document.querySelector('.orderCSContentWap').style.display = 'none'
 	document.querySelector('.salesCSContentWap').style.display = 'inline'
+	
+	salesCSPrint()
+}
+
+function salesCSPrint(){
+	
+	let salescount = 0;
+	let salesTotal = 0;
+	let rank = 1;
+	
+		// console.log(salesList)	// --- 확인 완료
 
 	let salesCS = `<table class="salesCSTable">
 								<tr>
@@ -496,9 +516,62 @@ function salesCSBtn(){
 									<th> 매출액 </th>
 									<th> 순위 </th>
 								</tr>
-							</table>`
+					</table>`
+	
+	for( let i = 0; i < salesList.length; i++){	// for1 S
+	
+		salesList[i].salescount = salescount
+		salesList[i].salesTotal = salesTotal
+		salesList[i].rank = rank
+			
+			// console.log(salesList[i].rank)	// ---- 정상
+			// console.log(salesList)	// ---- 정상 
+	
+		salesCS += `<table class="salesCSTable">
+								<tr>
+									<th> ${ i+1 } </th>
+									<th> ${ salesList[i].name } </th>`
+									
+			// console.log(salesList.length)	// --- 확인 완료
+		
+		for( let j = 0; j < orderedList.length; j++){	// for2 S
+			
+				// console.log(orderedList)	// --- 확인 완료
+			
+			for( let k = 0; k < orderedList[j].orderitems.length; k++){		// for3 S
+				if( salesList[i].name === orderedList[j].orderitems[k].name ){
+						
+						// console.log(salesList[i].name)
+						// console.log(orderedList[j].orderitems[k].name)
+					
+					
+					salesList[i].salescount++;
+					salesList[i].salesTotal = salesList[i].salescount * salesList[i].price;
+					}
+			}	// for3 E
+				
+		}	// for2 E
+		
+		salesCS += `<th> ${ salesList[i].salescount.toLocaleString() } </th>
+						<th> ${ salesList[i].salesTotal.toLocaleString() } </th>`		
+		
 
-	
-	document.querySelector('.salesCSContent2').innerHTML = salesCS;
-	
+		for( let ㅣ = 0; ㅣ < salesList.length; ㅣ++ ){
+			
+			if ( salesList[i].salesTotal < salesList[ㅣ].salesTotal ) { 
+				
+					// 
+					// console.log(salesList[ㅣ].salesTotal)
+				
+				salesList[i].rank++;}
+		}
+			console.log(salesList)
+			//console.log(salesList)
+			//console.log(salesList[i].rank)
+		salesCS += `<th> ${ salesList[i].rank } </th></tr></table>`
+
+		document.querySelector('.salesCSContent2').innerHTML = salesCS;	
+		
+	}	
 }
+
