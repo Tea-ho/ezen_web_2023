@@ -502,6 +502,8 @@ function salesCSBtn(){
 
 function salesCSPrint(){
 	
+	// 판매수량 0인 경우 출력 안되게 옵션 추가해보기
+	
 	let salescount = 0;
 	let salesTotal = 0;
 	let rank = 1;
@@ -517,7 +519,7 @@ function salesCSPrint(){
 									<th> 순위 </th>
 								</tr>
 					</table>`
-	
+		
 	for( let i = 0; i < salesList.length; i++){	// for1 S
 	
 		salesList[i].salescount = salescount
@@ -570,7 +572,7 @@ function salesCSPrint(){
 			//console.log(salesList[i].rank)
 		salesCS += `<th> ${ salesList[i].rank } </th></tr></table>`
 
-		document.querySelector('.salesCSContent2').innerHTML = salesCS;	
+		document.querySelector('.salesCSContent2').innerHTML = salesCS;
 		
 	}	
 }
