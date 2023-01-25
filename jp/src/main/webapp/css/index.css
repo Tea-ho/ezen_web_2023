@@ -2,7 +2,6 @@
 
 *{
 	font-family: '맑은 고딕';
-	color: black;
 	margin: 0; padding: 0px;
 }
 
@@ -17,6 +16,7 @@
 	color: black;
 	font-weight: bold;
 }
+
 
 /* 하단 메뉴 top 위치 변경 */
 .h_bottom{
