@@ -389,7 +389,7 @@ function resistedBGPrint(){
 									<th> <img class="productimg" src="img/${ burgerList[i].img }" width="100%"> </th>
 									<th> ${burgerList[i].name} </th>
 									<th> ${burgerList[i].category} </th>
-									<th> ${burgerList[i].price} </th>
+									<th> ${burgerList[i].price.toLocaleString()} </th>
 									<th>
 										<button onclick="resistedBGTable_Delete( ${ i } )" type="button"> 삭제 </button>
 										<button onclick="resistedBGTable_EditPrice( ${ i } )" type="button"> 가격 수정 </button>
@@ -423,6 +423,11 @@ function resistedBGTable_EditPrice( Eindex ){
 	
 	burgerList.map( ( o , i ) => { if( i == Eindex ){ burgerList[i].price = editPrice; } })
 		// console.log(burgerList)
+		
+	// 피드백: 아래와 같이 쉽게 적용 가능
+	// burgerList[i].price = isNaN (parseInt(editPrice)) ? burgerList[i].price : parseInt(editPrice)
+	
+	
 	resistedBGPrint()
 	category_select( 0 );
 }
@@ -455,6 +460,7 @@ function CompleteBtn(i){
 }
 
 // ------------------------------------------------- 주문현황 페이지 출력 함수
+// ------------------------------------------------- 주문/완료 시간 추가해보기
 function orderCSPrint(){
 	let orderCSTable = `<table class="orderCSTable">
 								<tr>
@@ -465,12 +471,14 @@ function orderCSPrint(){
 								</tr>
 							</table>`	
 
-	for( let i = 0; i < orderList.length; i++ ){
+	for( let i = 0; i < orderList.length; i++ ){		
 		orderCSTable += `<table class="orderCSTable">
 								<tr>
 									<th> ${ (i+1) } </th>`
 									
 		for( let j = 0; j < orderList[i].orderitems.length; j++) {
+			
+			
 			orderCSTable += `<th class="orderitems"> ${ orderList[i].orderitems[j].name } </th>`
 		}
 		
@@ -501,8 +509,6 @@ function salesCSBtn(){
 }
 
 function salesCSPrint(){
-	
-	// 판매수량 0인 경우 출력 안되게 옵션 추가해보기
 	
 	let salescount = 0;
 	let salesTotal = 0;
