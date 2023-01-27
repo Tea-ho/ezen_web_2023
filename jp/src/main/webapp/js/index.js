@@ -1,11 +1,11 @@
 
 let productList=[
-	{ img: 'p1.webp', tittle: '레이나 트위드자켓(하객룩/포켓/노카라)', size: '[ FREE ]' , price: 89000, discount: 0.25, like: 540, review: 1412 },
+	{ img: 'p1.webp', tittle: '레이나 트위드자켓(하객룩)', size: '[ FREE ]' , price: 89000, discount: 0.25, like: 540, review: 1412 },
 	{ img: 'p2.webp', tittle: '로일 크롭 니트가디건(라운드넥)', size: '[ FREE ]' , price: 60000, discount: 0.30, like: 154, review: 410 },
-	{ img: 'p3.webp', tittle: '브리젯 핀턱 롱스커트(A라인/하객룩)', size: '[ S , M , L ]' , price: 75000, discount: 0.30, like: 514, review: 1421 },
+	{ img: 'p3.webp', tittle: '브리젯 핀턱 롱스커트(하객룩)', size: '[ S , M , L ]' , price: 75000, discount: 0.30, like: 514, review: 1421 },
 	{ img: 'p4.webp', tittle: '데이린 플리츠 미니스커트(A라인)', size: '[ S , M , L ]' , price: 42500, discount: 0.25, like: 54, review: 124 },
-	{ img: 'p5.webp', tittle: '블리안 리본 블라우스(하객룩/타이)', size: '[ S , M , L ]' , price: 50000, discount: 0.30, like: 541, review: 4112 },
-	{ img: 'p6.webp', tittle: '라빈 스퀘어 롱 샤원피스(오프숄더/샤스커트)', size: '[ FREE ]' , price: 75000, discount: 0.25, like: 504, review: 2412 },
+	{ img: 'p5.webp', tittle: '블리안 리본 블라우스(하객룩)', size: '[ S , M , L ]' , price: 50000, discount: 0.30, like: 541, review: 4112 },
+	{ img: 'p6.webp', tittle: '라빈 스퀘어 롱 샤원피스', size: '[ FREE ]' , price: 75000, discount: 0.25, like: 504, review: 2412 },
 ]
 
 productPrint();
@@ -37,5 +37,4 @@ function productPrint(){
 		`
 	})
 	document.querySelector('.itembox').innerHTML = html;
-
 }
