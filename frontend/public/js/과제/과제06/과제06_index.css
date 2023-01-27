@@ -1,8 +1,41 @@
 @charset "UTF-8";
 
-.wrap{
-	width: 1000px;
-	height: 800px;
-	margin: 0 auto;
-	border: 1px solid #eeeeee;
+.wrap{	/* 게임 화면 설정 */
+	width: 1000px;	height: 600px;	margin: 0 auto;	border: 1px solid black;
+	position: relative;
+	background-image: url("img/게임배경.jfif");
+	background-size: 110%;
+	background-repeat: no-repeat;
+}
+
+.userbox{	/* 캐릭터 설정 */
+	width: 100px;	height: 100px;
+	position: absolute;	left: 10px; top: 430px;
+	background-image: url("img/User.png");
+	background-size: 90%;
+	background-repeat: no-repeat;
+}
+
+.monbox{
+	width: 100px;	height: 100px;
+	position: absolute;	top: 430px;
+/* 	background-image: url("img/mon.gif");
+	background-size: 70%;
+	background-repeat: no-repeat; */
+	
+	transition: all 1s;	/* 애니메이션 1초 간격으로 부드럽게 이동하는 효과 */
+}
+
+.userHP{
+	width: 200px;	height: 30px;
+	position: absolute;	left: 10px; top: 100px;
+	background-color: red;
+	font-weight: bold;
+}
+
+.monHP{
+	width: 200px;	height: 30px;
+	position: absolute;	left: 720px; top: 100px;
+	background-color: red;
+	font-weight: bold;
 }
