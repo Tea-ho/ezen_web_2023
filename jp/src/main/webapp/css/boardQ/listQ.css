@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+table tr td{
+	white-space: nowrap !important;		/* 줄바꿈 처리 해제 */
+	overflow: hidden;					/* 공간보다 text 길이가 길어질 경우, 길이를 초과한 내용 숨김 처리 */
+/*  overflow: scroll					   공간보다 text 길이가 길어질 경우, 스크롤 생성 */
+
+	text-overflow: ellipsis;			/*  */
+	word-break: break-all;
+	max-width: 100px;					/* 반응형인 경우, 최대 사이즈 설정 */
+}

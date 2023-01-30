@@ -8,6 +8,8 @@ let productList=[
 	{ img: 'p6.webp', tittle: '라빈 스퀘어 롱 샤원피스', size: '[ FREE ]' , price: 75000, discount: 0.25, like: 504, review: 2412 },
 ]
 
+
+
 productPrint();
 // 제품 출력함수
 function productPrint(){
@@ -38,3 +40,6 @@ function productPrint(){
 	})
 	document.querySelector('.itembox').innerHTML = html;
 }
+
+
+

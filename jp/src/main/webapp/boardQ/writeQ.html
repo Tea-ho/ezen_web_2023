@@ -9,9 +9,14 @@
 
 <!-- 사용자 정의 : css -->
 <link href="/jp/css/index.css" rel="stylesheet">
+<link href="../css/board/list.css" rel="stylesheet">
 
 <!-- 부트스트랩 : css -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- 썸머노트 : css -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
 
 	<!-- 헤더에서 사용되는 경로는 절대경로를 사용해준다. (이유: 페이지마다 공통 헤더를 사용하기 때문에 상대경로를 사용할 경우, 양식이 적용되지 않음 -->
 	<!-- 
@@ -22,7 +27,7 @@
 	 -->
 	
 
-<title>hoky look_회원가입</title>
+<title>hoky look_문의사항(list)</title>
 
 </head>
 <body>
@@ -72,10 +77,68 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- 본문 -->
+	<div class="container">
+		<h3 class="box_tittle"> 문의사항 작성 </h3>
+		<form class="writeQform">
+			<div class="row my-3">
+				<div class="col-md-5 offset-md-1">
+					<input class="form-control bQwriter" type="text" placeholder="작성자">
+				</div>
+				<div class="col-md-5">
+					<input class="form-control bQpassword" type="password" placeholder="비밀번호">
+				</div>
+			</div>
+			
+			<div class="col-md-10 offset-md-1 my-3">
+				<input class="form-control bQtitle" type="text" placeholder="제목">
+			</div>
+			
+			<div class="col-md-10 offset-md-1 my-3">
+				<textarea id="summernote" class="form-control bcontent" rows="10" cols="" placeholder="내용"></textarea>
+				<!-- summernote 적용 -->
+				<!-- 확인 필요내용: reset 기능 적용 안됨 -->
+			</div>
+			
+			<div class="row my-3">
+					<div class="col-md-5 offset-md-1">
+						<input class="form-control" type="file">
+					</div>
+			</div>
+			
+			<div class="row col-md-4 offset-md-4">
+				<div class="col-md-4">
+					<button class="form-control" type="button" onclick="boardQWrite()"> 등록하기 </button>
+				</div>
+				<div class="col-md-4">
+					<input class="form-control" type="reset" value="다시작성">
+					<!-- 피드백: form 태그 안에 묶여야 reset 기능 작동됨 -->
+				</div>
+				<div class="col-md-4">
+					<a href="listQ.html"><button type="button" class="form-control"> 목록보기 </button></a>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+
 		
 	<!-- 부트스트랩 : JS -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	 
+	<!-- JQuery: JS -->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+	<!-- 썸머노트: JS -->
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+	
+	<!-- 썸머노트: 한글 JS -->
+	<script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
+	
+	<!-- 부트스트랩: 사용자 -->
+	<script src="../js/boardQ/writeQ.js"></script>
+	
 
 </body>
 </html>

@@ -5,6 +5,11 @@
 	margin: 0; padding: 0px;
 }
 
+a{
+	color: black !important;
+	text-decoration: none !important;
+}
+
 /* 로고 구역 */
 .logobox{
 	text-align: center;
@@ -46,7 +51,7 @@
 	font-weight: bold;
 	border-bottom: 4px solid #999999;
 	width: 20%;
-	margin: 0 auto;
+	margin: 3% auto;
 }
 
 /* 디바이스 사이즈마다 css다르게 적용 방법: 미디어쿼리 */
