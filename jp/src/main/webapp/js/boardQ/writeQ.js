@@ -13,7 +13,7 @@ function boardQWrite(){
 	}
 	
 	// 기능1-2: [첨부파일 있는 경우] 입력양식 form 전체를 객체화
-	let writeQform = document.querySelector('.writeform');
+	let writeQform = document.querySelector('.writeQform');
 	let formdata = new FormData( writeQform );
 		console.log( writeQform )
 		console.log( formdata )	
