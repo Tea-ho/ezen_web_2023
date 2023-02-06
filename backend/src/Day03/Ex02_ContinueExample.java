@@ -1,7 +1,7 @@
 package Day03; // continue 문
 
-public class Ex02_ContinueExample {
-	public static void main(String[] args) {
+public class Ex02_ContinueExample { // c S
+	public static void main(String[] args) { // m S
 		
 		for(int i = 1; i<=10; i++) {
 			if( i%2 != 0) {
@@ -13,5 +13,5 @@ public class Ex02_ContinueExample {
 			
 			System.out.print( i + " ");
 		}
-	}
-}
+	} // m E
+} // c E

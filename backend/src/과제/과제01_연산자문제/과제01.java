@@ -6,6 +6,7 @@ public class 과제01 { // c S
 	public static void main(String[] args) { // m S
 		
 		Scanner scanner = new Scanner( System.in );
+		
 		// 문제1
 		System.out.println("|￦_/|");
 		System.out.println("|q p|  /}");
@@ -154,6 +155,6 @@ public class 과제01 { // c S
 			else if(player2 == 1) { System.out.println("player1 win"); }
 			else if(player2 == 2){ System.out.println("무승부");}
 		}
-		
+	
 	} // m E
 } // c E
