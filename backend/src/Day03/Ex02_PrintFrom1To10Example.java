@@ -32,5 +32,8 @@ public class Ex02_PrintFrom1To10Example {
 			System.out.print(x + " ");
 		}
 		
+		System.out.println( 4%2 );
+		System.out.println( 2%4 );
+		
 	}
 }

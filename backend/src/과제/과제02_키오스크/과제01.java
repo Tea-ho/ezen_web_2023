@@ -35,86 +35,106 @@ public class 과제01 { // class S
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		while(true) {
 			int colaP = 300;	int colaC = 10;		int incolaC = 0;
 			int ciderP = 400;	int ciderC = 8;		int inciderC = 0;
 			int FantaP = 500;	int FantaC = 15;	int inFantaC = 0;
 			
-			cancle: while(true) {
+			while(true) {
 				// System.out.println(colaC); -- 확인 완료
 				
 				System.out.println("1.콜라 2.사이다 3.환타 4.결제");
 				System.out.print(">>메뉴 선택: ");
 				int choice = scanner.nextInt();
-	
+				//----------------------------------------- 콜라 선택
 				if( choice == 1 ) {
 					System.out.print(">>콜라 구매 수량: ");
 					incolaC = scanner.nextInt();
 					
-					if( colaC >= incolaC ) {
-						colaC -= incolaC;
-						System.out.println(">>콜라 선택 수량:" + incolaC);
+					if( colaC >	0 ) {
+						colaC--; incolaC++;
+						System.out.println(">>콜라를 담았습니다.");
 					}
 					else {
 						System.out.println("재고 부족 // 현 재고:" + colaC);
 					}
 				}
+				//----------------------------------------- 사이다 선택
 				else if( choice == 2 ) {
 					System.out.print(">>사이다 구매 수량: ");
 					inciderC = scanner.nextInt();
 					
-					if( ciderC >= inciderC ) {
-						ciderC -= inciderC;
-						System.out.println(">>사이다 선택 수량:" + inciderC);
+					if( ciderC > 0 ) {
+						ciderC--; inciderC++;
+						System.out.println(">>사이다를 담았습니다.");
 					}
 					else {
 						System.out.println("재고 부족 // 현 재고:" + ciderC);
 					}
 				}
+				//----------------------------------------- 환타 선택
 				else if( choice == 3 ) {
 					System.out.print(">>환타 구매 수량: ");
 					inFantaC = scanner.nextInt();
 					
-					if( FantaC >= inFantaC ) {
-						FantaC -= inFantaC;
-						System.out.println(">>환타 선택 수량:" + inFantaC);
+					if( FantaC > 0 ) {
+						FantaC--; inFantaC++;
+						System.out.println(">>환타를 담았습니다.");
 					}
 					else {
 						System.out.println("재고 부족 // 현 재고:" + FantaC);
 					}
 				}
+				//----------------------------------------- 결제 선택
 				else if( choice == 4 ) {
 					System.out.println("1.결제 2.취소");
 					System.out.print(">>메뉴 선택: ");
 					int lastChoice = scanner.nextInt();
 					
-					if( lastChoice == 1) {
-						System.out.println("-------------결제 목록-------------");
-						System.out.printf("%6s   %6s   %6s", "제품", "수량", "가격");
-						System.out.println();
+					System.out.println("-------------결제 목록-------------");
+					System.out.printf("%6s   %6s   %6s", "제품", "수량", "가격");
+					System.out.println();
+					if( incolaC > 0 ) {
 						System.out.printf("%6s   %5d   %6d", "콜라", incolaC, colaP);
 						System.out.println();
+					}
+					if( inciderC > 0 ) {
 						System.out.printf("%6s   %5d   %6d", "사이다", inciderC, ciderP);
 						System.out.println();
+					}
+					if( inFantaC > 0 ) {
 						System.out.printf("%6s   %5d   %6d", "환타", inFantaC, FantaP);
 						System.out.println();
-						System.out.println("총 결제 금액: " + ((incolaC*colaP) + (inciderC*ciderP) + (inFantaC*FantaP)) );
 					}
-	
+					int total = (incolaC*colaP) + (inciderC*ciderP) + (inFantaC*FantaP);
+					System.out.println("총 결제 금액: " + total );
+					
+					//----------------------------------------- 결제 선택
+					if( lastChoice == 1) {
+						System.out.println(">>결제 금액: ");
+						int inpay = scanner.nextInt();
+						if( inpay >= total ) {
+							System.out.println(">>결제 완료");
+							System.out.println(">>잔돈: " + (inpay-total));
+						}
+						else {
+							System.out.println(">>잔액 부족");
+							colaC += incolaC;	ciderC += inciderC;		FantaC += inFantaC;
+						}
+					}
+					//----------------------------------------- 취소 선택
 					else if( lastChoice == 2 ) {
-						break cancle;
+						colaC += incolaC;	ciderC += inciderC;		FantaC += inFantaC;
+						
 					}
 					else {
 						System.out.println("등록되지 않은 번호입니다. 다시 입력해주세요.");
 					}
 				}
+				//----------------------------------------- 오류 옵션
 				else {
 					System.out.println("등록되지 않은 번호입니다. 다시 입력해주세요.");
 				}
 				
-			} // while2 E
-			
-			
-		} // while1 E
+			} // while E
 	} // m E
 } // c E
