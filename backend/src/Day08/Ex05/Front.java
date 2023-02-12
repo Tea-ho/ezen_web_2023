@@ -13,7 +13,7 @@ public class Front {
 	
 	// 생성자 영역
 	// Empty 생성자
-	public Front() {
+	public Front(int no, int view, String writer, String title) {
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -65,6 +65,11 @@ public class Front {
 		for( int i = 0 ; i < memberList.size(); i++ ) {
 			System.out.println( i + "\t" + memberList.get(i).name + "\t" + memberList.get(i).phone);
 		}
+	}
+
+	public void boardList(int no, int view, String writer, String title) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

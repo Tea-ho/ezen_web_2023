@@ -11,7 +11,7 @@ public class MController {
 	
 	// 필드 영역
 	ArrayList<MemberDB> memberDB = new ArrayList<>();
-	ArrayList<Board> board = new ArrayList<>();
+	ArrayList<Board> boardDB = new ArrayList<>();
 	
 	// 생성자 영역
 	// Empty 생성자 생성
@@ -99,24 +99,69 @@ public class MController {
 		return memberDB.get(result).pw;
 	}
 	
-	// 6. 게시판 내역 출력 로직(기능: 배열값 반환)
-	public void boardList() {
-		
-		Front front = new Front();
-	
-		for( int i = 0; i < board.size(); i++) {
-			int no = i;
-			int view = board.get(i).view;
-			String writer = board.get(i).writer;
-			String title = board.get(i).title;
-			
-		}
-	}
 	
 	// 5. 게시판 글쓰기 로직
-	public String write( int logcheck, String title, String content ) {
+	public int write( int logcheck, String title, String content ) {
 		String writer = memberDB.get(logcheck).id;
-		board.add(writer,title,content);
+		int view = 0;
+		
+		if( title != "" ) {
+			if( content != "" ) {
+				Board board = new Board( view, writer, title, content );
+				boardDB.add( board );
+				return 0;
+			}
+			else {
+				return 2;
+			}
+		}
+		else {
+			return 1;
+		}
+		
+	}
+	
+	// 6. 게시판 내역 출력 로직(기능: 배열값 반환)
+	public int boardList() {
+
+		if( boardDB.size() > 0 ) {
+			
+			// 초기값 출력안되게 설정해야됨
+			int no = 0;		int view = 0;	String writer = null;	String title = null;
+			
+			과제.과제04_MVC이해.View.Front front = new 과제.과제04_MVC이해.View.Front(no, view, writer, title);
+			for( int i = 0; i < boardDB.size(); i++) {
+				no = i;
+				view = boardDB.get(i).view;
+				writer = boardDB.get(i).writer;
+				title = boardDB.get(i).title;
+
+				front.boardList( no, view, writer, title );
+			}
+			return 0;
+		}
+		return 1;
+	}
+	
+	// 7. 글 보기 로직
+	public String detailTitle( int choiceBoardLi ) {
+		return boardDB.get(choiceBoardLi).title;
+	}
+	
+	public String detailWriter( int choiceBoardLi ) {
+		return boardDB.get(choiceBoardLi).writer;
+	}
+	
+	int viewValue = 0;
+	public int detailView( int choiceBoardLi ) {
+		viewValue++;
+		boardDB.get(choiceBoardLi).view(viewValue);
+		
+		return boardDB.get(choiceBoardLi).view;
+	}
+	
+	public String detailContent( int choiceBoardLi ) {
+		return boardDB.get(choiceBoardLi).content;
 	}
 	
 }

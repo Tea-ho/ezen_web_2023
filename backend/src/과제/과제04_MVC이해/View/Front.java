@@ -1,5 +1,6 @@
 package 과제.과제04_MVC이해.View;
 
+
 import java.util.Scanner;
 import 과제.과제04_MVC이해.Controller.MController;
 
@@ -10,6 +11,7 @@ public class Front {
 	Scanner scanner = new Scanner(System.in);
 	MController mc = new MController();
 	
+	// 변수 선언
 	int no;
 	int view;
 	String writer;
@@ -148,28 +150,36 @@ public class Front {
 	
 	// 6. 게시판 출력 메소드 생성
 	void board( int logcheck ) {
-		System.out.println("--------------커뮤니티--------------");
-		System.out.println("번호\t조휘수\t작성자\t제목");
-		
-		System.out.println("메뉴> 1.글쓰기, 2.글보기, 3.로그아웃");
-		int choice = scanner.nextInt();
-		if( choice == 1 ) {
-			System.out.println("글쓰기 선택");
-			write( logcheck );
+		logout: while(true) {
+			System.out.println("--------------커뮤니티--------------");
+			
+			System.out.println("메뉴> 1.글쓰기, 2.글보기, 3.로그아웃");
+			int choice = scanner.nextInt();
+			if( choice == 1 ) {
+				System.out.println("글쓰기 선택");
+				write( logcheck );
+			}
+			
+			else if( choice == 2) {
+				System.out.println("글보기 선택");
+				System.out.println("번호\t조휘수\t작성자\t제목");
+				boardList( no, view, writer, title );
+				System.out.println("[상세보기] 게시물 번호 입력: ");
+				
+				int choiceBoardLi = scanner.nextInt();
+				
+				detailVeiw( choiceBoardLi );
+			}
+			
+			else if( choice == 3) {
+				System.out.println("로그아웃 완료");
+				break logout;
+			}
+			else {
+				System.out.println("번호를 다시 입력해주세요.");
+			}
 		}
 		
-		else if( choice == 2) {
-			System.out.println("글보기 선택");
-			detailVeiw( logcheck );
-		}
-		
-		else if( choice == 3) {
-			System.out.println("로그아웃 완료");
-			index();
-		}
-		else {
-			System.out.println("번호를 다시 입력해주세요.");
-		}
 	}
 	
 	// 글쓰기 메뉴 출력 메소드 생성
@@ -178,17 +188,59 @@ public class Front {
 		System.out.println("제목: ");		String title = scanner.next();
 		System.out.println("내용: ");		String content = scanner.next();
 		
-		mc.write( logcheck, title, content );
+		int result = mc.write( logcheck, title, content );
 		
+		if( result == 0 ) {
+			System.out.println("글쓰기 성공");
+			board(logcheck);
+			// 글쓰기 내용 출력해야함
+		}
+		else if( result == 1 ) {
+			System.out.println("제목을 입력해주세요.");
+		}
+		else if( result == 2 ) {
+			System.out.println("내용을 입력해주세요.");
+		}
 	}
+	
+	// 게시판 리스트 출력 메소드 생성
 	public void boardList( int no, int view, String writer, String title ) {
 		
+		this.no = no;	this.view = view; this.writer = writer; this.title = title;
+		
+		int result = mc.boardList();
+		if( result > 0 ) {
+			for( int i = 0; i < result; i++) {
+				
+				System.out.println(no +"\t"+ view +"\t"+ writer +"\t"+ title);
+			}
+		}
 		
 	}
 	
-	
-	// 
-	void detailVeiw( int logcheck ) {
+	// 글 보기 출력 메소드 생성
+	void detailVeiw( int choiceBoardLi ) {
+		
+		System.out.println("제목: " + mc.detailTitle(choiceBoardLi) ); 
+		System.out.print("작성자: " + mc.detailWriter(choiceBoardLi));
+		System.out.println("조회수: " + mc.detailView(choiceBoardLi));
+		System.out.println("내용: " + mc.detailContent(choiceBoardLi));
+		
+		System.out.println("메뉴> 1.글삭제 2.글수정 3.뒤로가기");
+		int choice = scanner.nextInt();
+		
+		if(choice == 1) {
+			
+		}
+		else if(choice == 2) {
+			
+		}
+		else if(choice == 3) {
+			
+		}
+		else {
+			System.out.println("번호를 다시 입력해주세요.");
+		}
 		
 	}
 

@@ -20,18 +20,24 @@ public class Board {
 		this.title = title;
 		this.content = content;
 	}
+
 	
 	// Full 생성자 생성
 	public Board( int view, String writer, String title, String content) {
 		this.view = view;
 		this.writer = writer;
 		this.title = title;
+		this.content = content;
+		}
+	
+	public void view( int viewValue ) {
+		this.view = viewValue;
 	}
-	
-	
-	// 메소드 영역
+
 	@Override
 	public String toString() {
-		return "Board [view=" + view + ", writer=" + writer + ", title=" + title + "]";
+		return "Board [view=" + view + ", writer=" + writer + ", title=" + title + ", content=" + content + "]";
 	}
+
+	
 }
