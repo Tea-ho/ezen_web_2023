@@ -263,16 +263,32 @@ public class Front {
 		int choice = scanner.nextInt();
 		
 		if(choice == 1) {
-			System.out.print("수정할 제목 입력: ");
-			String titleValue = scanner.next();
-			mc.editTitle(choiceBoardLi, titleValue);
-			System.out.println("수정이 완료되었습니다.");
+			
+			int result = mc.editTitle( logcheck, choiceBoardLi);
+			if( result == 0 ) {
+				System.out.print("수정할 제목 입력: ");
+				String titleValue = scanner.next();
+				mc.editTitleP(choiceBoardLi, titleValue);
+				System.out.println("수정 완료");
+			}
+			else if(result == 1) {
+				System.out.println("권한 없음");
+			}
+			
 		}
 		else if( choice == 2 ) {
-			System.out.print("수정할 내용 입력: ");
-			String contentValue = scanner.next();
-			mc.editContent(choiceBoardLi, contentValue);
-			System.out.println("수정이 완료되었습니다.");
+			
+			int result = mc.editContent(logcheck, choiceBoardLi);
+			if(result == 0) {
+				System.out.print("수정할 내용 입력: ");
+				String contentValue = scanner.next();
+				mc.editContentP(choiceBoardLi, contentValue);
+				System.out.println("수정 완료");
+			}
+			else if(result == 1) {
+				System.out.println("권한 없음");
+			}
+			
 		}
 		else {
 			System.out.println("번호를 다시 입력해주세요.");
@@ -281,8 +297,14 @@ public class Front {
 	}
 	
 	void delete( int choiceBoardLi ) {
-		mc.delete(choiceBoardLi);
-		System.out.println("해당 게시글이 정상 삭제되었습니다.");
+		int result = mc.delete(logcheck, choiceBoardLi);
+		if(result == 0) {
+			mc.deleteP(choiceBoardLi);
+			System.out.println("해당 게시글이 정상 삭제되었습니다.");
+		}
+		else if(result == 1) {
+			System.out.println("권한 없음");
+		}
 	}
 
 	

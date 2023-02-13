@@ -165,22 +165,58 @@ public class MController {
 		return boardDB.get(choiceBoardLi).content;
 	}
 	
-	// 8. 글 수정
-	public String editTitle( int choiceBoardLi, String titleValue ) {
+	// 8-1. 제목수정 (기능: 적부 판단)
+	public int editTitle( int logcheck, int choiceBoardLi ) {
+		if( memberDB.get(logcheck).id.equals(boardDB.get(choiceBoardLi).writer) ) {
+			return 0;
+		}
+		else {
+			return 1;
+		}	
+	}
+	
+	// 8-2. 제목수정 (기능: 제목 수정)
+	public String editTitleP( int choiceBoardLi, String titleValue ) {
 		boardDB.get(choiceBoardLi).title(titleValue);
 		return boardDB.get(choiceBoardLi).title;
 	}
 	
+	public int editContent( int logcheck, int choiceBoardLi ) {
+		if( memberDB.get(logcheck).id.equals(boardDB.get(choiceBoardLi).writer) ) {
+			return 0;
+		}
+		else {
+			return 1;
+		}	
+	}
+	
+	// 8-3. 내용수정 (기능: 적부 판단)
+	public String editContentP( int choiceBoardLi, String contentValue ) {
+		boardDB.get(choiceBoardLi).content(contentValue);
+		return boardDB.get(choiceBoardLi).content;
+	}
+	
+	// 8-4. 내용수정 (기능: 내용 수정)
 	public String editContent( int choiceBoardLi, String contentValue ) {
 		boardDB.get(choiceBoardLi).content(contentValue);
 		return boardDB.get(choiceBoardLi).content;
 	}
 	
-	// 9. 글 삭제
-	public void delete(int choiceBoardLi) {
-		boardDB.remove(choiceBoardLi);
+	// 9-1. 글 삭제 (기능: 적부 판단)
+	public int delete(int logcheck, int choiceBoardLi) {
+		if( memberDB.get(logcheck).id.equals(boardDB.get(choiceBoardLi).writer) ) {
+			return 0;
+		}
+		else {
+			return 1;
+		}	
+		
 	}
 	
+	// 9-2. 글 삭제 (기능: 글 삭제)
+	public void deleteP(int choiceBoardLi) {
+		boardDB.remove(choiceBoardLi);
+	}
 }
 	
 	
