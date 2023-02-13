@@ -31,8 +31,18 @@ public class Board {
 		}
 	
 	public void view( int viewValue ) {
-		this.view = viewValue;
+		this.view += viewValue;
 	}
+	
+	public void title(String titleValue) {
+		this.title = titleValue;
+	}
+	public void content(String contentValue) {
+		this.content = contentValue;
+	}
+	
+	
+	
 
 	@Override
 	public String toString() {

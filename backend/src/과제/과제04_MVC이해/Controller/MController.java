@@ -152,8 +152,9 @@ public class MController {
 		return boardDB.get(choiceBoardLi).writer;
 	}
 	
-	int viewValue = 0;
+	
 	public int detailView( int choiceBoardLi ) {
+		int viewValue = 0;
 		viewValue++;
 		boardDB.get(choiceBoardLi).view(viewValue);
 		
@@ -162,6 +163,22 @@ public class MController {
 	
 	public String detailContent( int choiceBoardLi ) {
 		return boardDB.get(choiceBoardLi).content;
+	}
+	
+	// 8. 글 수정
+	public String editTitle( int choiceBoardLi, String titleValue ) {
+		boardDB.get(choiceBoardLi).title(titleValue);
+		return boardDB.get(choiceBoardLi).title;
+	}
+	
+	public String editContent( int choiceBoardLi, String contentValue ) {
+		boardDB.get(choiceBoardLi).content(contentValue);
+		return boardDB.get(choiceBoardLi).content;
+	}
+	
+	// 9. 글 삭제
+	public void delete(int choiceBoardLi) {
+		boardDB.remove(choiceBoardLi);
 	}
 	
 }

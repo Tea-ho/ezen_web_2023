@@ -16,6 +16,7 @@ public class Front {
 	int view;
 	String writer;
 	String title;
+	int logcheck;
 	
 	// 생성자 영역
 	// Empty 생성자 생성
@@ -23,12 +24,21 @@ public class Front {
 		// TODO Auto-generated constructor stub
 	}
 	
-	// Full 생성자 생성
-	public Front(int no, int view, String writer, String title ) {
+	public Front(int no, int view, String writer, String title) {
 		this.no = no;
 		this.view = view;
 		this.writer = writer;
 		this.title = title;
+	}
+	
+	
+	// Full 생성자 생성
+	public Front(int no, int view, String writer, String title, int logcheck ) {
+		this.no = no;
+		this.view = view;
+		this.writer = writer;
+		this.title = title;
+		this.logcheck = logcheck;
 	}
 	
 	
@@ -79,6 +89,9 @@ public class Front {
 		}
 		
 	}
+	
+	
+	
 	// 3. 로그인 페이지 출력 메소드 생성
 	void login() {
 		System.out.println("아이디: ");
@@ -90,7 +103,8 @@ public class Front {
 		
 		if( result >= 0 ) {
 			System.out.println("로그인 성공");
-			board(result); // 로그 추적
+			logcheck = result;
+			board(logcheck); // 로그 추적
 		}
 		else if( result == -1 ) {
 			System.out.println("로그인 실패 (비밀번호를 확인해주세요.)");
@@ -230,18 +244,45 @@ public class Front {
 		int choice = scanner.nextInt();
 		
 		if(choice == 1) {
-			
+			delete(choiceBoardLi);
 		}
 		else if(choice == 2) {
-			
+			editPrint(choiceBoardLi);
 		}
 		else if(choice == 3) {
-			
+			board(logcheck);
 		}
 		else {
 			System.out.println("번호를 다시 입력해주세요.");
 		}
 		
+	}
+	
+	void editPrint( int choiceBoardLi) {
+		System.out.println("1.제목수정, 2.내용수정");
+		int choice = scanner.nextInt();
+		
+		if(choice == 1) {
+			System.out.print("수정할 제목 입력: ");
+			String titleValue = scanner.next();
+			mc.editTitle(choiceBoardLi, titleValue);
+			System.out.println("수정이 완료되었습니다.");
+		}
+		else if( choice == 2 ) {
+			System.out.print("수정할 내용 입력: ");
+			String contentValue = scanner.next();
+			mc.editContent(choiceBoardLi, contentValue);
+			System.out.println("수정이 완료되었습니다.");
+		}
+		else {
+			System.out.println("번호를 다시 입력해주세요.");
+		}
+		
+	}
+	
+	void delete( int choiceBoardLi ) {
+		mc.delete(choiceBoardLi);
+		System.out.println("해당 게시글이 정상 삭제되었습니다.");
 	}
 
 	
