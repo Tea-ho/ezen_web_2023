@@ -237,7 +237,7 @@ public class Front {
 		
 		System.out.println("제목: " + mc.detailTitle(choiceBoardLi) ); 
 		System.out.print("작성자: " + mc.detailWriter(choiceBoardLi));
-		System.out.println("조회수: " + mc.detailView(choiceBoardLi));
+		System.out.println("\t조회수: " + mc.detailView(choiceBoardLi));
 		System.out.println("내용: " + mc.detailContent(choiceBoardLi));
 		
 		System.out.println("메뉴> 1.글삭제 2.글수정 3.뒤로가기");
@@ -269,7 +269,8 @@ public class Front {
 				System.out.print("수정할 제목 입력: ");
 				String titleValue = scanner.next();
 				mc.editTitleP(choiceBoardLi, titleValue);
-				System.out.println("수정 완료");
+				System.out.println("--------------제목 수정--------------");
+				System.out.println("변경제목:" + mc.editTitleP(choiceBoardLi, titleValue) );
 			}
 			else if(result == 1) {
 				System.out.println("권한 없음");
@@ -283,7 +284,8 @@ public class Front {
 				System.out.print("수정할 내용 입력: ");
 				String contentValue = scanner.next();
 				mc.editContentP(choiceBoardLi, contentValue);
-				System.out.println("수정 완료");
+				System.out.println("--------------글 수정--------------");
+				System.out.println("변경내용: " + mc.editContentP(choiceBoardLi, contentValue));
 			}
 			else if(result == 1) {
 				System.out.println("권한 없음");
