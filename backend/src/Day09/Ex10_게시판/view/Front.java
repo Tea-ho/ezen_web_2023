@@ -70,8 +70,7 @@ public class Front {
 		
 		for( int i = 0; i < result.size(); i++) {
 			System.out.println( (i+1) + "\t" + result.get(i).toString());
-		}
-		
+		}	
 	}
 	
 	private void viewPage() {
