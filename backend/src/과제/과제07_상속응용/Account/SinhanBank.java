@@ -1,20 +1,21 @@
 package 과제.과제07_상속응용.Account;
 
-public class WooriBank extends Account{
+public class SinhanBank extends Account {
 	
 	// 필드 영역
-	final String bankCode = "05";
+	final String bankCode = "03";
 
 	// 생성자 영역
-	public WooriBank() {
+	public SinhanBank() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public WooriBank(String accountNo, String accountName, int accountPW, int balance) {
+	public SinhanBank(String accountNo, String accountName, int accountPW, int balance) {
 		super(accountNo, accountName, accountPW, balance);
 		// TODO Auto-generated constructor stub
 	}
-	
+
+	// 메소드 영역
 	// 1-1. 계좌생성
 	@Override
 	public String createAccount( Account account ) {
@@ -32,3 +33,5 @@ public class WooriBank extends Account{
 		System.out.println("신한은행 계좌 만들어주셔서 감사합니다.");
 	}
 }
+	
+
