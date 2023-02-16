@@ -33,6 +33,5 @@ public class KookminBank extends Account {
 	public void complete(Account account) {
 		System.out.println("국민은행 계좌 만들어주셔서 감사합니다.");
 	}
-	
 
 }

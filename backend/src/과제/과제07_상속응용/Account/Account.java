@@ -34,7 +34,7 @@ public class Account {
 	// 1-1 계좌번호 난수 생성 메소드
 	public int creatNo( ) {
 		Random random = new Random();
-		int result = random.nextInt(99)+10;
+		int result = random.nextInt(89)+10;
 		return result;
 	}
 	
@@ -44,8 +44,7 @@ public class Account {
 	}
 
 	
-	// 2. 예금
-	
+	// 2. 예금 (getter,setter 이용하여 입력)
 	public String getAccountNo() {
 		return accountNo;
 	}
@@ -77,10 +76,5 @@ public class Account {
 	public void setBalance(int balance) {
 		Balance = balance;
 	}
-	
-
-	
-	
-	
 
 }

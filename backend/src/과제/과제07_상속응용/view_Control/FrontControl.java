@@ -10,7 +10,7 @@ import 과제.과제07_상속응용.Account.WooriBank;
 
 public class FrontControl {
 	
-	// 
+	// 싱글톤 적용
 	private static FrontControl front = new FrontControl();
 	private FrontControl() {}
 	public static FrontControl getInstance() { return front;}
@@ -18,6 +18,7 @@ public class FrontControl {
 	// Scanner 객체 생성
 	Scanner scanner = new Scanner(System.in);
 	
+	// 계좌 객체 생성
 	Account combine = new Account();
 	KookminBank kookmin = new KookminBank();
 	WooriBank woori = new WooriBank();
@@ -26,7 +27,7 @@ public class FrontControl {
 	// ArrayList 생성
 	ArrayList<Account> accountList = new ArrayList<>();
 	
-	
+	// 1. 초기 화면 메소드
 	public void index() {
 		while(true) {
 			System.out.println("--------------------- 계좌 관리 ---------------------");
@@ -40,6 +41,7 @@ public class FrontControl {
 		}
 	}
 	
+	// 2. 계좌 정보 출력 메소드
 	public void printIndex() {
 		System.out.println("은행명\t계좌번호\t\t예금액");
 		for( int i = 0; i < accountList.size(); i++ ) {
@@ -56,6 +58,7 @@ public class FrontControl {
 		}
 	}
 	
+	// 3. 계좌 선택 메소드
 	public void choiceBank(int no) {
 		System.out.println("--------------------- 계좌 생성 ---------------------");
 		System.out.print("[메뉴] 1.신한은행 2.국민은행 3.우리은행");
@@ -71,9 +74,9 @@ public class FrontControl {
 			createAccount(woori);
 		}
 		else { System.out.println("번호를 다시 입력해주세요."); }
-		
 	}
 	
+	// 4. 계좌 생성 메소드
 	public void createAccount(Account account) {
 		
 		String accountNo = account.createAccount(account);
@@ -104,6 +107,7 @@ public class FrontControl {
 		}
 	}
 	
+	// 5. 생성 완료 알림 메소드
 	public void printAccount(Account account) {
 		System.out.println("--------------------- 계좌 생성 완료 ---------------------");
 		if( account instanceof KookminBank ) {
@@ -123,7 +127,7 @@ public class FrontControl {
 		}
 	}
 	
-	
+	// 6. 입금 메소드
 	public void deposit(int no) {
 		System.out.println("--------------------- 계좌 입금 ---------------------");
 		System.out.print("입금할 계좌번호: ");		String accountNo = scanner.next();
@@ -135,9 +139,5 @@ public class FrontControl {
 				System.out.println( "예금 완료, 잔고: " + accountList.get(i).getBalance() );
 			}
 		}
-		
 	}
-	
-	
-	
 }
