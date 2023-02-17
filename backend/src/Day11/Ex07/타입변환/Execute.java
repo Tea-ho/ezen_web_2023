@@ -42,6 +42,14 @@ public class Execute {
 			short value11 = (short)value7;
 			byte value12 = (byte)value7;
 			
+			System.out.println(value8);
+			System.out.println(value9);
+			System.out.println(value10);
+			System.out.println(value11);
+			System.out.println(value12);
+			
+			
+			
 		// 메소드 타입 변환(매개변수, 리턴타입)
 		double result1 = method1(value1);
 		byte result2 = (byte)method2( (byte)value3);

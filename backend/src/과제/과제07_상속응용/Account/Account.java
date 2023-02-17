@@ -20,7 +20,7 @@ public class Account {
 		this.Balance = balance;
 	}
 
-	// 메소드 영역
+	// 메소드 영역l
 	// 1-1. 계좌생성
 	public String createAccount( Account account ) {
 		
