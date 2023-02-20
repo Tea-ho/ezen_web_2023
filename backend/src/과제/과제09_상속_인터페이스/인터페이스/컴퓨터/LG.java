@@ -12,5 +12,11 @@ public class LG implements 컴퓨터입출력장치{
 		System.out.println("LG 키보드 해제");
 	}
 
+	@Override
+	public void checkNo() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }
