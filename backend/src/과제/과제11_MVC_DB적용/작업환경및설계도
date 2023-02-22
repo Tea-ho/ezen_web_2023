@@ -1,0 +1,37 @@
+### 1. 작업 환경
+
+1) Used Tool: Eclipse, MySQL
+2) Used Word: Java, SQL
+3) Topic: console 활용한 Web Site 구현
+4) Function: 제품등록[C], 제품정보출력[R], 제품수정[U], 제품삭제[D]
+5) Point:
+ (1) MVC 기반으로 설계 진행
+ (2) DTO, DAO 활용
+ (3) Getter, Setter, ArrayList, SingleTon Pattern, 접근 제한자 적극 활용
+ 
+ ### 2. 설계 작업
+
+**1) 데이터 모델링**
+(1) MemberDTO: 데이터를 이동시키는 역할
+(2) MemberDAO: DB에 접근하는 역할
+
+**2) MemberDAO 메소드**
+(1) 제품등록 처리
+매개변수: MemberDTO 객체
+반환: true, false
+
+(2) 제품정보 출력
+매개변수: X
+반환: ArrayList MemberDTO
+
+(3) 제품 수정-1
+매개변수: 번호, 수정할 이름, 수정할 가격
+반환: true, false
+
+(4) 제품 수정-2
+매개변수: 번호, 수정할 재고
+반환: true, false
+
+(5) 제품삭제 처리
+매개변수: 번호
+반환: true, false

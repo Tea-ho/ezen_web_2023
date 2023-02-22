@@ -14,7 +14,6 @@ public class Television implements RemoteControl {
 	// 해석1: 인터페이스 추상메소드를 구체적으로 구현하는 메소드이다.
 	// 해석2: 인터페이스에서 해당 메소드의 접근지시자가 public abstract이므로, 자식 클래스에서는 반드시 제어자를 public으로 설정해야 한다.
 	
-	
 	@Override
 	public void turnOff() {
 		System.out.println("TV를 끕니다.");
@@ -48,7 +47,4 @@ public class Television implements RemoteControl {
 			setVolume( this.memoryVolume );
 		}
 	}
-	
-	
-	
 }

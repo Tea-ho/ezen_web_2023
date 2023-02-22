@@ -42,5 +42,4 @@ public class Audio implements RemoteControl {
 			setVolume( this.memoryVolume );
 		}
 	}
-	
 }

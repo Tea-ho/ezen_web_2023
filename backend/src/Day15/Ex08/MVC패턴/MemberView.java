@@ -1,5 +1,6 @@
 package Day15.Ex08.MVC패턴;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MemberView {
@@ -25,7 +26,7 @@ public class MemberView {
 				list();
 			}
 			else if( choice == 3) {
-				edit();
+				update();
 			}
 			else if( choice == 4) {
 				delete();
@@ -50,18 +51,41 @@ public class MemberView {
 		else {
 			System.out.println("[알림] 회원가입 실패");
 		}
-		
 	}
 	
 	public void list() {
 		
+		System.out.println("--------------------------------------");
+		System.out.printf("%2s \t %10s \t %10s \n", "no", "ID", "PW");
+		
+		ArrayList<MemberDTO> result = MemberController.getInstance().list();
+		// 해석: Controller 클래스의 list 메소드의 결과값(DAO 메소드 결과값)을 View 클래스로 가져와서 저장
+		
+		for( int i = 0; i < result.size(); i ++) {
+			System.out.printf( "%2d \t %10s \t %10s \n", 
+					result.get(i).getmNo(), result.get(i).getmID(), result.get(i).getmPW() );
+		}
+		// 해석: 위에서 가져온 ArrayList, result의 필요한 데이터 전체 출력
 	}
 	
-	public void edit() {
+	public void update() {
+		System.out.println("-------------------비밀번호 변경 페이지-------------------");
+		System.out.println("회원번호: ");			int mNo = scanner.nextInt();
+		System.out.println("새로운 비밀번호: ");		String mPW = scanner.next();
 		
+		boolean result = MemberController.getInstance().update(mNo, mPW);
+		
+		if( result ) {	System.out.println("[알림] 수정 성공"); }
+		else {System.out.println("[알림] 수정 실패");}
 	}
+	
 	public void delete() {
+		System.out.println("-------------------회원 탈퇴 페이지-------------------");
+		System.out.println("회원번호: ");		int mNo = scanner.nextInt();
 		
+		if( MemberController.getInstance().delete(mNo) ) {
+			System.out.println("[알림] 회원 탈퇴 성공");
+		}
+		else {System.out.println("[알림] 회원 탈퇴 실패");}
 	}
-	
 }

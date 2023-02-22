@@ -15,11 +15,9 @@ public class Execute {
 		// 3. 해당 인터페이스를 implements 선언하지 않은 객체 주소 대입 불가
 		// RemoteControl control3 = new Audio();
 		
-		
 		RemoteControl rc;
 		Television tv = new Television();
-		Audio au = new Audio();
-		
+		Audio au = new Audio();	
 		
 		rc = new Television();
 		rc.turnOn();
@@ -42,7 +40,6 @@ public class Execute {
 		rc.turnOff();
 		
 		RemoteControl.changeBattery(); // 정적 메소드 호출
-		
 		
 		rc = tv;
 		rc.turnOn();

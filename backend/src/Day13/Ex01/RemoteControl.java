@@ -11,7 +11,6 @@ package Day13.Ex01; // 인터페이스
 // 3. 메소드 영역: 추상 메소드만 다를 수 있음 public abstract
 // 4. 특징 public static final과 public abstract 생략 가능
 
-
 public interface RemoteControl {
 	
 	public static int MAX_VOLUME = 50; // public static final 생략 가능
@@ -45,7 +44,4 @@ public interface RemoteControl {
 	static void changeBattery() {
 		System.out.println("리모콘 건전지를 교환합니다.");
 	}
-	
-	
-	
 }
