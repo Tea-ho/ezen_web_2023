@@ -52,13 +52,4 @@ public class ProductDTO {
 	public void setpStock(int pStock) {
 		this.pStock = pStock;
 	}
-	
-	
-	
-
-	
-	
-	
-	
-	
 }

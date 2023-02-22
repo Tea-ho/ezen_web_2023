@@ -136,5 +136,122 @@ public class ProductDAO {
 		}
 		catch(Exception e) { System.out.println("예외 발생: " + e);	}
 		return false;
-	}	
+	}
+	
+	// ----------------------------------------------------------------- 고객 화면
+	// 1. 제품 리스트 출력 메소드
+	public ArrayList<ProductDTO> listC(){
+		
+		// 1-1. SQL 작성
+		String sql = "select * from product";
+		ArrayList<ProductDTO> list = new ArrayList<>();
+		// 용도: DB에서 가져온 객체 저장소
+		
+		try {
+			// 1-2. DB에 전송
+			ps = con.prepareStatement(sql);
+			// 1-3. SQL 조작 (없음)
+			
+			// 1-4. SQL 실행
+			rs = ps.executeQuery();
+			
+			// 1-5. SQL 결과
+			while(rs.next()) {
+				ProductDTO dto = new ProductDTO( rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4) );
+				list.add(dto);
+			}
+			return list;
+		}
+		catch(Exception e) { System.out.println("예외 발생: " + e);}
+		return null;
+	}
+	
+	// 2. 장바구니 선택 메소드
+	ArrayList<ProductDTO> basket = new ArrayList<>();
+	// 2-1. 장바구니 출력
+	public ArrayList<ProductDTO> basketList( int pNo ) {
+		
+		// 2-1. SQL 작성
+		String sql = "select * from product where pNo = ?";
+		
+		try {
+			// 2-2. DB에 전송
+			ps = con.prepareStatement(sql);
+			// 2-3. SQL 조작
+			ps.setInt(1, pNo);
+			// 2-4. SQL 실행
+			rs = ps.executeQuery();
+			// 2-5. SQL 결과
+			while(rs.next()) {
+				ProductDTO dto = new ProductDTO( rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4) );
+				basket.add(dto);
+			}
+			return basket;
+		}
+		catch(Exception e) { System.out.println("예외 발생: " + e);}
+		return null;
+	}
+	
+	// 2-2. 장바구니 선택
+	public boolean basketChoice( int pNo ) {
+		
+		String sql = "select * from product where pNo = ?";
+		ArrayList<ProductDTO> basket = new ArrayList<>();
+		
+		try {
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, pNo);
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				ProductDTO dto = new ProductDTO( rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4) );
+				
+				if( rs.getInt(4) > 0 ) {
+					basket.add(dto);
+					return true;
+				}
+				return false;
+			}
+		}
+		catch(Exception e) {
+			System.out.println("예외 발생: " + e);
+		}
+		return false;
+	}
+	
+	// 3. 결제 메소드
+	// 3-1. 결제 완료 메소드
+	public boolean buy( int buy ) {		
+		
+		buyList();
+		
+		String sql = "update product set pStock = ? where pNo = ?";		
+
+		try {
+			// 4-2. DB에 전송
+			ps = con.prepareStatement(sql);
+			// 4-3. SQL 조작
+			for( int i = 0; i < basket.size(); i++ ) {
+				ps.setInt(1, basket.get(i).getpStock()-1);
+				ps.setInt(2, basket.get(i).getpNo());
+			}
+			// 4-4. SQL 실행
+			ps.executeUpdate();
+			// 4-5. SQL 결과
+			basket = null;
+			return true;
+		}
+		catch(Exception e) { System.out.println("예외 발생: " + e);	}
+		return false;
+	}
+	
+	// 3-2. 결제 완료 전 출력 메소드
+	public ArrayList<ProductDTO> buyList(){
+		return basket;
+	}
+	
+	
 }

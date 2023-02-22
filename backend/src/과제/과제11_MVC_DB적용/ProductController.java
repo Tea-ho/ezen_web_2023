@@ -38,6 +38,20 @@ public class ProductController {
 		return ProductDAO.getInstance().delete(pNo);
 	}
 	
+	// ------------------------------------------------------------------- 고객 화면
+	public ArrayList<ProductDTO> listC(){
+		return ProductDAO.getInstance().listC();
+	}
 	
+	public ArrayList<ProductDTO> basketList(int pNo) {
+		return ProductDAO.getInstance().basketList(pNo);
+	}
 	
+	public boolean basketChoice(int pNo) {
+		return ProductDAO.getInstance().basketChoice(pNo);
+	}
+	
+	public boolean buy( int buy ) {
+		return ProductDAO.getInstance().buy(buy);
+	}
 }
