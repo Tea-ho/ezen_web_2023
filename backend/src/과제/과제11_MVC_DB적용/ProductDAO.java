@@ -129,9 +129,10 @@ public class ProductDAO {
 			// 5-3. SQL 조작
 			ps.setInt(1, pNo);
 			// 5-4. SQL 실행
-			ps.executeUpdate();
+			int result = ps.executeUpdate();
 			// 5-5. SQL 결과
-			return true;
+			if( result == 1) { return true; }
+			else { return false; }
 		}
 		catch(Exception e) { System.out.println("예외 발생: " + e);	}
 		return false;
