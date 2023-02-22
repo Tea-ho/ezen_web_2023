@@ -38,21 +38,17 @@
 반환: true, false
 
 --------------------------------
-(1) 고객 화면 제품출력
-매개변수: X
-반환: ArrayList MemberDTO
-
-(2) 장바구니 출력 메소드
-매개변수: pno
-반환:  ArrayList MemberDTO
-
-(3) 장바구니 재고 차감 메소드
-매개변수: pno
-반환: true, false
-
-(4) 결제 메소드
-매개변수: basket
-반환: true, false
+(1) 장바구니 선택
+매개변수: pNo
+리턴: true, false
+기능: arrayList에 선택된 장바구니 추가, 유효성 검사
+(2) 결제 화면 출력
+매개변수: x
+리턴: arrayList 출력
+(3) 결제
+매개변수: int buy
+리턴: true, false
+기능: 기존 재고에서 마이너스, 장바구니 리셋
 
 ### 3. 추가 옵션
 **1) 초기메뉴 추가

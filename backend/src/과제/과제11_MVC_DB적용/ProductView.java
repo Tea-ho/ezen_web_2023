@@ -148,17 +148,6 @@ public class ProductView {
 		}
 	}
 	
-	public void basketList() {
-		System.out.println("-----------------------장바구니 화면 -----------------------");
-		System.out.print("제품 선택: ");	int pNo = scanner.nextInt();
-		
-		
-		ArrayList<ProductDTO> basket = ProductController.getInstance().basketList(pNo);
-		
-		for(ProductDTO x : basket) {
-			System.out.printf("%2s \t %10s \t %10s \t %10s \n", x.getpNo(), x.getpName(), x.getpPrice(),(x.getpStock()>0)?"판매중":"재고없음");
-		}
-	}
 	
 	public void basketChoice()  {
 		System.out.println("-----------------------장바구니 화면 -----------------------");
@@ -170,6 +159,16 @@ public class ProductView {
 		else { System.out.println("[알림] 장바구니 담기 실패"); }
 	}
 	
+	public void buyList() {
+		System.out.println("-----------------------결제 리스트-----------------------");
+		System.out.printf("%2s \t %10s \t %10s \t %10s \n", "번호", "제품명", "제품가격", "판매상태");
+		
+		ArrayList<ProductDTO> basket = ProductController.getInstance().buyList();
+		
+		for(ProductDTO x : basket) {
+			System.out.printf("%2s \t %10s \t %10s \t %10s \n", x.getpNo(), x.getpName(), x.getpPrice(),(x.getpStock()>0)?"판매중":"재고없음");
+		}
+	}
 	
 	public void buy() {
 		System.out.println("-----------------------제품 구매 화면-----------------------");
@@ -181,8 +180,4 @@ public class ProductView {
 		else {	System.out.println("[알림] 결제 취소"); }
 		
 	}
-	
-	
-	
-	
 }

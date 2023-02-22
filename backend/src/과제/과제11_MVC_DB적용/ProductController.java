@@ -43,12 +43,12 @@ public class ProductController {
 		return ProductDAO.getInstance().listC();
 	}
 	
-	public ArrayList<ProductDTO> basketList(int pNo) {
-		return ProductDAO.getInstance().basketList(pNo);
-	}
-	
 	public boolean basketChoice(int pNo) {
 		return ProductDAO.getInstance().basketChoice(pNo);
+	}
+	
+	public ArrayList<ProductDTO> buyList(){
+		return ProductDAO.getInstance().buyList();
 	}
 	
 	public boolean buy( int buy ) {
