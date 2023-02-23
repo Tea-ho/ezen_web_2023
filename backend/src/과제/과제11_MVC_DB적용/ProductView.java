@@ -130,7 +130,7 @@ public class ProductView {
 			System.out.print("[메뉴] 0.결제 1.제품선택 2.나가기");
 			int choice = scanner.nextInt();
 			
-			if( choice == 0) { buy(); }
+			if( choice == 0) { buyList(); }
 			else if( choice == 1 ) { basketChoice(); }
 			else if( choice == 2) { break; }
 			else { System.out.println("[알림] 번호를 다시 입력해주세요."); }
@@ -168,6 +168,8 @@ public class ProductView {
 		for(ProductDTO x : basket) {
 			System.out.printf("%2s \t %10s \t %10s \t %10s \n", x.getpNo(), x.getpName(), x.getpPrice(),(x.getpStock()>0)?"판매중":"재고없음");
 		}
+		
+		buy();
 	}
 	
 	public void buy() {

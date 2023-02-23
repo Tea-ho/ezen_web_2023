@@ -173,7 +173,6 @@ public class ProductDAO {
 	public boolean basketChoice( int pNo ) {
 		
 		String sql = "select * from product where pNo = ?";
-		ArrayList<ProductDTO> basket = new ArrayList<>();
 		
 		try {
 			
@@ -202,7 +201,13 @@ public class ProductDAO {
 	// 3. 결제 메소드
 	// 3-1. 결제화면 출력 메소드
 	public ArrayList<ProductDTO> buyList(){
-		return basket;
+		try {
+			return basket;
+		}
+		catch (Exception e){
+			System.out.println("예외 발생: " + e);
+		}
+		return null;
 	}
 	
 	// 3-2. 결제 완료 메소드
