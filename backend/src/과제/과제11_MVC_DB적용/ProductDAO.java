@@ -227,7 +227,7 @@ public class ProductDAO {
 				// 4-4. SQL 실행
 				ps.executeUpdate();
 				// 4-5. SQL 결과
-				basket = null;
+				basket = new ArrayList<>();
 				return true;
 			}
 			catch(Exception e) { System.out.println("예외 발생: " + e);	}

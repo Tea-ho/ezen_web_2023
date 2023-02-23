@@ -4,7 +4,7 @@ package Day11.Ex01; // 상속
 // 관련 키워드: super, this, 오버라이딩
 // 상속 제한 방법: final 클래스 및 final 메소드 선언
 
-public class SmartPhone extends Phone {
+public class SmartPhone extends Phone { // 자식 클래스(특이사항: Phone클래스 상속)
 	
 	// 필드 영역
 	public boolean wifi;

@@ -1,6 +1,6 @@
 package Day11.Ex01; // 상속
 
-public class Phone {
+public class Phone { // 부모 클래스
 
 	// 필드 영역
 	public String model;
@@ -18,21 +18,11 @@ public class Phone {
 	}
 
 	// 메소드 영역
-	public void bell() {
-		System.out.println("벨이 울립니다.");
-	}
+	public void bell() {System.out.println("벨이 울립니다."); }
 	
-	public void sendVoice(String message) {
-		System.out.println("본인: " + message);
-	}
+	public void sendVoice(String message) {	System.out.println("본인: " + message); }
 	
-	public void receiveVoice(String message) {
-		System.out.println("상대방: " + message);
-	}
+	public void receiveVoice(String message) { System.out.println("상대방: " + message); }
 	
-	public void hangUp() {
-		System.out.println("전화를 끊습니다.");
-		
-	}
-	
+	public void hangUp() { System.out.println("전화를 끊습니다."); }
 }

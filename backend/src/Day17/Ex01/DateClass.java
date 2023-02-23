@@ -1,8 +1,11 @@
 package Day17.Ex01;
 
+import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
@@ -71,6 +74,52 @@ public class DateClass {
 		System.out.println("2개월 전: " + dateTime.minusMinutes(2));
 		System.out.println("7일 후: " + dateTime.plusDays(7));
 		
+		LocalDateTime 시작일 = LocalDateTime.of(2023, 1, 1, 0, 0, 0);
+		LocalDateTime 종료일 = LocalDateTime.of(2023, 12, 31, 0, 0, 0);
 		
+		System.out.println( "시작일이 종료일 이전?" + 시작일.isBefore(종료일) );
+		System.out.println( "시작일이 종료일 이후?" + 시작일.isAfter(종료일) );
+		System.out.println( "시작일과 종료일 동일?" + 시작일.isEqual(종료일) );
+		
+		System.out.println( "연도 차이: " + (시작일.until(종료일, ChronoUnit.YEARS)));
+		System.out.println( "월수 차이: " + (시작일.until(종료일, ChronoUnit.MONTHS)));
+		System.out.println( "일수 차이: " + (시작일.until(종료일, ChronoUnit.DAYS)));
+		System.out.println( "시간 차이: " + (시작일.until(종료일, ChronoUnit.HOURS)));
+		System.out.println( "분 차이: " + (시작일.until(종료일, ChronoUnit.MINUTES)));
+		System.out.println( "초 차이: " + (시작일.until(종료일, ChronoUnit.SECONDS)));
+		
+		double num = 1234567.89;
+		DecimalFormat df;
+		
+		df = new DecimalFormat("#,###");
+		System.out.println(df.format(num));
+		
+		df = new DecimalFormat("#,###.0");
+		System.out.println(df.format(num));
+		
+		df = new DecimalFormat("#,##0원");
+		System.out.println(df.format(num));
+		
+		// SimpleDateFormat( 패턴 )
+		Date date = new Date();
+		System.out.println(date);
+		
+		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
+		System.out.println(sdf2.format(date));
+		
+		sdf2 = new SimpleDateFormat("yyyy년MM월dd일");
+		System.out.println(sdf2.format(date));
+		
+		sdf2 = new SimpleDateFormat("yyyy.MM.dd, HH:mm:ss");
+		System.out.println(sdf2.format(date));
+		
+		sdf2 = new SimpleDateFormat("오늘은 E 요일");
+		System.out.println(sdf2.format(date));
+		
+		sdf2 = new SimpleDateFormat("오늘은 D번째 날");
+		System.out.println(sdf2.format(date));
+		
+		sdf2 = new SimpleDateFormat("오늘은 d번째 날");
+		System.out.println(sdf2.format(date));
 	}
 }
