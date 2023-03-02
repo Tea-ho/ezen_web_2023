@@ -12,16 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import jspweb.model.Dao;
 
 /**
- * Servlet implementation class IndexTest
+ * Servlet implementation class hw1
  */
-@WebServlet("/IndexTest")
-public class IndexTest extends HttpServlet {
+@WebServlet("/hw1")
+public class hw1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public IndexTest() {
+    public hw1() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,36 +31,29 @@ public class IndexTest extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// 0. 한글 인코딩 세팅
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
-		ArrayList<String> result = Dao.getInstance().getData();
-		System.out.println("확인: " + result);
+		ArrayList<String> hwList = Dao.getInstance().gethw();
+		System.out.println("확인: " + hwList);
 		
-		response.getWriter().print(result);
-		
+		response.getWriter().print(hwList);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		// 0. 한글 인코딩 세팅
+	
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
-		// 1. HTTP 객체 [ request: JS에게 요청, response: JS에게 응답]
-			// 1) request 사용: request.getParameter("매개변수명");
-			// 매개변수명: JS에서 가져올 $.ajax의 data 매개변수명
 		String data = request.getParameter("data");
-		System.out.println("JS post 방식으로 받은 데이터: " + data );
+		System.out.println("확인: " + data);
 		
-		// 2. DB 연동
-		boolean result = Dao.getInstance().setData(data);
-		response.getWriter().print("post 방식으로 success" + result);
-		
+		boolean result = Dao.getInstance().sethw(data);
+		response.getWriter().print(result);
+
 	}
-	
+
 }
