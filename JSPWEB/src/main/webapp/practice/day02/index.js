@@ -26,10 +26,41 @@ function submit(){
 		url: "/JSPWEB/practice",
 		method: "post",
 		data: info,
-		success: ( )=>{
-			alert('통신');
-			
+		success: ( o )=>{
+			if(o){ alert('DB저장 완료') }
+			getData();
 		}
 	 });
+}
 
+getData();
+function getData(){
+	$.ajax({
+		url: "/JSPWEB/practice",
+		method: "get",
+		success: ( o )=>{
+			
+			let html = `<table border="1">
+							<tr>
+								<th> data1 </th> <th> data2 </th> <th> data3 </th> <th> data4 </th> <th> data5 </th>
+								<th> data6 </th> <th> data7 </th> <th> data8 </th> <th> data9 </th> <th> data10 </th>
+							</tr>
+						`
+						
+						
+			
+			
+			o.forEach( ( x,i ) => {
+				html += `<tr>
+							<th> ${ x.data1 } </th> <th> ${ x.data2 } </th> <th> ${ x.data3 } </th> <th> ${ x.data4 } </th> <th> ${ x.data5 } </th>
+							<th> ${ x.data6 } </th> <th> ${ x.data7 } </th> <th> ${ x.data8 } </th> <th> ${ x.data9 } </th> <th> ${ x.data10 } </th>
+						</tr>`
+				
+			});
+			html += `</table>`
+			document.querySelector(".ex1_box").innerHTML = html;
+			
+		}
+		
+	});
 }

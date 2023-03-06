@@ -27,6 +27,8 @@
 	
 	<button type="button" onclick="submit()"> 전송 </button>
 	<h3> [R] DB -> dao -> servlet -> JS -> HTML </h3>
+	<div onclick="getData()" class="ex1_box">  </div>
+	
 
 
 	<!-- 1. 최신 jquery(js 라이브러리) import (ajax 함수 활용하기 위함) -->
