@@ -78,7 +78,7 @@ public class Dao {
 	
 	public ArrayList<String> gethw(){
 		
-		ArrayList<String> hwList = new ArrayList();
+		ArrayList<String> hwList = new ArrayList<>();
 		
 		String sql = "select * from hw1";
 		try {

@@ -9,18 +9,18 @@
 <body>
 
 	<h3> [C] 학생 정보 입력 </h3>
-	이름: 	<input type="text" class="sName"> 	</br>
-	전화번호: 	<input type="text" class="sPhone"> 	</br>
-	키: 		<input type="text" class="sLength">	</br>
-	나이:		<input type="number" class="sAge">	</br>
-	등록일:	<input type="date" class="sDate">	</br>
+	이름: 	<input type="text" class="sName"> 	<br/>
+	전화번호: 	<input type="text" class="sPhone"> 	<br/>
+	키: 		<input type="text" class="sLength">	<br/>
+	나이:		<input type="number" class="sAge">	<br/>
+	등록일:	<input type="date" class="sDate">	<br/>
 	성별:		<input type="radio" name="sSex"> 남
-			<input type="radio" name="sSex"> 여	</br>
-	사는지역:	<select class="sHome">				</br>
+			<input type="radio" name="sSex"> 여	<br/>
+	사는지역:	<select class="sHome">				
 				<option> 안산 </option> <option> 안양 </option> <option> 수원 </option> <option> 시흥 </option>
-			</select> </br>
-	자기소개:	<textarea class="sIntro" rows="" cols=""></textarea>	</br>
-	개인정보동의:<input type="checkbox" class="sAgree"> 동의 </br>
+			</select> <br/>
+	자기소개:	<textarea class="sIntro" rows="" cols=""></textarea>	<br/>
+	개인정보동의:<input type="checkbox" class="sAgree"> 동의 <br/>
 	
 	<button type="button" onclick="submit()" > 전송 </button>
 	
