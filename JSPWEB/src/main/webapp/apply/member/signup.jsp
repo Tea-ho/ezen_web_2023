@@ -8,15 +8,20 @@
 </head>
 <body>
 
+	<%@ include file = "../header.jsp" %>
 	<h3> 회원가입 </h3>
 
 	<form class="signupForm" enctype="multipart/form">
 		아이디:		<input onkeyup="idcheck()" maxlength="30" type="text" name="mid" class="mid" id="mid"> <br/>
-		<div class = "idcheck"></div>
-		비밀번호:		<input type="text" name="mpw" class="mpw" id="mpw"> <br/>
-		비밀번호 확인:	<input type="text" name="mpwc" class="mpwc" id="mpwc"> <br/>
-		이메일:		<input type="text" name="memail" class="memail" id="memail"> <br/>
-		프로필:		<input type="file" name="mimg" class="mimg" id="mimg"> <br/>
+					<div class = "checkconfirm"></div>
+		비밀번호:		<input onkeyup="pwcheck()" maxlength="20" type="password" name="mpw" class="mpw" id="mpw"> <br/>
+					<div class = "checkconfirm"></div>
+		비밀번호 확인:	<input onkeyup="pwccehck()" maxlength="20" type="password" name="mpwc" class="mpwc" id="mpwc"> <br/>
+					<div class = "checkconfirm"></div>
+		이메일:		<input onkeyup="emailcheck()" type="text" name="memail" class="memail" id="memail"> <br/>
+					<div class = "checkconfirm"></div>
+		프로필:		<input onchange="premimg(this)" type="file" name="mimg" class="mimg" id="mimg"> <br/>
+					<img class="premig" alt="" src="/JSPWEB/apply/member/pimg/default.webp"> <br/>
 		<button onclick="signup()" type="button"> 가입 </button>	
 	</form>
 

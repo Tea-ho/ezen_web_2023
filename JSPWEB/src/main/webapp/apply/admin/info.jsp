@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	
+	<%@ include file = "../header.jsp" %>
 	<h3> 회원 명단 </h3>
 	<table class="mList" border="1">
 		
