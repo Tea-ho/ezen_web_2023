@@ -93,9 +93,98 @@ function emailcheck(){
 	
 	let memailj = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+$/
 	
-	if(memailj.test(memail)){ checkconfirm[3].innerHTML = '사용가능'; }
-	else{checkconfirm[3].innerHTML = '이메일 형식으로 입력';}
+	if(memailj.test(memail)){
+		checkconfirm[3].innerHTML = '인증해주세요.'; 
+		document.querySelector('.authbtn').disabled = false;
 	
+	}
+	else{
+		checkconfirm[3].innerHTML = '이메일 형식으로 입력';
+		document.querySelector('.authbtn').disabled = true; // 인증 버튼 사용 불가 
+	}
+}
+
+// 이메일 인증함수
+function getauth(){
+	// console.log('함수 작동')
+	
+	// ajax JAVA에게 이메일 전송 후 인증코드 방기! [실제 인증 절차 적용할 때 코드!]
+	/*
+	$.ajax({
+		url:"/JSPWEB/apply/Email",
+		method: "post",
+		data: {  "memail" : document.querySelector('.memail').value },
+		success: ( o )=>{
+			console.log(o);
+			
+			let html =	`
+				<input type="text" class="authinput" placeholder="인증코드">
+				<div class="timebox"> </div>
+				<button onclick="authconfirm()" class="authconfirmbtn" type="button"> 확인  </button>
+				`
+			document.querySelector('.authbox').innerHTML = html;
+	
+			// 타이머 함수 적용
+			auth = o;
+			timer = 120;
+			settimer();
+		}	
+	})
+	*/
+	
+	let html =	`
+				<input type="text" class="authinput" placeholder="인증코드">
+				<div class="timebox"> </div>
+				<button onclick="authconfirm()" class="authconfirmbtn" type="button"> 확인  </button>
+				`
+	document.querySelector('.authbox').innerHTML = html;
+	
+	// 타이머 함수 적용
+	atuh = 1234;
+	timer = 120;
+	settimer();
+}
+
+let auth = 0;
+let timer = 0;
+let timerInter; 
+
+// 타이머 함수 [이메일]
+function settimer(){
+	timerInter = setInterval( ()=>{
+		let min = parseInt(timer / 60); let sec = parseInt(timer % 60);
+		
+		min = min < 10 ? "0" + min : min;
+		sec = sec < 10 ? "0" + sec : sec;
+		
+		let timeHTML = min + ":" + sec;
+		document.querySelector('.timebox').innerHTML = timeHTML;
+		timer--;
+		
+		if( timer < 0 ){
+			clearInterval( timerInter )
+			checkconfirm[3].innerHTML = "인증 실패";
+			document.querySelector('.authbox').innerHTML = "";
+			
+		}
+	} , 1000 )
+}
+
+// 인증코드 확인
+function authconfirm(){
+	console.log('함수 동작 확인');
+	
+	let authinput = document.querySelector('.authinput').value;
+	// 2. 발급된 인증코드 와 입력한 인증코드 비교 
+	if( auth == authinput ){ // 인증코드 일치 
+		clearInterval( timerInter );
+		document.querySelector('.authbox').innerHTML = "";
+		document.querySelector('.authbtn').innerHTML = "완료";
+		document.querySelector('.authbtn').disabled = true;
+		checkconfirm[3].innerHTML = '사용가능';
+	}else{ // 인증코드 불일치 
+		checkconfirm[3].innerHTML = '인증코드 일치하지 않습니다.';
+	}
 }
 
 // 첨부파일 미리보기 기능

@@ -1,5 +1,25 @@
 @charset "UTF-8";
 
+/* 전체 공통 적용 */
+*{ margin: 0px; padding: 0px; list-style-type: none; }
+a{ color: black; text-decoration: none; }
+
+.header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 20px 0px;
+}
+
+.mainlogo{ width:10%; }
+.mainlogo img{ width: 100%; }
+.mainmenu{ width: 70%; display: flex; justify-content: center; margin: 0px !important;}
+.mainmenu li{margin-right: 5%; font-size: 20px; font-weight: bold; }
+.submenu{ width: 20%; display: flex; align-items: center; justify-content: flex-end; } 
+.submenu a{ margin-right: 5%; }
+
+.hpimgbtn{ border: none; background-color: transparent;}
+
 .hpimg{
 	width: 50px;
 	height: 50px;

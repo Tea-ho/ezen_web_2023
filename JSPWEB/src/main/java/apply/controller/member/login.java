@@ -12,17 +12,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import apply.model.dao.MemberDao;
 import apply.model.dto.MemberDto;
 
-/**
- * Servlet implementation class login
- */
 @WebServlet("/apply/login")
 public class login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public login() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+    public login() {}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mid = (String)request.getSession().getAttribute("login");
@@ -36,8 +30,6 @@ public class login extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		response.getWriter().print(json);
-		
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -47,19 +39,7 @@ public class login extends HttpServlet {
 		boolean result = MemberDao.getInstance().login(mid,mpw);
 		
 		// 서버[톰캣] 내 세션 객체 호출하기
-		if( result ) { 
-			request.getSession().setAttribute("login", mid);
-		
-		}
+		if( result ) { request.getSession().setAttribute("login", mid); }
 		response.getWriter().print(result);
 	}
-
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-	}
-
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-	}
-
 }

@@ -86,4 +86,46 @@ public class MemberDao extends Dao {
 		return null;
 	}
 	
+	// 6. 아이디 찾기
+	public String findID( String memail ) {
+		
+		String sql = "select mid from member where memail = ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, memail);
+			rs = ps.executeQuery();
+			if( rs.next() ) { return rs.getString(1); }
+		} catch(Exception e) { System.out.println( "예외발생: " + e); }
+		return "false";
+	}
+	
+	
+	// 7. 비밀번호 찾기
+	public String findPW( String mid, String memail, String updatePW ) {	
+		String sql = "select mno from member where mid = ? and memail = ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, mid);
+			ps.setString(2, memail);
+			rs = ps.executeQuery();
+			if( rs.next() ) { 
+				
+				sql = "update member set mpw = ? where mno = ? ";
+				ps = con.prepareStatement(sql);
+				ps.setString(1, updatePW);
+				ps.setInt(2, rs.getInt(1));
+				int result = ps.executeUpdate();
+				if ( result == 1 ) {
+					
+					// 실제 이메일 활용할 경우 코드
+					// new MemberDto().sendEmail(memail, updatePW);
+					// return "true";
+					
+					return updatePW;
+					
+				}
+			}
+		} catch(Exception e) { System.out.println( "예외발생: " + e); }
+		return "false";
+	}
 }
