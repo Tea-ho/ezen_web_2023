@@ -240,7 +240,7 @@ function signup(){
 	for( let i = 0; i<checkconfirm.length; i++ ){
 		if( checkconfirm[i].innerHTML == '사용가능' ){ count++; }
 	}
-	if( count != 3 ) { alert('정상적으로 입력되지 않은 데이터가 있습니다.'); return; }
+	if( count != 4 ) { alert('정상적으로 입력되지 않은 데이터가 있습니다.'); return; }
 	
 	
 	
@@ -269,8 +269,9 @@ function signup(){
 				console.log(o);
 			
 			if( o ){
-				alert('회원가입 성공');
-				location.href="/JSPWEB/apply/index.jsp"
+				// alert('회원가입 성공');
+				openModal();
+				//location.href="/JSPWEB/apply/index.jsp"
 			} else{ alert('회원가입 실패') }
 		}
 	})

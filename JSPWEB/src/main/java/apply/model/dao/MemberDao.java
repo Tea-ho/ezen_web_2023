@@ -1,5 +1,6 @@
 package apply.model.dao;
 
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import apply.model.dto.MemberDto;
@@ -15,12 +16,21 @@ public class MemberDao extends Dao {
 		
 		String sql = "insert into member(mid,mpw,mimg,memail)values(?,?,?,?)";
 		try {
-			ps = con.prepareStatement(sql);
+			ps = con.prepareStatement(sql , Statement.RETURN_GENERATED_KEYS);
 			ps.setString(1, dto.getMid());
 			ps.setString(2, dto.getMpw());
 			ps.setString(3, dto.getMimg());
 			ps.setString(4, dto.getMemail());
-			ps.executeUpdate(); return true;
+			ps.executeUpdate();
+			
+			// 포인트 지급 [ 회원가입한 회원번호 정보 how? ]
+			rs = ps.getGeneratedKeys();
+			if( rs.next() ) {
+				int mno = rs.getInt(1);
+				setPoint("회원가입 축하", 1000, mno);
+			}
+			
+			return true;
 		} catch (Exception e) { System.out.println("예외 발생: " + e); }
 		return false;
 	}
@@ -72,14 +82,17 @@ public class MemberDao extends Dao {
 	// 5. 회원 정보 전송
 	public MemberDto getMember( String mid ) {
 		
-		String sql = "select * from member where mid =?";
+		String sql = "select m.mno , m.mid , m.mimg , m.memail , sum( p.mpamount ) as  mpoint "
+				+ "from member m , mpoint p "
+				+ "where m.mno = p.mno and m.mid = ? group by mno;";
 		
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, mid);
 			rs = ps.executeQuery();
 			if( rs.next() ) {
-				MemberDto dto = new MemberDto( rs.getInt(1), rs.getString(2), null, rs.getString(4), rs.getString(5) );  
+				MemberDto dto = new MemberDto( rs.getInt(1), rs.getString(2), null, rs.getString(3), rs.getString(4) );
+				dto.setMpoint( rs.getInt(5));
 				return dto;
 			} 
 		} catch(Exception e) { System.out.println( "예외발생: " + e); }
@@ -98,7 +111,6 @@ public class MemberDao extends Dao {
 		} catch(Exception e) { System.out.println( "예외발생: " + e); }
 		return "false";
 	}
-	
 	
 	// 7. 비밀번호 찾기
 	public String findPW( String mid, String memail, String updatePW ) {	
@@ -127,5 +139,48 @@ public class MemberDao extends Dao {
 			}
 		} catch(Exception e) { System.out.println( "예외발생: " + e); }
 		return "false";
+	}
+	
+	// 8. 포인트 지급
+	// 적용시점1 - 회원가입 성공할 경우, 가입 축하 포인트 지급 
+	public boolean setPoint( String content, int point, int mno) {
+		String sql = "insert into mpoint( mpcomment, mpamount, mno) values(?,?,?)";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, content);
+			ps.setInt(2, point);
+			ps.setInt(3, mno);
+			ps.executeUpdate();
+			return true;
+		} catch(Exception e) { System.out.println( "예외발생: " + e); }
+		return false;
+	}
+	
+	// 9. 회원탈퇴
+	public boolean delete( String mid, String mpw ) {
+		String sql = "delete from member where mid = ? and mpw = ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, mid);
+			ps.setString(2, mpw);
+			int count = ps.executeUpdate();
+			if( count == 1 ) { return true; }
+		} catch(Exception e) { System.out.println( "예외발생: " + e); }
+		return false;
+	}
+	
+	
+	// 10. 회원수정
+	public boolean update( String mid, String mpw, String memail ) {
+		String sql = "update member set mpw = ?, memail = ? where mid = ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, mpw);
+			ps.setString(2, memail);
+			ps.setString(3, mid);
+			int count = ps.executeUpdate();
+			if( count == 1 ) { return true; }
+		} catch(Exception e) { System.out.println( "예외발생: " + e); }
+		return false;
 	}
 }

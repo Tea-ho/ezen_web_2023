@@ -19,6 +19,7 @@
 			
 			<div class="title"> 아이디 </div>
 			<input type="text" name="mid" class="mid" id="mid"> <br/>
+			<div class = "checkconfirm"> </div>
 			
 			<div class="title"> 이메일 </div>
 			<input type="text" name="memail" class="memail" id="memail"> <br/>

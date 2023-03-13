@@ -38,6 +38,8 @@ public class login extends HttpServlet {
 		
 		boolean result = MemberDao.getInstance().login(mid,mpw);
 		
+			System.out.println(result);
+		
 		// 서버[톰캣] 내 세션 객체 호출하기
 		if( result ) { request.getSession().setAttribute("login", mid); }
 		response.getWriter().print(result);

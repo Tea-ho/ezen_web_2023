@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+	
 	<link href="/JSPWEB/apply/css/signup.css" rel="stylesheet">
 
 </head>
@@ -20,21 +20,23 @@
 		<form class="signupForm" enctype="multipart/form">
 		
 			<div class="title"> 아이디 </div>
-			<input onkeyup="idcheck()" maxlength="30" type="text" name="mid" class="mid" id="mid"> <br/>
+			<input maxlength="30" type="text" name="mid" class="mid" id="mid"> <br/>
+			<div class = "checkconfirm"> </div>
 			
 			<div class="title"> 비밀번호 </div>
-			<input onkeyup="pwcheck()" maxlength="20" type="password" name="mpw" class="mpw" id="mpw"> <br/>
+			<input maxlength="20" type="password" name="mpw" class="mpw" id="mpw"> <br/>
 			<div class = "checkconfirm"></div>
 			
-			<div class="subbtnbox">
-				<a href="/JSPWEB/apply/member/findID.jsp"> 아이디 찾기 </a>
-				<a href="/JSPWEB/apply/member/findPW.jsp"> 비밀번호 찾기 </a>
-			</div>
 			<button class="signupbtn" onclick="login()" type="button"> 로그인 </button>	
+			
+			<div class="subbtnbox">
+				<a href="/JSPWEB/apply/member/findID.jsp"> 아이디 찾기 </a>ㅣ
+				<a href="/JSPWEB/apply/member/findPW.jsp"> 비밀번호 찾기 </a>ㅣ
+				<a href="/JSPWEB/apply/member/signup.jsp"> 회원가입 </a>
+			</div>
 			
 		</form>
 	</div>
-
 	
 	<script src="/JSPWEB/apply/js/member/login.js" type="text/javascript"> </script>
 </body>

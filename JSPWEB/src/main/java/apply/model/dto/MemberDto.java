@@ -16,7 +16,8 @@ public class MemberDto {
 	private String mpw;
 	private String mimg;
 	private String memail;
-	
+	private int mpoint;
+
 	// -------------------------------------------------------------- 이메일 전송 메소드
 	public boolean sendEmail( String toEmail, String contentHTML ) {
 		
@@ -100,6 +101,13 @@ public class MemberDto {
 	public void setMemail(String memail) {
 		this.memail = memail;
 	}
+	public int getMpoint() {
+		return mpoint;
+	}
+	public void setMpoint(int mpoint) {
+		this.mpoint = mpoint;
+	}
+
 	@Override
 	public String toString() {
 		return "MemberDto [mno=" + mno + ", mid=" + mid + ", mpw=" + mpw + ", mimg=" + mimg + ", memail=" + memail

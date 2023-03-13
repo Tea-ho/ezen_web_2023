@@ -20,7 +20,7 @@ function mList(){
 			o.forEach( (x) =>{
 				html += `<tr>
 							<td> ${x.mno} </td>
-							<td> <img src="/JSPWEB/apply/member/pimg/${x.mimg == null ? 'default.webp' : x.mimg}" witdh="100%"> </td>
+							<td> <img src="/JSPWEB/apply/member/pimg/${x.mimg == null ? 'default.png' : x.mimg}" witdh="100%"> </td>
 							<td> ${x.mid} </td>
 							<td> ${x.memail} </td>
 							<td> 비고 </td>

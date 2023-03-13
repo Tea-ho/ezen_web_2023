@@ -101,12 +101,28 @@ public class Info extends HttpServlet {
 
 	// 3. 회원 정보 수정
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+	
+		String mid = (String)request.getSession().getAttribute("login");
+		String mpw = request.getParameter("mpw");
+		String memail = request.getParameter("memail"); 
+	
+		boolean result = MemberDao.getInstance().update(mid, mpw, memail);
+		response.getWriter().print(result);
+		
 	}
 
 	// 4. 회원탈퇴
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
+		// 1. 로그인된 회원 아이디 정보 가져오기 [ 세션 이용 ]
+		String mid = (String)request.getSession().getAttribute("login");
+			System.out.println(mid);
+		String mpw = request.getParameter("mpw");
+		// 2. 회원탈퇴 실행 결과 가져오기
+		boolean result = MemberDao.getInstance().delete(mid, mpw);
+			System.out.println(result);
+		// 3. 결과값 HTML에 전송
+		response.getWriter().print(result);
 	}
 
 }

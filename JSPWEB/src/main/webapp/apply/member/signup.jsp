@@ -50,12 +50,27 @@
 			<div class="title"> 프로필 </div>
 			<div class="pimgbox">
 				<input onchange="premimg(this)" type="file" name="mimg" class="mimg" id="mimg"> <br/>
-				<img class="premig" alt="" src="/JSPWEB/apply/member/pimg/default.webp"> <br/>
+				<img class="premig" alt="" src="/JSPWEB/apply/member/pimg/default.png"> <br/>
 			</div>
 			
 			<button class="signupbtn" onclick="signup()" type="button"> 가입 </button>	
 			
 		</form>
+	</div>
+	
+	<!-- 모달 HTMLs -->
+	<div class="modal_wrap">
+		<div class="modal_box">
+			<h3 class="modal_title"> 회원가입 성공! </h3>
+			<div class="modal_content">
+				가입해주셔서 감사합니다. <br/>
+				회원가입 축하 포인트 1,000 Point 지급 
+			</div>
+			<div class="modal_btns">
+				<a href="/WEBJSP/apply/member/login.jsp"> <button class="modla_check" type="button"> 로그인 </button> </a>
+				<button onclick="closeModal()" class="modla_cancle" type="button"> 닫기 </button>
+			</div>
+		</div>
 	</div>
 
 	<!-- 1. 최신 jquery(js 라이브러리) import (ajax 함수 활용하기 위함) -->

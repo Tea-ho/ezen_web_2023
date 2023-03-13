@@ -19,6 +19,8 @@
 		
 			<div class="title"> 이메일 </div>
 			<input type="text" name="memail" class="memail" id="memail"> <br/>
+			<div class = "checkconfirm"> </div>
+			
 			<div class = "checkconfirm"></div>
 			<button class="signupbtn" onclick="findID()" type="button"> 아이디찾기 </button>	
 			
