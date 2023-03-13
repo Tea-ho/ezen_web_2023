@@ -62,6 +62,7 @@ function findPW(){
 			}
 			else{
 				document.querySelector('.checkconfirm').innerHTML = '임시비밀번호를 등록된 이메일로 전송하였습니다.';
+				alert( '임시비밀번호:' + o );
 			}
 		}
 	})

@@ -26,7 +26,13 @@
 			
 			<div class = "checkconfirm"></div>
 			
-			<button class="signupbtn" onclick="findPW()" type="button"> 비밀번호 찾기 </button>	
+			<button class="signupbtn" onclick="findPW()" type="button"> 비밀번호 찾기 </button>
+			
+			<div class="subbtnbox">
+				<a href="/JSPWEB/apply/member/findID.jsp"> 아이디 찾기 </a>ㅣ
+				<a href="/JSPWEB/apply/member/signup.jsp"> 회원가입 </a>ㅣ
+				<a href="/JSPWEB/apply/member/login.jsp"> 로그인 </a>
+			</div>
 			
 		</form>
 	</div>

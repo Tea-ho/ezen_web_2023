@@ -30,7 +30,7 @@
 				<div class="mpoint"></div>
 			</div>
 			
-			<button onclick="setUpdate()" type="button"> 정보수정 </button>
+			<a href="/JSPWEB/apply/member/update.jsp"><button type="button"> 정보수정 </button> </a>
 			<button onclick="openModal()" type="button"> 회원탈퇴 </button>
 			
 		</div>

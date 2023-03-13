@@ -171,13 +171,15 @@ public class MemberDao extends Dao {
 	
 	
 	// 10. 회원수정
-	public boolean update( String mid, String mpw, String memail ) {
-		String sql = "update member set mpw = ?, memail = ? where mid = ?";
+	public boolean update( String mid, String mpw, String newmimg, String newmpw, String memail ) {
+		String sql = "update member set mpw = ?, memail = ?, mimg = ? where mid = ? and mpw = ?";
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setString(1, mpw);
+			ps.setString(1, newmpw);
 			ps.setString(2, memail);
-			ps.setString(3, mid);
+			ps.setString(3, newmimg);
+			ps.setString(4, mid);
+			ps.setString(5, mpw);
 			int count = ps.executeUpdate();
 			if( count == 1 ) { return true; }
 		} catch(Exception e) { System.out.println( "예외발생: " + e); }

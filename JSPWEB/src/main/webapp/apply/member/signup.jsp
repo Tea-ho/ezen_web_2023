@@ -67,7 +67,7 @@
 				회원가입 축하 포인트 1,000 Point 지급 
 			</div>
 			<div class="modal_btns">
-				<a href="/WEBJSP/apply/member/login.jsp"> <button class="modla_check" type="button"> 로그인 </button> </a>
+				<a href="/JSPWEB/apply/member/login.jsp"> <button class="modla_check" type="button"> 로그인 </button> </a>
 				<button onclick="closeModal()" class="modla_cancle" type="button"> 닫기 </button>
 			</div>
 		</div>
