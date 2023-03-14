@@ -24,6 +24,7 @@ function printInfo( no ){
 			
 			document.querySelector('.empImg').src =
 				 `/JSPWEB/practice/과제/과제04/employee/eimg/${ o.empImg == null ? 'default.png' : o.empImg }`;
+			document.querySelector('.empNo').innerHTML = o.empNo;
 			document.querySelector('.newName').value = o.empName;
 			document.querySelector('.newGrade').value = o.empGrade;
 			document.querySelector('.newConstruct').value = o.empConstruct;
@@ -42,6 +43,9 @@ function doUpdate(){
 	let updateForm = document.querySelectorAll('.updateForm')[0];
 	let updateFormData = new FormData( updateForm );
 	
+	let empNo = document.querySelector('.empNo').innerHTML;
+	console.log(empNo);
+	updateFormData.set( "empNo" , empNo );
 		// console.log(updateFormData);
 	
 	$.ajax({
@@ -53,10 +57,10 @@ function doUpdate(){
 		success: (o) => {
 				console.log(o);
 			if( o == 'true' ){
-				alert('[수정성공] 다시 로그인해주세요.');
-				location.href="/JSPWEB/practice/과제/과제04/employee.jsp"
+				alert('[알림] 수정성공');
+				location.href="/JSPWEB/practice/과제/과제04/employee/employee.jsp";
 			}
-			else{ alert('[수정실패] 기존 비밀번호 확인해주세요.') }
+			else{ alert('[알림] 수정실패'); }
 		}
 	})
 }

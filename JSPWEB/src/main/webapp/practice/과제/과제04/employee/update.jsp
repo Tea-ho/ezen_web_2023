@@ -28,6 +28,10 @@
 							<br>프로필 변경: <input type="file" name="newImg">
 						</div>
 						<div>
+							<div> 사원번호 </div>
+							<div class="empNo" name="empNo"> </div>
+						</div>
+						<div>
 							<div> 사원명 </div>
 							<input class="newName" name="newName">
 						</div>
@@ -55,7 +59,7 @@
 							<div> 퇴사사유 </div>
 							<input class="newLcomment" name="newLcomment">
 						</div>
-						<div class = "modal_btns">
+						<div class = "umodal_btns">
 							<button onclick="doUpdate()" type="button"> 정보수정 </button>
 							<button onclick="updateModalClose()" class="modal_cancle" type="button"> 취소 </button>
 						</div>

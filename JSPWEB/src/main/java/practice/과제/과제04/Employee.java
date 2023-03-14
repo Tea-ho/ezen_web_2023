@@ -67,6 +67,8 @@ public class Employee extends HttpServlet {
 		
 		String uploadpath = request.getServletContext().getRealPath("/practice/과제/과제04/employee/eimg");
 		
+			System.out.println(uploadpath);
+		
 		MultipartRequest multi = new MultipartRequest(
 				request,						// 요청방식 
 				uploadpath,						// 첨부파일 저장할 서버 폴더
@@ -74,17 +76,17 @@ public class Employee extends HttpServlet {
 				"UTF-8",						// 인코딩 타입 설정
 				new DefaultFileRenamePolicy()	// 동일한 첨부파일명으로 중복 업로드 될 경우, 식별이 불가능해지는 상황 예방하는 옵션
 												// 작동원리: 동일 첨부명 존재하면 뒤에 숫자 자동 부여
-			);
+		);
 		
 		int empNo = Integer.parseInt(multi.getParameter("empNo"));	System.out.println( empNo );
-		String empImg = multi.getFilesystemName("empImg");			System.out.println( empImg );
-		String empName = multi.getParameter("empName");				System.out.println( empName );
-		String empGrade = multi.getParameter("empGrade");			System.out.println( empGrade );
-		String empContruct = multi.getParameter("empContruct");		System.out.println( empContruct );
-		String empDepart = multi.getParameter("empDepart");			System.out.println( empDepart );
-		String empSdate = multi.getParameter("empSdate");			System.out.println( empSdate );
-		String empLdate = multi.getParameter("empLdate");			System.out.println( empLdate );
-		String empLcomment = multi.getParameter("empLcomment");		System.out.println( empLcomment );
+		String empImg = multi.getFilesystemName("newImg");			System.out.println( empImg );
+		String empName = multi.getParameter("newName");				System.out.println( empName );
+		String empGrade = multi.getParameter("newGrade");			System.out.println( empGrade );
+		String empContruct = multi.getParameter("newConstruct");	System.out.println( empContruct );
+		String empDepart = multi.getParameter("newDepart");			System.out.println( empDepart );
+		String empSdate = multi.getParameter("newSdate");			System.out.println( empSdate );
+		String empLdate = multi.getParameter("newLdate");			System.out.println( empLdate );
+		String empLcomment = multi.getParameter("newLcomment");		System.out.println( empLcomment );
 		
 		if( empImg == null ) {
 			empImg = EmployeeDao.getInstance().printInfo(empNo).getEmpImg();
