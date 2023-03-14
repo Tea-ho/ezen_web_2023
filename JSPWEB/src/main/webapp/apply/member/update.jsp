@@ -47,8 +47,6 @@
 			</div>
 		</form>
 	</div>
-	
-
 
 	<script src="/JSPWEB/apply/js/member/update.js" type="text/javascript"> </script>
 </body>
