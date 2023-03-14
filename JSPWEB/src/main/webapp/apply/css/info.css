@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.title{
+	font-weight: bold;
+}
+
+.mid, .memail, .mpoint{
+	margin-bottom: 1%;
+}
+
+.infoBtn{
+    width: 85px;
+    height: 30px;
+    background-color: #1E1F21;
+    color: white;
+    border: none;
+}

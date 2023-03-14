@@ -12,7 +12,8 @@
 	
 	<div class="container">
 	
-		<h3> 회원정보 수정 </h3>
+		<h3> 내프로필 수정 </h3>
+		<p> 프로필 수정 및 회원 탈퇴를 하실 수 있습니다. </p>
 		<form class="updateForm">
 			<div>
 				<div>

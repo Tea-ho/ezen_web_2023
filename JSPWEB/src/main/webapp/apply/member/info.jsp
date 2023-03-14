@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	<link href="/JSPWEB/apply/css/info.css" rel="stylesheet">
 </head>
 <body>
 	
@@ -12,26 +13,26 @@
 	
 	<div class="container">
 	
-		<h3> 회원정보 </h3>
+		<h3> 내프로필 </h3>
 		<div>
 			<div>
 				<img class="mimg" alt="" src="">
 			</div>
 			<div>
-				<div> 아이디 </div>
+				<div class="title"> 아이디 </div>
 				<div class="mid"></div>
 			</div>
 			<div>
-				<div> 이메일 </div>
+				<div class="title"> 이메일 </div>
 				<div class="memail"></div>
 			</div>
 			<div>
-				<div> 보유 포인트 </div>
+				<div class="title"> 보유 포인트 </div>
 				<div class="mpoint"></div>
 			</div>
 			
-			<a href="/JSPWEB/apply/member/update.jsp"><button type="button"> 정보수정 </button> </a>
-			<button onclick="openModal()" type="button"> 회원탈퇴 </button>
+			<a href="/JSPWEB/apply/member/update.jsp"><button class="infoBtn" type="button"> 정보수정 </button> </a>
+			<button class="infoBtn" onclick="openModal()" type="button"> 회원탈퇴 </button>
 			
 		</div>
 	</div>
